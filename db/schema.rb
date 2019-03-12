@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_12_110841) do
+ActiveRecord::Schema.define(version: 2019_03_12_120214) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,14 +26,12 @@ ActiveRecord::Schema.define(version: 2019_03_12_110841) do
   create_table "diagnoses", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "doctor_id"
-    t.bigint "picture_id"
     t.text "medical_assessment"
     t.text "recommendation"
     t.string "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["doctor_id"], name: "index_diagnoses_on_doctor_id"
-    t.index ["picture_id"], name: "index_diagnoses_on_picture_id"
     t.index ["user_id"], name: "index_diagnoses_on_user_id"
   end
 
@@ -69,6 +67,8 @@ ActiveRecord::Schema.define(version: 2019_03_12_110841) do
     t.string "diagnosis_picture"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "diagnosis_id"
+    t.index ["diagnosis_id"], name: "index_pictures_on_diagnosis_id"
   end
 
   create_table "prescriptions", force: :cascade do |t|
@@ -104,7 +104,6 @@ ActiveRecord::Schema.define(version: 2019_03_12_110841) do
 
   add_foreign_key "answers", "questions"
   add_foreign_key "diagnoses", "doctors"
-  add_foreign_key "diagnoses", "pictures"
   add_foreign_key "diagnoses", "users"
   add_foreign_key "doctors", "users"
   add_foreign_key "patient_answers", "answers"

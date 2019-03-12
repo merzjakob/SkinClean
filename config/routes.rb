@@ -2,19 +2,15 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
-  resources :patients, only: [:new, :create, :show] do
+  resources :diagnoses, only: [:new, :create, :show, :index] do
+    resources :prescriptions, only: [:new, :create,:show]
     resources :pictures, only: [:new, :create]
-    resources :diagnosis, only: [:new, :create, :show, :index]
   end
 
   resources :doctors, only: [:new, :create, :update, :edit]
 
   resources :questions, only: [:show] do
     resources :patient_answers, only: [:new, :create]
-  end
-
-  resources :diagnosis, only: [] do
-    resources :prescriptions, only: [:new, :create,:show]
   end
 
   resources :medicines, only: [:show]
