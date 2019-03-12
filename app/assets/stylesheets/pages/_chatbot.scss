@@ -1,0 +1,43 @@
+.chat-container {
+  width: 100%;
+  height: 90vh;
+  border: 2px solid #1AB06D;
+  margin: 0;
+  border-radius: 5px;
+  .chatHeader {
+    width: 100%;
+    padding: 10px;
+    border-bottom: 1px solid #1AB06D;
+  }
+    h3{
+      margin: 0;
+      padding: 0;
+      font-weight: 300;
+      color: #1AB06D;
+    }
+    .chatMessages {
+      height: 70%;
+      border-bottom: 1px solid #1AB06D;
+      overflow-y: scroll;
+    }
+  .chatBottom {
+    form input[type='submit'] {
+      cursor: pointer;
+    }
+    form input[type='text'] {
+      width: 80%;
+      padding: 3px;
+      padding-left: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      margin: 5px;
+    }
+  }
+  .cm {
+    list-style: none;
+    border-bottom: 1px solid #ddd;
+    padding: 5px;
+  }
+}
+
+
