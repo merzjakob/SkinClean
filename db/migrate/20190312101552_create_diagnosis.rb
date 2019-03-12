@@ -1,6 +1,6 @@
-class CreateDiagnoses < ActiveRecord::Migration[5.2]
+class CreateDiagnosis < ActiveRecord::Migration[5.2]
   def change
-    create_table :diagnoses do |t|
+    create_table :diagnosis do |t|
       t.text :medical_assessment
       t.string :location
       t.text :recommendation
