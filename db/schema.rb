@@ -10,32 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_12_101926) do
+ActiveRecord::Schema.define(version: 2019_03_12_101301) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "answers", force: :cascade do |t|
-    t.string "content"
-    t.bigint "question_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["question_id"], name: "index_answers_on_question_id"
-  end
-
-  create_table "diagnosis", force: :cascade do |t|
-    t.text "medical_assessment"
-    t.string "location"
-    t.text "recommendation"
-    t.bigint "user_id"
-    t.bigint "doctor_id"
-    t.bigint "picture_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["doctor_id"], name: "index_diagnosis_on_doctor_id"
-    t.index ["picture_id"], name: "index_diagnosis_on_picture_id"
-    t.index ["user_id"], name: "index_diagnosis_on_user_id"
-  end
 
   create_table "doctors", force: :cascade do |t|
     t.text "introduction"
@@ -49,13 +27,6 @@ ActiveRecord::Schema.define(version: 2019_03_12_101926) do
 
   create_table "pictures", force: :cascade do |t|
     t.string "diagnosis_picture"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "questions", force: :cascade do |t|
-    t.text "question"
-    t.boolean "multiple_choice"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -75,9 +46,5 @@ ActiveRecord::Schema.define(version: 2019_03_12_101926) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "answers", "questions"
-  add_foreign_key "diagnosis", "doctors"
-  add_foreign_key "diagnosis", "pictures"
-  add_foreign_key "diagnosis", "users"
   add_foreign_key "doctors", "users"
 end
