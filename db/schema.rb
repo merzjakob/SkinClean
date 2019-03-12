@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_12_103800) do
+ActiveRecord::Schema.define(version: 2019_03_12_110841) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,10 +47,37 @@ ActiveRecord::Schema.define(version: 2019_03_12_103800) do
     t.index ["user_id"], name: "index_doctors_on_user_id"
   end
 
+  create_table "medicines", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.text "risk"
+    t.integer "price_per_unit"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "patient_answers", force: :cascade do |t|
+    t.bigint "answer_id"
+    t.bigint "diagnosis_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["answer_id"], name: "index_patient_answers_on_answer_id"
+    t.index ["diagnosis_id"], name: "index_patient_answers_on_diagnosis_id"
+  end
+
   create_table "pictures", force: :cascade do |t|
     t.string "diagnosis_picture"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "prescriptions", force: :cascade do |t|
+    t.bigint "diagnosis_id"
+    t.bigint "medicine_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["diagnosis_id"], name: "index_prescriptions_on_diagnosis_id"
+    t.index ["medicine_id"], name: "index_prescriptions_on_medicine_id"
   end
 
   create_table "questions", force: :cascade do |t|
@@ -70,7 +97,7 @@ ActiveRecord::Schema.define(version: 2019_03_12_103800) do
     t.datetime "updated_at", null: false
     t.string "first_name"
     t.string "last_name"
-    t.boolean "doctor"
+    t.boolean "doctor", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -80,4 +107,8 @@ ActiveRecord::Schema.define(version: 2019_03_12_103800) do
   add_foreign_key "diagnoses", "pictures"
   add_foreign_key "diagnoses", "users"
   add_foreign_key "doctors", "users"
+  add_foreign_key "patient_answers", "answers"
+  add_foreign_key "patient_answers", "diagnoses"
+  add_foreign_key "prescriptions", "diagnoses"
+  add_foreign_key "prescriptions", "medicines"
 end
