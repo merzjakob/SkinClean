@@ -1,6 +1,11 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
 
+<div class="banner">
+  <div class="banner-content text-center">
+    <h1>Discrete, professional advice for your skin problems!</h1>
+    <%= link_to "Get advice", new_user_session_path, class: "btn btn-solid"  %>
+    <p><i class="fas fa-angle-down"></i></p>
+  </div>
+</div>
 
 <div class="wrapper-light-grey">
   <div class="stats-container">
@@ -75,5 +80,16 @@
         </div>
       </div>
     </div>
+
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+   <h5>SkinClean</h5>
   </div>
 </div>
