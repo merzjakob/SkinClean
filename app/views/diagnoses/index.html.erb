@@ -1,2 +1,40 @@
-<h1>Diagnoses#index</h1>
-<p>Find me in app/views/diagnoses/index.html.erb</p>
+<div class="big-box-all-patients">
+  <% if not @patients_answers.include?(diagnosis_id) %>
+  <div class="container wrapper">
+    <h2>Patients in diagnose</h2>
+    <%  @patient_answers.each do |patient_answer| %>
+    <div class="patient_answer-card">
+      <div class="patient_answer-name">
+        <h3><%=  patient_answer.first_name patient_answer.last_name %></h3>
+        <p>(<%= Date.parse(patient_answer.created_at.to_s).strftime("%d/%m/%Y") %></p>
+      </div>
+      <div class="patient_answer-body">
+        <p> I facial skin problems</p>
+      </div>
+      <div class="patient_answer-status">
+        <%= "In diagnose", id: "pending"%>
+      </div>
+      <%= <%= link_to "Diagnose", new_diagnosis_path(@parent) %> %>
+    </div>
+  </div>
+  <!-- <h2>Your guests</h2> -->
+  <% else %>
+  <div class="container wrapper">
+    <h2>Your patients</h2>
+    <%  @patient_answers.each do |patient_answer| %>
+    <div class="patient_answer-card">
+      <div class="patient_answer-name">
+        <h3><%=  patient_answer.first_name patient_answer.last_name %></h3>
+        <p>(<%= Date.parse(patient_answer.created_at.to_s).strftime("%d/%m/%Y") %></p>
+      </div>
+      <div class="patient_answer-body">
+        <p>I have facial skin problems</p>
+      </div>
+      <div class="patient_answer-status">
+        <%= "Diagnosed", id: "approved"%>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+<!-- List of all bookings where flat_id = current_user_id -->
