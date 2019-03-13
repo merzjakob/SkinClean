@@ -12,7 +12,6 @@ Diagnosis.destroy_all
 Answer.destroy_all
 Question.destroy_all
 Medicine.destroy_all
-Picture.destroy_all
 Doctor.destroy_all
 User.destroy_all
 
@@ -28,9 +27,11 @@ question1 = Question.create!(title: 'What is your name?', multiple_choice: false
 question2 = Question.create!(title: 'Do you have pain?', multiple_choice: true)
 question3 = Question.create!(title: 'Is that bleeding?', multiple_choice: true)
 question4 = Question.create!(title: 'Are you ashamed?', multiple_choice: true)
+question5 = Question.create!(title: 'Please upload a photo', multiple_choice:false, photo:true)
 
 puts 'Creating answers...'
 answer1 = Answer.create!(content: '', question: question1)
+answer1 = Answer.create!(content: '', question: question5)
 answer2 = Answer.create!(content: '', question: question1)
 answer3 = Answer.create!(content: 'No', question: question2)
 answer6 = Answer.create!(content: 'Yes', question: question2)
@@ -49,11 +50,9 @@ diagnosis1 = Diagnosis.create!(user: user2, doctor: doctor1, recommendation: 'So
 puts 'Creating patient answer...'
 PatientAnswer.create!(question: question1, diagnosis: diagnosis1, user: user1, content: "Jakob")
 PatientAnswer.create!(question: question2, diagnosis: diagnosis1, user: user1, content: answer3.content)
+PatientAnswer.create!(question: question5, diagnosis: diagnosis1, user: user1, content: answer5.content, photo:'https://www.uni-regensburg.de/Fakultaeten/phil_Fak_II/Psychologie/Psy_II/beautycheck/english/durchschnittsgesichter/m(01-32)_gr.jpg' )
 
 puts 'Creating prescription'
 Prescription.create!(diagnosis: diagnosis1, medicine: medicine2)
-
-puts 'Creating pictures..'
-patient_pic1 = Picture.create!(diagnosis_picture: 'https://www.uni-regensburg.de/Fakultaeten/phil_Fak_II/Psychologie/Psy_II/beautycheck/english/durchschnittsgesichter/m(01-32)_gr.jpg', diagnosis: diagnosis1)
 
 puts 'Database seeded'
