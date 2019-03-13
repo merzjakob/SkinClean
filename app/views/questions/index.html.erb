@@ -2,18 +2,24 @@
 <div class="container">
   <h1>Chatbot MyMan</h1>
     <% @questions.each do |question| %>
-      <%= question.title %>
+      <p>
+        <%= question.title %>
+        </p>
       <% if question.answered?(current_user) %>
         <% if question.photo?  %>
-          <%= current_user.patient_answers.photo %>
+          <p>
+            <%= current_user.patient_answers.photo %>
+          </p>
         <% else %>
-          <%= current_user.patient_answers[0].content %>
+          <p>
+            <%= current_user.patient_answers[@questions.index(question)].content %>
+          </p>
         <% end %>
       <% else %>
         <% if question.multiple_choice %>
           <div class="col-xs-12 col-sm-5 col-sm-offset-3">
             <%= simple_form_for [question, @patient_answer] do |f| %>
-              <%= f.input :content, collection: question.answers %>
+              <%= f.input :content, collection: question.answers, label: false %>
               <%= f.submit %>
             <% end %>
           </div>
@@ -28,14 +34,13 @@
         <% else %>
           <div class="col-xs-12 col-sm-5 col-sm-offset-3">
             <%= simple_form_for [question, @patient_answer] do |f| %>
-              <%= f.input :content %>
+              <%= f.input :content, label: false %>
               <%= f.submit %>
             <% end %>
           </div>
         <% end %>
       <% end %>
       <% break unless question.answered?(current_user) %>
-
     <% end %>
 </div>
 

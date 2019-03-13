@@ -7,7 +7,7 @@ class PatientAnswersController < ApplicationController
     if params.include?(:photo)
       @patient_answer = PatientAnswer.new(question: @question, user: current_user, photo: params[:photo])
     else
-      @patient_answer = PatientAnswer.new(question: @question, content: params[:content], user: current_user)
+      @patient_answer = PatientAnswer.new(question: @question, content: params[:patient_answer][:content], user: current_user)
     end
     if @patient_answer.save
       redirect_to questions_path
