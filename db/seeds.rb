@@ -25,10 +25,16 @@ doctor1 = Doctor.create!(introduction: 'I am a good doctor', profile_picture: 'h
 
 puts 'Creating questions..'
 question1 = Question.create!(question: 'What is your name?', multiple_choice: false)
+question2 = Question.create!(question: 'Do you have pain?', multiple_choice: true)
+question3 = Question.create!(question: 'Is that bleeding?', multiple_choice: true)
+question4 = Question.create!(question: 'Are you ashamed?', multiple_choice: true)
 
 puts 'Creating answers...'
 answer1 = Answer.create!(content: 'Jakob', question: question1)
 answer2 = Answer.create!(content: 'Augustine', question: question1)
+answer3 = Answer.create!(content: 'No', question: question2)
+answer4 = Answer.create!(content: 'Yes', question: question3)
+answer5 = Answer.create!(content: 'No', question: question4)
 
 puts 'Creating medicines...'
 medicine1 = Medicine.create!(name: 'Aspirin', description: 'This helps with hangovers', risk: 'drowning', price_per_unit: 3)
