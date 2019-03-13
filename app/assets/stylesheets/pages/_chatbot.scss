@@ -2,7 +2,7 @@
   width: 100%;
   height: 90vh;
   border: 2px solid #1AB06D;
-  margin: 0;
+  margin: 5px 10px;
   border-radius: 5px;
   .chatHeader {
     width: 100%;
@@ -16,23 +16,13 @@
       color: #1AB06D;
     }
     .chatMessages {
-      height: 70%;
+      height: 80%;
       border-bottom: 1px solid #1AB06D;
       overflow-y: scroll;
     }
-  .chatBottom {
-    form input[type='submit'] {
-      cursor: pointer;
-    }
-    form input[type='text'] {
-      width: 80%;
-      padding: 3px;
-      padding-left: 10px;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      margin: 5px;
-    }
-  }
+  // .chatBottom {
+
+  // }
   .cm {
     list-style: none;
     border-bottom: 1px solid #ddd;
@@ -40,4 +30,92 @@
   }
 }
 
+.speech-wrapper{
+  padding: 30px 35px;
+  .bubble{
+    width: 280px;
+    height: auto;
+    display: block;
+    background: white;
+    border-radius: 4px;
+    position: relative;
+    margin: 0 0 30px;
+    &.alt{
+      margin: 0 0 0 30px;
+    }
+    .txt{
+      padding: 8px 60px 8px 14px;
+      .name{
+        font-weight: 600;
+        font-size: 14px;
+        margin: 0 0 4px;
+        color: #3498db;
+        span{
+          font-weight: normal;
+          color: #b3b3b3;
+        }
+        &.alt{
+          color: #2ecc71;
+        }
+      }
+      .message{
+        font-size: 15px;
+        margin: 0;
+        color: #2b2b2b;
+      }
+      .timestamp{
+        font-size: 11px;
+        position: absolute;
+        bottom: 8px;
+        right: 10px;
+        text-transform: uppercase; color: #999
+      }
+    }
+    .bubble-arrow {
+      position: absolute;
+      width: 0;
+      bottom:42px;
+      left: -16px;
+      height: 0;
+      &.alt{
+        right: -2px;
+        bottom: 40px;
+        left: auto;
+      }
+    }
+    .bubble-arrow:after {
+      content: "";
+      position: absolute;
+      border: 0 solid transparent;
+      border-top: 9px solid white;
+      border-radius: 0 20px 0;
+      width: 15px;
+      height: 30px;
+      transform: rotate(145deg);
+    }
+    .bubble-arrow.alt:after {
+      transform: rotate(45deg) scaleY(-1);
+    }
+  }
+}
+  form {
+      display: flex !important;
+      height: 40%;
+      align-items: center;
+
+    }
+      #submitchat {
+        cursor: pointer;
+        height: 100%;
+        width: 20%;
+        margin: 0px 2px;
+      }
+      #inputchat {
+        padding: 3px;
+        padding-left: 10px;
+        flex-grow: 1;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        margin: 5px;
+      }
 
