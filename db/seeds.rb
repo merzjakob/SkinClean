@@ -30,8 +30,8 @@ question3 = Question.create!(title: 'Is that bleeding?', multiple_choice: true)
 question4 = Question.create!(title: 'Are you ashamed?', multiple_choice: true)
 
 puts 'Creating answers...'
-answer1 = Answer.create!(content: 'Jakob', question: question1)
-answer2 = Answer.create!(content: 'Augustine', question: question1)
+answer1 = Answer.create!(content: '', question: question1)
+answer2 = Answer.create!(content: '', question: question1)
 answer3 = Answer.create!(content: 'No', question: question2)
 answer6 = Answer.create!(content: 'Yes', question: question2)
 answer4 = Answer.create!(content: 'No', question: question3)
@@ -47,7 +47,8 @@ puts 'Creating diagnosis...'
 diagnosis1 = Diagnosis.create!(user: user2, doctor: doctor1, recommendation: 'Sorry, there is nothing I can do here', medical_assessment: 'this is bad!')
 
 puts 'Creating patient answer...'
-PatientAnswer.create!(answer: answer1, diagnosis: diagnosis1)
+PatientAnswer.create!(question: question1, diagnosis: diagnosis1, user: user1, content: "Jakob")
+PatientAnswer.create!(question: question2, diagnosis: diagnosis1, user: user1, content: answer3.content)
 
 puts 'Creating prescription'
 Prescription.create!(diagnosis: diagnosis1, medicine: medicine2)
