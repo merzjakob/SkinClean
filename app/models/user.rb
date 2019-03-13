@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   has_many :doctors, dependent: :destroy
   has_many :diagnoses
-  has_many :pictures, through: :diagnoses, dependent: :destroy
+  has_many :patient_answers
 
   validates :first_name, :last_name, :email, :password, presence: true
 end
