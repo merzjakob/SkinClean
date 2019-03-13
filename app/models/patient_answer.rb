@@ -1,4 +1,4 @@
 class PatientAnswer < ApplicationRecord
-  belongs_to :answer
-  belongs_to :diagnosis
+  belongs_to :question, :user
+  belongs_to :diagnosis, optional:true
 end

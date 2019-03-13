@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_13_111503) do
+ActiveRecord::Schema.define(version: 2019_03_13_140643) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,12 +55,15 @@ ActiveRecord::Schema.define(version: 2019_03_13_111503) do
   end
 
   create_table "patient_answers", force: :cascade do |t|
-    t.bigint "answer_id"
     t.bigint "diagnosis_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["answer_id"], name: "index_patient_answers_on_answer_id"
+    t.bigint "question_id"
+    t.bigint "user_id"
+    t.text "content"
     t.index ["diagnosis_id"], name: "index_patient_answers_on_diagnosis_id"
+    t.index ["question_id"], name: "index_patient_answers_on_question_id"
+    t.index ["user_id"], name: "index_patient_answers_on_user_id"
   end
 
   create_table "pictures", force: :cascade do |t|
@@ -106,7 +109,6 @@ ActiveRecord::Schema.define(version: 2019_03_13_111503) do
   add_foreign_key "diagnoses", "doctors"
   add_foreign_key "diagnoses", "users"
   add_foreign_key "doctors", "users"
-  add_foreign_key "patient_answers", "answers"
   add_foreign_key "patient_answers", "diagnoses"
   add_foreign_key "prescriptions", "diagnoses"
   add_foreign_key "prescriptions", "medicines"
