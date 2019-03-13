@@ -24,11 +24,20 @@ puts 'Creating doctors...'
 doctor1 = Doctor.create!(introduction: 'I am a good doctor', profile_picture: 'https://hcplive.s3.amazonaws.com/v1_media/_image/happydoctor.jpg', license: '1234', user: user1)
 
 puts 'Creating questions..'
-question1 = Question.create!(question: 'What is your name?', multiple_choice: false)
+question1 = Question.create!(title: 'What is your name?', multiple_choice: false)
+question2 = Question.create!(title: 'Do you have pain?', multiple_choice: true)
+question3 = Question.create!(title: 'Is that bleeding?', multiple_choice: true)
+question4 = Question.create!(title: 'Are you ashamed?', multiple_choice: true)
 
 puts 'Creating answers...'
 answer1 = Answer.create!(content: 'Jakob', question: question1)
 answer2 = Answer.create!(content: 'Augustine', question: question1)
+answer3 = Answer.create!(content: 'No', question: question2)
+answer6 = Answer.create!(content: 'Yes', question: question2)
+answer4 = Answer.create!(content: 'No', question: question3)
+answer7 = Answer.create!(content: 'Yes', question: question3)
+answer5 = Answer.create!(content: 'No', question: question4)
+answer8 = Answer.create!(content: 'Yes', question: question4)
 
 puts 'Creating medicines...'
 medicine1 = Medicine.create!(name: 'Aspirin', description: 'This helps with hangovers', risk: 'drowning', price_per_unit: 3)

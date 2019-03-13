@@ -1,0 +1,22 @@
+
+<div class="container">
+    <h1>Chatbot MyMan</h1>
+      <form>
+        <% @questions.each do |question| %>
+          <%= question.title %>
+          <% if question.multiple_choice %>
+          <% question.answers.each do |answer|  %>
+          <input type="checkbox" name="" value="answer.id" id="answer_id_<%=answer.id%>">
+          <label for="answer_id_<%=answer.id%>">
+             <%= answer.content %>
+          </label>
+          <% end %>
+          <% else %>
+          <input type="textarea" name="question.id">
+          <% end %>
+        <% end %>
+        <input type="submit" name="submit" value="post">
+      </form>
+</div>
+
+
