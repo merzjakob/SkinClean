@@ -1,2 +1,52 @@
-<h1>Diagnoses#index</h1>
-<p>Find me in app/views/diagnoses/index.html.erb</p>
+<!-- <h2>Your guests</h2> -->
+<div class="container wrapper">
+  <h2>Patients in diagnose</h2>
+  <% @diagnoses.each do |diagnosis| %>
+  <% diagnosis.patient_answers.each do |patient_answer| %>
+  <div class="diagnosis-card">
+    <div class="diagnosis-name">
+      <h3><%=  patient_answer.first_name patient_answer.last_name %></h3>
+      <p>(<%= Date.parse(patient_answer.created_at.to_s).strftime("%d/%m/%Y") %></p>
+    </div>
+    <div class="diagnosis-body">
+      <p> I facial skin problems</p>>
+    </div>
+    <div class="diagnosis-status">
+      <% if diagnosis.status == "Diagnosed" %>
+      <h3 id="approved"><%=diagnosis.status%></h3>
+      <% elsif diagnosis.status =="Pending" %>
+      <h3 id="declined"><%=diagnosis.status%></h3>
+      <% end %>
+      <% if diagnosis.status == "pending" %>
+      <%= link_to "Diagnose", approve_path(diagnosis), method: :patch, id: "approved"%>
+      <%= link_to "Decline", decline_path(diagnosis), method: :patch, id: "declined"%>
+      <% end %>
+    </div>
+  </div>
+  <% end%>
+</div>
+<!-- List of all diagnosiss where dianosis_id = current_user_id -->
+<div class="container wrapper">
+  <h2>Your patients</h2>
+  <% diagnosis.user_id.patient_answers.each do |patient_answer| %>
+  <div class="diagnosis-card">
+    <div class="diagnosis-name">
+      <h3><%=  patient_answer.first_name patient_answer.last_name %></h3>
+      <p>(<%= Date.parse(patient_answer.created_at.to_s).strftime("%d/%m/%Y") %></p>
+    </div>
+    <div class="diagnosis-body">
+      <p> I facial skin problems</p>
+    </div>
+    <div class="diagnosis-status">
+      <%= link_to edit_dianosis_path(dianosis) do %>
+      <i class="fas fa-edit-alt"></i>
+      EDIT
+      <% end %>
+      <%= link_to dianosis_path(dianosis), method: "delete", data: {confirm: "Are you sure you want to delete your trip?"} do %>
+      <i class="fas fa-trash-alt"></i>
+      <% end %>
+    </div>
+  </div>
+  <% end %>
+  <% end%>
+</div>

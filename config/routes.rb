@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
-  resources :diagnoses, only: [:new, :create, :show, :index] do
+  resources :diagnoses, only: [:new, :create, :show, :index, :edit, :update] do
     resources :prescriptions, only: [:new, :create,:show]
     resources :pictures, only: [:new, :create]
   end
