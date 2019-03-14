@@ -1,4 +1,6 @@
 
+
+
 <div class="container">
   <h1>Chatbot MyMan</h1>
     <% @questions.each do |question| %>
@@ -7,9 +9,13 @@
         </p>
       <% if question.answered?(current_user) %>
         <% if question.photo?  %>
-          <p>
-            <%= current_user.patient_answers.photo %>
-          </p>
+          <% current_user.patient_answers.each do |patient_answer| %>
+          <div>
+            <% if patient_answer.photo? %>
+            <%= image_tag patient_answer.photo.url %>
+            <% end %>
+          </div>
+          <% end %>
         <% else %>
           <p>
             <%= current_user.patient_answers[@questions.index(question)].content %>
@@ -17,27 +23,21 @@
         <% end %>
       <% else %>
         <% if question.multiple_choice %>
-          <div class="col-xs-12 col-sm-5 col-sm-offset-3">
             <%= simple_form_for [question, @patient_answer] do |f| %>
-              <%= f.input :content, collection: question.answers, label: false %>
+              <%= f.input :content, collection: question.answers,value_method: :content, label_method: :content %>
               <%= f.submit %>
             <% end %>
-          </div>
         <% elsif question.photo %>
-          <div class="col-xs-12 col-sm-5 col-sm-offset-3">
             <%= simple_form_for [question, @patient_answer] do |f| %>
               <%= f.input :photo %>
               <%= f.input :photo_cache, as: :hidden %>
               <%= f.submit %>
             <% end %>
-          </div>
         <% else %>
-          <div class="col-xs-12 col-sm-5 col-sm-offset-3">
             <%= simple_form_for [question, @patient_answer] do |f| %>
               <%= f.input :content, label: false %>
               <%= f.submit %>
             <% end %>
-          </div>
         <% end %>
       <% end %>
       <% break unless question.answered?(current_user) %>

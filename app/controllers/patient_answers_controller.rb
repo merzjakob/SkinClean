@@ -4,8 +4,10 @@ class PatientAnswersController < ApplicationController
 
   def create
     @question = Question.find(params[:question_id])
-    if params.include?(:photo)
-      @patient_answer = PatientAnswer.new(question: @question, user: current_user, photo: params[:photo])
+
+    if patient_answer_params.include?(:photo)
+      # binding.pry
+      @patient_answer = PatientAnswer.new(question: @question, user: current_user, photo: patient_answer_params[:photo])
     else
       @patient_answer = PatientAnswer.new(question: @question, content: params[:patient_answer][:content], user: current_user)
     end
@@ -22,7 +24,7 @@ class PatientAnswersController < ApplicationController
   private
 
   def patient_answer_params
-    params.require(:patient_answer).permit(:photo, :content)
+    params.require(:patient_answer).permit(:photo, :photo_cache, :content)
   end
 
 end
