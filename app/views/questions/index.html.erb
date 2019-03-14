@@ -58,7 +58,7 @@
               <% end %>
             <% elsif question.photo %>
               <%= simple_form_for [question, @patient_answer], html: {id: "chatForm"} do |f| %>
-                <%= f.input :photo %>
+                <%= f.input :photo, label: false%>
                 <%= f.input :photo_cache, as: :hidden %>
                 <%= f.submit "Send", id: "submitchat", class: "btn-solid" %>
               <% end %>

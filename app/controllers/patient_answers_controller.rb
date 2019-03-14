@@ -4,7 +4,6 @@ class PatientAnswersController < ApplicationController
   end
 
   def create
-
     @question = Question.find(params[:question_id])
     if patient_answer_params.include?(:photo)
       @patient_answer = PatientAnswer.new(question: @question, user: current_user, photo: patient_answer_params[:photo])
