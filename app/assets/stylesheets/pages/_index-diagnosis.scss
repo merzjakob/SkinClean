@@ -1,4 +1,4 @@
-.booking-card {
+.diagnosis-card {
   display: flex;
   align-items: center;
   padding: 10px;
@@ -17,37 +17,37 @@
   margin-top: 30px;
   border-radius: 5px;
 }
-.booking-card:last-child {
+.diagnosis-card:last-child {
   border-bottom: none;
 }
-.booking-body {
+.diagnosis-body {
   flex-grow: 1;
   padding-left: 40px;
   color: rgba(0,0,0,0.4);
   font-size: 15px;
   color: rgba(0,0,0,0.7);
 }
-.booking-name {
+.diagnosis-name {
   // padding-left: 10px;
   width: 20%;
 }
-.booking-card h3{
+.diagnosis-card h3{
   font-size: 18px;
   margin: 0px 0px;
 }
-.booking-card p {
+.diagnosis-card p {
   font-size: 15px;
   font-weight: lighter;
   opacity: 0.8;
   margin: 5px 0px;
 }
 
-.booking-body strong{
+.diagnosis-body strong{
   color: rgba(0,0,0,0.9);
   color: rgba(0,0,0,0.9);
 }
 
-.booking-status {
+.diagnosis-status {
   display: block;
   min-width: 150px;
   justify-content: space-between;
