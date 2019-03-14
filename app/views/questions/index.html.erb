@@ -22,7 +22,6 @@
               <div class="bubble-arrow"></div>
             </div>
               <% if question.answered?(current_user) %>
-              <% sleep(2) %>
                 <% if question.photo?  %>
                   <% current_user.patient_answers.each do |patient_answer| %>
                     <div>
