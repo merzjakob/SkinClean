@@ -1,4 +1,5 @@
 <div class="container">
+
   <div class="row">
       <div class="chat-container">
         <div class="chatHeader">
@@ -21,6 +22,7 @@
               <div class="bubble-arrow"></div>
             </div>
               <% if question.answered?(current_user) %>
+              <% sleep(2) %>
                 <% if question.photo?  %>
                   <% current_user.patient_answers.each do |patient_answer| %>
                     <div>
@@ -51,20 +53,20 @@
           </div>
           <div class="chatBottom">
             <% if question.multiple_choice %>
-              <%= simple_form_for [question, @patient_answer] do |f| %>
-                <%= f.input :content, collection: question.answers,value_method: :content, label_method: :content %>
-                <%= f.submit %>
+              <%= simple_form_for [question, @patient_answer], html: {id: "chatForm"} do |f| %>
+                <%= f.input :content, as: :radio_buttons, collection: question.answers, label: false, value_method: :content,label_method: :content, wrapper_html: {class: "choices"}, input_html: {class: "choice hidden"}%>
+                <%= f.submit "Send", id: "submitchat", class: "btn-solid" %>
               <% end %>
             <% elsif question.photo %>
-              <%= simple_form_for [question, @patient_answer] do |f| %>
+              <%= simple_form_for [question, @patient_answer], html: {id: "chatForm"} do |f| %>
                 <%= f.input :photo %>
                 <%= f.input :photo_cache, as: :hidden %>
-                <%= f.submit %>
+                <%= f.submit "Send", id: "submitchat", class: "btn-solid" %>
               <% end %>
             <% else %>
-              <%= simple_form_for [question, @patient_answer] do |f| %>
-                <%= f.input :content, label: false %>
-                <%= f.submit %>
+              <%= simple_form_for [question, @patient_answer], html: {id: "chatForm"} do |f| %>
+                <%= f.input :content, label: false, wrapper_html: {id: "inputchat"} %>
+                <%= f.submit "Send", id: "submitchat", class: "btn-solid" %>
               <% end %>
             <% end %>
             <% end %>
@@ -72,18 +74,8 @@
           <% end %>
         </div>
     </div>
+          <div class="chatBottom">
+              <%= link_to 'Submit', diagnoses_path, method: :post, class: "btn btn-solid" %>
+          </div>
   </div>
-</div>
-
-         <div class="chatBottom">
-          <form action="#" onSubmit="return fals;" id="chatForm">
-            <input type="hidden" name="text" value="user" >
-            <textarea type="text" name="text" id="inputchat" value="" placeholder="type your message" ></textarea>
-            <input type="submit" name="submit" value="Post" class="btn-solid"id="submitchat">
-          </form>
-        </div>
-      </div>
-  </div>
-
-</div>
 
