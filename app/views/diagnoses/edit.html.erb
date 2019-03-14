@@ -17,17 +17,21 @@
           <% if patient_answer.photo%>
           <%= patient_answer.photo.url  %>
           <% end %>
+          <% end %>
         </div>
         <div class="description-card-diagnosis">
           <%= "patient description" %>
         </div>
       </div>
-      <div class="questions-answers-patient">
-        <ul>
-          <li> <%= patient_answer.question.title %></li>
-          <li> <%= patient_answer.content %></li>
-          <% end %>
-        </ul>
+      <div class="little-box-question-answers">
+        <div class="questions-answers-patient">
+          <ul>
+             <% @diagnosis.patient_answers.each do |patient_answer| %>
+            <li> <%= patient_answer.question.title %></li>
+            <li> <%= patient_answer.content %></li>
+            <% end %>
+          </ul>
+        </div>
       </div>
     </div>
   </div>

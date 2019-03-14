@@ -1,35 +1,35 @@
 .big-box-diagnosis {
-  display: grid;
-  grid-template-columns:1fr 1fr;
-    // grid-template-rows: repeat(2, 14vw);
-  grid-gap: 30px;
+  display: flex;
+  padding-top: 20px;
 }
 
 .form-new-diagnosis {
-  grid-column-start: 1;
-  grid-column-end: 1;
+  display: block;
+  margin-left: 30px;
+  flex-grow: 1;
+
 }
 
 .patient-info-diagnosis {
-  grid-column-start: 2;
-  grid-column-end: 2;
   position: sticky;
+  margin-left: 100px;
+  margin-right:30px;
 }
-
 
 .little-box-patient {
-   display: grid;
-  grid-template-columns:1fr 1fr;
-    // grid-template-rows: repeat(2, 14vw);
-  grid-gap: 30px;
+  display: flex;
 }
 
 .patient-info-diagnosis {
-  grid-column-start: 1;
-  grid-column-end: 1;
+
+}
+
+.little-box-question-answers {
+  display:block;
 }
 
 .questions-answers-patient {
-  grid-column-start: 2;
-  grid-column-end: 2;
+margin-left: 180px;
+margin-right:50px;
+display:flex;
 }
