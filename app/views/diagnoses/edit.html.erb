@@ -16,16 +16,16 @@
           <% @diagnosis.patient_answers.each do |patient_answer| %>
           <% if patient_answer.photo%>
           <%= patient_answer.photo.url  %>
+          <% end %>
         </div>
         <div class="description-card-diagnosis">
-          <% patient_answer %>
-          <% end  %>
+          <%= "patient description" %>
         </div>
       </div>
       <div class="questions-answers-patient">
         <ul>
-          <li> <%= patient_answer.question %></li>
-          <li> <%= patient_answer.answer %></li>
+          <li> <%= patient_answer.question.title %></li>
+          <li> <%= patient_answer.content %></li>
           <% end %>
         </ul>
       </div>
