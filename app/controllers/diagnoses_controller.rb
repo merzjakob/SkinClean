@@ -1,15 +1,16 @@
 class DiagnosesController < ApplicationController
   def new
-    @diagnosis = Diagnosis.new
+
   end
 
   def create
-    @diagnosis = Diagnosis.new(diagnosis_params)
-    @diagnosis.doctor_id = current_user.id
+    @diagnosis = Diagnosis.new(user_id: current_user.id, recommendation: 'To', medical_assessment: "")
     if @diagnosis.save
-      redirect_to new_diagnosis_path(@diagnosis)
+      current_user.undiagnosed_answers.update_all(diagnosis_id: @diagnosis.id)
+      redirect_to diagnoses_path
     else
-      render :new
+      @questions = Question.all
+      render "questions/index"
     end
   end
 
