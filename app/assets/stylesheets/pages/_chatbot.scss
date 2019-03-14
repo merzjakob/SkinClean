@@ -6,6 +6,7 @@
   border-radius: 5px;
   .chatHeader {
     width: 100%;
+    height: 5%;
     padding: 10px;
     border-bottom: 1px solid #1AB06D;
   }
@@ -19,15 +20,17 @@
       height: 80%;
       border-bottom: 1px solid #1AB06D;
       overflow-y: scroll;
+      padding-bottom: 5px;
     }
   // .chatBottom {
-
+  //   height: 15%;
+  //   display:flex;
+  //   justify-content: space-around;
+  //   align-items: center;
+  //   .btn {
+  //     padding: 15px 50px;
+  //   }
   // }
-  .cm {
-    list-style: none;
-    border-bottom: 1px solid #ddd;
-    padding: 5px;
-  }
 }
 
 .speech-wrapper{
@@ -40,8 +43,12 @@
     border-radius: 4px;
     position: relative;
     margin: 0 0 30px;
+    img {
+      width: 100%
+    }
     &.alt{
-      margin: 0 0 0 30px;
+      margin: 0 0 30px 100px;
+      object-fit: contain;
     }
     .txt{
       padding: 8px 60px 8px 14px;
@@ -101,6 +108,7 @@
   form {
       display: flex !important;
       height: 40%;
+      justify-content: space-around;
       align-items: center;
 
     }
@@ -118,4 +126,56 @@
         border-radius: 5px;
         margin: 5px;
       }
+.form-post {
+  background: white;
+  margin-top: 50px;
+  padding: 20px;
+  border-radius: 5px;
+  h1 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+    color: #666666;
+    margin-bottom: 50px;
+    margin-top: 0px;
+  }
+  .btn {
+    width: 100%;
+    padding: 10px;
+    font-weight: bold;
+  }
+}
 
+// Checkboxes design
+.choices {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0px 0px;
+  legend {
+    display:none;
+  }
+}
+
+.form-check {
+  background: #b7b7b7;
+  padding: 5px 50px;
+  border-radius: 5px;
+  opacity: .4;
+  flex: 0 1 30%;
+  text-align: center;
+  margin: 5px 0px;
+  &:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+  &.active {
+  background: #1AB06D;
+  color: white;
+  opacity: 1;
+  }
+}
+
+.choice.hidden{
+  display: none;
+}
