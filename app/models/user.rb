@@ -9,4 +9,8 @@ class User < ApplicationRecord
   has_many :patient_answers
 
   validates :first_name, :last_name, :email, :password, presence: true
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
 end
