@@ -31,7 +31,7 @@ question5 = Question.create!(title: 'Please upload a photo', multiple_choice:fal
 
 puts 'Creating answers...'
 answer1 = Answer.create!(content: '', question: question1)
-answer1 = Answer.create!(content: '', question: question5)
+answer9 = Answer.create!(content: '', question: question5)
 answer2 = Answer.create!(content: '', question: question1)
 answer3 = Answer.create!(content: 'No', question: question2)
 answer6 = Answer.create!(content: 'Yes', question: question2)
