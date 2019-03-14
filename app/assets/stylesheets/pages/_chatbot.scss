@@ -22,7 +22,29 @@
       overflow-y: scroll;
       padding-bottom: 5px;
     }
-  // .chatBottom {
+  .chatBottom {
+
+     form {
+      display: flex !important;
+      height: 40%;
+      justify-content: space-around;
+      align-items: center;
+
+    }
+      #submitchat {
+        cursor: pointer;
+        height: 100%;
+        width: 20%;
+        margin: 0px 2px;
+      }
+      #inputchat {
+        padding: 3px;
+        padding-left: 10px;
+        flex-grow: 1;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        margin: 5px;
+      }
   //   height: 15%;
   //   display:flex;
   //   justify-content: space-around;
@@ -30,7 +52,7 @@
   //   .btn {
   //     padding: 15px 50px;
   //   }
-  // }
+  }
 }
 
 .speech-wrapper{
@@ -105,27 +127,7 @@
     }
   }
 }
-  form {
-      display: flex !important;
-      height: 40%;
-      justify-content: space-around;
-      align-items: center;
 
-    }
-      #submitchat {
-        cursor: pointer;
-        height: 100%;
-        width: 20%;
-        margin: 0px 2px;
-      }
-      #inputchat {
-        padding: 3px;
-        padding-left: 10px;
-        flex-grow: 1;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        margin: 5px;
-      }
 .form-post {
   background: white;
   margin-top: 50px;
