@@ -19,20 +19,26 @@ class DiagnosesController < ApplicationController
   end
 
   def index
-    @diagnoses = Diagnosis.all
+    if current_user.doctor?
+      @diagnoses = Diagnosis.all
+      # redirect_to diagnoses_path
+    else
+      @diagnoses = Diagnosis.where(user_id: current_user.id)
+      # redirect_to diagnosis_path(params[:id])
+   end
   end
 
   def update
     identify_diagnosis
     @diagnosis.update(diagnosis_params)
-    redirect_to diagnosis_path
+    redirect_to diagnoses_path
   end
 
   def approve
     @diagnosis = Diagnosis.find(params[:id])
     @diagnosis.status = "Diagnosed"
     @diagnosis.save
-    redirect_to dashboard_path
+    redirect_to edit_diagnosis_path(@diagnosis)
   end
 
   def decline

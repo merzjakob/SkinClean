@@ -5,7 +5,7 @@
   <% diagnosis.patient_answers.each do |patient_answer| %>
   <div class="diagnosis-card">
     <div class="diagnosis-name">
-      <h3><%=  patient_answer.first_name patient_answer.last_name %></h3>
+      <h3><%=  patient_answer.user.full_name %></h3>
       <p>(<%= Date.parse(patient_answer.created_at.to_s).strftime("%d/%m/%Y") %></p>
     </div>
     <div class="diagnosis-body">
@@ -28,21 +28,21 @@
 <!-- List of all diagnosiss where dianosis_id = current_user_id -->
 <div class="container wrapper">
   <h2>Your patients</h2>
-  <% diagnosis.user_id.patient_answers.each do |patient_answer| %>
+  <% diagnosis.patient_answers.each do |patient_answer| %>
   <div class="diagnosis-card">
     <div class="diagnosis-name">
-      <h3><%=  patient_answer.first_name patient_answer.last_name %></h3>
+      <h3><%=  patient_answer.user.full_name %></h3>
       <p>(<%= Date.parse(patient_answer.created_at.to_s).strftime("%d/%m/%Y") %></p>
     </div>
     <div class="diagnosis-body">
       <p> I facial skin problems</p>
     </div>
     <div class="diagnosis-status">
-      <%= link_to edit_dianosis_path(dianosis) do %>
+      <%= link_to edit_diagnosis_path(diagnosis) do %>
       <i class="fas fa-edit-alt"></i>
       EDIT
       <% end %>
-      <%= link_to dianosis_path(dianosis), method: "delete", data: {confirm: "Are you sure you want to delete your trip?"} do %>
+      <%= link_to diagnosis_path(diagnosis), method: "delete", data: {confirm: "Are you sure you want to delete your patient?"} do %>
       <i class="fas fa-trash-alt"></i>
       <% end %>
     </div>

@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
+  patch '/diagnoses/:id/approve', to: 'diagnoses#approve', as: :approve
+  patch '/diagnoses/:id/decline', to: 'diagnoses#decline', as: :decline
   root to: 'pages#home'
+
 
   resources :diagnoses, only: [:new, :create, :show, :index, :edit, :update] do
     resources :prescriptions, only: [:new, :create,:show]
