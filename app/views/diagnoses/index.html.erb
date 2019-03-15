@@ -2,6 +2,7 @@
 <div class="container wrapper">
   <h2>Patients in diagnose</h2>
   <% @diagnoses.each do |diagnosis| %>
+  <%= diagnosis.id %>
   <% diagnosis.patient_answers.each do |patient_answer| %>
   <div class="diagnosis-card">
     <div class="diagnosis-name">
