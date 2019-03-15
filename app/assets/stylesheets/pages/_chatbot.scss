@@ -11,6 +11,7 @@
     width: 100%;
     padding: 10px;
     border-bottom: 1px solid #1AB06D;
+    margin-bottom: 5px;
     h3{
         margin: 0;
         padding: 0;
@@ -30,6 +31,7 @@
     flex-grow: 1;
     width: 100%;
     border-top: 1px solid #1AB06D;
+    margin-top: 5px;
     // display: flex;
     // .answers-container {
     //   flex-grow: 1;
@@ -68,7 +70,7 @@
   }
 
 .speech-wrapper{
-  padding: 30px 35px;
+  padding: 30px 35px 30px 30px;
   height: 100%;
   .bubble{
     width: 70%;
@@ -82,7 +84,7 @@
       width: 100%
     }
     &.alt{
-      margin: 0 0 7% 40%;
+      margin: 0 0 7% 35%;
       object-fit: contain;
     }
     .txt{
