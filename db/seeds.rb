@@ -49,8 +49,8 @@ answer11 = Answer.create!(content: 'Never', question: question3)
 puts 'Creating Q4 answers'
 answer12 = Answer.create!(content: 'Every day', question: question4)
 answer13 = Answer.create!(content: 'For a week or two each month', question: question4)
-answer14 = Answer.create!(content: 'Every couple of months', question: question4)
-answer15 = Answer.create!(content: 'Never', question: question4)
+# answer14 = Answer.create!(content: 'Every couple of months', question: question4)
+# answer15 = Answer.create!(content: 'Never', question: question4)
 puts 'Creating Q5 answers'
 answer16 = Answer.create!(content: 'More than 25%', question: question5)
 answer17 = Answer.create!(content: "Between 10% and 25%", question: question5)
