@@ -23,22 +23,51 @@ puts 'Creating doctors...'
 doctor1 = Doctor.create!(introduction: 'I am a good doctor', profile_picture: 'https://hcplive.s3.amazonaws.com/v1_media/_image/happydoctor.jpg', license: '1234', user: user1)
 
 puts 'Creating questions..'
-question1 = Question.create!(title: 'What is your name?', multiple_choice: false)
-question2 = Question.create!(title: 'Do you have pain?', multiple_choice: true)
-question3 = Question.create!(title: 'Is that bleeding?', multiple_choice: true)
-question4 = Question.create!(title: 'Are you ashamed?', multiple_choice: true)
-question5 = Question.create!(title: 'Please upload a photo', multiple_choice:false, photo:true)
+question1 = Question.create!(title: "Hi, my name is Jude. I am SkinClean's chatbot and I will personally assist you in getting discrete, professional advice for your skin problems. What should I call you throughout this process?", multiple_choice: false)
+question2 = Question.create!(title: 'What percentage of your face would you say is covered in acne scars?', multiple_choice: true)
+question3 = Question.create!(title: 'How often do you have deep, painful nodules on your face?', multiple_choice: true)
+question4 = Question.create!(title: 'How often do you have painful nodules on areas of your body other than your face?', multiple_choice: true)
+question5 = Question.create!(title: 'How much of your face is covered with pus-filled blemishes?', multiple_choice: true)
+question6 = Question.create!(title: 'What percentage of your face is covered with blackheads or whiteheads?', multiple_choice: true)
+question7 = Question.create!(title: 'How much of your face is covered with red blemishes without pus?', multiple_choice: true)
+question8 = Question.create!(title: 'Please upload a photo', multiple_choice:false, photo:true)
 
-puts 'Creating answers...'
+puts 'Creating text answers'
 answer1 = Answer.create!(content: '', question: question1)
-answer9 = Answer.create!(content: '', question: question5)
-answer2 = Answer.create!(content: '', question: question1)
-answer3 = Answer.create!(content: 'No', question: question2)
-answer6 = Answer.create!(content: 'Yes', question: question2)
-answer4 = Answer.create!(content: 'No', question: question3)
-answer7 = Answer.create!(content: 'Yes', question: question3)
-answer5 = Answer.create!(content: 'No', question: question4)
-answer8 = Answer.create!(content: 'Yes', question: question4)
+answer2 = Answer.create!(content: '', question: question5)
+answer3 = Answer.create!(content: '', question: question1)
+puts 'Creating Q2 answers'
+answer4 = Answer.create!(content: 'More than 25%', question: question2)
+answer5 = Answer.create!(content: "Between 10% and 25%", question: question2)
+answer6 = Answer.create!(content: 'Less than 10%', question: question2)
+answer7 = Answer.create!(content: "I don't have any acne scars", question: question2)
+puts 'Creating Q3 answers'
+answer8 = Answer.create!(content: 'Every day', question: question3)
+answer9 = Answer.create!(content: 'For a week or two each month', question: question3)
+answer10 = Answer.create!(content: 'Every couple of months', question: question3)
+answer11 = Answer.create!(content: 'Never', question: question3)
+puts 'Creating Q4 answers'
+answer12 = Answer.create!(content: 'Every day', question: question4)
+answer13 = Answer.create!(content: 'For a week or two each month', question: question4)
+answer14 = Answer.create!(content: 'Every couple of months', question: question4)
+answer15 = Answer.create!(content: 'Never', question: question4)
+puts 'Creating Q5 answers'
+answer16 = Answer.create!(content: 'More than 25%', question: question5)
+answer17 = Answer.create!(content: "Between 10% and 25%", question: question5)
+answer18 = Answer.create!(content: "Less than 10%", question: question5)
+answer19 = Answer.create!(content: "I don't have any red bumps that are filled with pus", question: question5)
+puts 'Creating Q6 answers'
+answer20 = Answer.create!(content: "More than 25%", question: question6)
+answer21 = Answer.create!(content: "Between 10% and 25%", question: question6)
+answer22 = Answer.create!(content: "Less than 10%", question: question6)
+answer23 = Answer.create!(content: "I don't have blackhead or whiteheads", question: question6)
+puts 'Creating Q7 answers'
+answer24 = Answer.create!(content: "More than 25%", question: question7)
+answer25 = Answer.create!(content: "Between 10% and 25%", question: question7)
+answer26 = Answer.create!(content: "Less than 10%", question: question7)
+answer27 = Answer.create!(content: "I don't have any red bumps without pus", question: question7)
+puts 'All answers created!'
+
 
 puts 'Creating medicines...'
 medicine1 = Medicine.create!(name: 'Aspirin', description: 'This helps with hangovers', risk: 'drowning', price_per_unit: 3)
@@ -49,10 +78,14 @@ diagnosis1 = Diagnosis.create!(user: user2, doctor: doctor1, recommendation: 'So
 
 puts 'Creating patient answer...'
 PatientAnswer.create!(question: question1, diagnosis: diagnosis1, user: user1, content: "Jakob")
-PatientAnswer.create!(question: question2, diagnosis: diagnosis1, user: user1, content: answer3.content)
-PatientAnswer.create!(question: question5, diagnosis: diagnosis1, user: user1, content: answer5.content, photo:'https://www.uni-regensburg.de/Fakultaeten/phil_Fak_II/Psychologie/Psy_II/beautycheck/english/durchschnittsgesichter/m(01-32)_gr.jpg' )
+PatientAnswer.create!(question: question2, diagnosis: diagnosis1, user: user1, content: answer4.content)
+PatientAnswer.create!(question: question5, diagnosis: diagnosis1, user: user1, content: answer8.content, photo:'https://www.uni-regensburg.de/Fakultaeten/phil_Fak_II/Psychologie/Psy_II/beautycheck/english/durchschnittsgesichter/m(01-32)_gr.jpg' )
 
 puts 'Creating prescription'
 Prescription.create!(diagnosis: diagnosis1, medicine: medicine2)
 
 puts 'Database seeded'
+
+# We are about to mount on a three step journey:
+#   I will ask you some question to classify your condition.
+#   Then I will ask you to upload a picture of your face. This part is very important for a good diagnosis. Then one of our doctors will give you a professional opinion on your next steps and recommended medicine. Ready? Let's start!
