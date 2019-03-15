@@ -57,7 +57,7 @@
 .speech-wrapper{
   padding: 30px 35px;
   .bubble{
-    width: 65%;
+    width: 70%;
     height: auto;
     display: block;
     background: white;
@@ -72,7 +72,7 @@
       object-fit: contain;
     }
     .txt{
-      padding: 8px 60px 8px 14px;
+      padding: 8px 40px 8px 14px;
       .name{
         font-weight: 600;
         font-size: 14px;
@@ -148,24 +148,15 @@
 }
 
 // Checkboxes design
-.choices {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin: 0px 0px;
-  legend {
-    display:none;
-  }
-}
-
 .form-check {
   background: #b7b7b7;
-  padding: 5px 50px;
+  padding: 5px 30px;
   border-radius: 5px;
   opacity: .4;
   flex: 0 1 30%;
   text-align: center;
   margin: 5px 0px;
+  font-size: 14px;
   &:hover {
     opacity: 1;
     cursor: pointer;
@@ -176,6 +167,16 @@
   opacity: 1;
   }
 }
+.choices {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0px 0px;
+  legend {
+    display:none;
+  }
+}
+
 
 .choice.hidden{
   display: none;
