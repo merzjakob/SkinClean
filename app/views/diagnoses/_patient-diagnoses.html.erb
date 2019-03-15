@@ -1,0 +1,34 @@
+<div class="wrapper-white">
+  <div class="green-header">
+    <h1>
+      MY DIAGNOSES
+      <hr>
+    </h1>
+  </div>
+    <div class="row">
+      <% @diagnoses.each do |diagnosis| %>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-2">
+          <div class="card">
+            <div class="diagnosis-name">
+              <h3><%=  diagnosis.user.full_name %></h3>
+              <p>(<%= Date.parse(diagnosis.created_at.to_s).strftime("%d/%m/%Y") %></p>
+            </div>
+            <div class="diagnosis-body">
+              <p><%= diagnosis.created_at %></p>
+            </div>
+            <div class="diagnosis-status">
+              <% if diagnosis.status == "Diagnosed" %>
+              <h3 id="approved"><%=diagnosis.status%></h3>
+              <% else diagnosis.status == "Pending" %>
+              <h3 id="pending"><%=diagnosis.status%></h3>
+              <% end %>
+            </div>
+              <%= link_to "Diagnosis", diagnosis_path(diagnosis), class: "card-link" %>
+          </div>
+        </div>
+      <% end%>
+    </div>
+  </div>
+</div>
+
+
