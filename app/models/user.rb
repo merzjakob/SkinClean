@@ -11,10 +11,11 @@ class User < ApplicationRecord
 
   validates :first_name, :last_name, :email, :password, presence: true
 
-
-
   def full_name
     "#{first_name} #{last_name}"
   end
 
+  def finished_quiz?
+    self.undiagnosed_answers.count == Question.count
+  end
 end

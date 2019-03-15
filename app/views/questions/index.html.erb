@@ -14,7 +14,7 @@
               <div class="txt">
                 <p class="name">Judy</p>
 
-                <p class="message"><%= question.title %></p>
+                <p class="message"><%= question.title %></p><br>
                 <span class="timestamp">10:20 pm</span>
               </div>
               <div class="bubble-arrow"></div>
@@ -28,10 +28,14 @@
                           <div class="txt">
                             <p class="name alt"><%= current_user.first_name %></p>
                             <p class="message"><%= image_tag patient_answer.photo.url %></p>
-                            <span class="timestamp">10:22 pm</span>
+                            <br>
+                            <p>
+                              <span class="timestamp">10:22 pm</span>
+                            </p>
                           </div>
                           <div class="bubble-arrow alt"></div>
                         </div>
+
                       <% end %>
                     </div>
                   <% end %>
@@ -39,7 +43,7 @@
                   <div class="bubble alt">
                     <div class="txt">
                       <p class="name alt"><%= current_user.first_name %></p>
-                      <p class="message"><%= current_user.patient_answers[@questions.index(question)].content %></p>
+                      <p class="message"><%= current_user.patient_answers[@questions.index(question)].content %></p><br>
                       <span class="timestamp">10:22 pm</span>
                     </div>
                     <div class="bubble-arrow alt"></div>
@@ -53,7 +57,7 @@
               <!-- <div class="answers-container"> -->
                 <%= simple_form_for [question, @patient_answer], html: {id: "chatForm"} do |f| %>
                     <%= f.input :content, as: :radio_buttons, collection: question.answers.pluck(:content), label: false, wrapper_html: { class: "choices" }, input_html: { class: "choice hidden" } %>
-                    <%= f.submit "Send", id: "submitchat", class: "btn-solid" %>
+
                     <% end %>
             </div>
           <% else %>
@@ -69,17 +73,20 @@
               <% end %>
             </div>
           <% end %>
-            <!-- </div> -->
-            <!-- <div class="submit-form"> -->
-            <!-- </div> -->
             <% break unless question.answered?(current_user) %>
           <% end %>
+        <% end %>
+        <% if current_user.finished_quiz? %>
+          <div class="chatBottom fix-height flex-submit">
+            <%=  link_to 'Submit', diagnoses_path, method: :post, class: "btn btn-solid"%>
+          </div>
         <% end %>
       </div>
   </div>
 </div>
 </div>
-<!--           <div class="chatBottom">
-              <p> link_to 'Submit', diagnoses_path, method: :post, class: "btn btn-solid" </p>
-          </div> -->
+<!--
 
+                        <div class="chatBottom fix-height">
+
+                        </div>
