@@ -1,5 +1,6 @@
 <!-- <h2>Your guests</h2> -->
 <div class="container wrapper">
+
   <h2>My diagnoses</h2>
 
     <% @diagnoses.each do |diagnosis| %>
@@ -9,6 +10,7 @@
           <h3><%=  patient_answer.user.full_name %></h3>
           <p>(<%= Date.parse(patient_answer.created_at.to_s).strftime("%d/%m/%Y") %></p>
         </div>
+
     <div class="diagnosis-body">
       <p> I facial skin problems</p>>
     </div>
