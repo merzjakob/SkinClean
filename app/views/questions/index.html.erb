@@ -14,7 +14,7 @@
               <div class="txt">
                 <p class="name">Judy</p>
 
-                <p class="message"><%= question.title %></p>
+                <p class="message"><%= question.title %></p><br>
                 <span class="timestamp">10:20 pm</span>
               </div>
               <div class="bubble-arrow"></div>
@@ -28,7 +28,10 @@
                           <div class="txt">
                             <p class="name alt"><%= current_user.first_name %></p>
                             <p class="message"><%= image_tag patient_answer.photo.url %></p>
-                            <span class="timestamp">10:22 pm</span>
+                            <br>
+                            <p>
+                              <span class="timestamp">10:22 pm</span>
+                            </p>
                           </div>
                           <div class="bubble-arrow alt"></div>
                         </div>
@@ -40,7 +43,7 @@
                   <div class="bubble alt">
                     <div class="txt">
                       <p class="name alt"><%= current_user.first_name %></p>
-                      <p class="message"><%= current_user.patient_answers[@questions.index(question)].content %></p>
+                      <p class="message"><%= current_user.patient_answers[@questions.index(question)].content %></p><br>
                       <span class="timestamp">10:22 pm</span>
                     </div>
                     <div class="bubble-arrow alt"></div>
