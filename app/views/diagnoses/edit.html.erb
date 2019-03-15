@@ -14,8 +14,8 @@
       <div class="pic-description">
         <div class="picture-diagnosis">
           <% @diagnosis.patient_answers.each do |patient_answer| %>
-          <% if patient_answer.photo%>
-          <%= patient_answer.photo.url  %>
+          <% if patient_answer.question.photo?  %>
+            <%= cl_image_tag patient_answer.photo, height: 300, width: 400, crop: :fill %>
           <% end %>
           <% end %>
         </div>
@@ -26,7 +26,7 @@
       <div class="little-box-question-answers">
         <div class="questions-answers-patient">
           <ul>
-             <% @diagnosis.patient_answers.each do |patient_answer| %>
+             <% @diagnosis.patient_answers.drop(1).each do |patient_answer| %>
             <li> <%= patient_answer.question.title %></li>
             <li> <%= patient_answer.content %></li>
             <% end %>
