@@ -3,16 +3,13 @@
   <div class="patien-signup">
     <%= link_to "Patient", new_user_session_path %>
   </div>
-  <div class="doctor-signup">
-    <%= link_to "Doctor", new_user_session_path %>
-  </div>
 </div>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :first_name,
+    <%= f.input :first_name, label: false,
                 required: true,
                 autofocus: true%>
     <%= f.input :last_name,
@@ -29,6 +26,7 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
+    <%= f.hidden_field :doctor, value: true if params[:role] == "doctor" %>
   </div>
 
   <div class="form-actions">
