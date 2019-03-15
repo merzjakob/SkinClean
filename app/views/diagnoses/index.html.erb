@@ -1,55 +1,8 @@
 <!-- <h2>Your guests</h2> -->
 <div class="container wrapper">
-  <h2>My diagnoses</h2>
-
-    <% @diagnoses.each do |diagnosis| %>
-    <% diagnosis.patient_answers.each do |patient_answer| %>
-      <div class="diagnosis-card">
-        <div class="diagnosis-name">
-          <h3><%=  patient_answer.user.full_name %></h3>
-          <p>(<%= Date.parse(patient_answer.created_at.to_s).strftime("%d/%m/%Y") %></p>
-        </div>
-    <div class="diagnosis-body">
-      <p> I facial skin problems</p>>
-    </div>
-    <div class="diagnosis-status">
-      <% if diagnosis.status == "Diagnosed" %>
-      <h3 id="approved"><%=diagnosis.status%></h3>
-      <% elsif diagnosis.status =="Pending" %>
-      <h3 id="declined"><%=diagnosis.status%></h3>
-      <% end %>
-      <% if diagnosis.status == "pending" %>
-
-      <%= link_to "Diagnose", approve_path(diagnosis), method: :patch, id: "approved"%>
-      <%= link_to "Decline", decline_path(diagnosis), method: :patch, id: "declined"%>
-      <%= diagnosis.status %>
-      <% end %>
-    </div>
-  </div>
-  <% end%>
-</div>
-<!-- List of all diagnosiss where dianosis_id = current_user_id -->
-<div class="container wrapper">
-  <h2>Your patients</h2>
-  <% diagnosis.patient_answers.each do |patient_answer| %>
-  <div class="diagnosis-card">
-    <div class="diagnosis-name">
-      <h3><%=  patient_answer.user.full_name %></h3>
-      <p>(<%= Date.parse(patient_answer.created_at.to_s).strftime("%d/%m/%Y") %></p>
-    </div>
-    <div class="diagnosis-body">
-      <p> I facial skin problems</p>
-    </div>
-    <div class="diagnosis-status">
-      <%= link_to edit_diagnosis_path(diagnosis) do %>
-      <i class="fas fa-edit-alt"></i>
-      EDIT
-      <% end %>
-      <%= link_to diagnosis_path(diagnosis), method: "delete", data: {confirm: "Are you sure you want to delete your patient?"} do %>
-      <i class="fas fa-trash-alt"></i>
-      <% end %>
-    </div>
-  </div>
-  <% end %>
-  <% end%>
+  <% if current_user.doctor? %>
+  <%= render 'doctor-diagnoses', diagnoses: @diagnoses %>
+  <% else %>
+  <%= render 'patient-diagnoses', diagnoses: @diagnoses %>
+<% end %>
 </div>
