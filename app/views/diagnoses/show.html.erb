@@ -1,26 +1,60 @@
 <div class="wrapper-light-grey">
   <div class="stats-container">
     <h2>
-      <mark class="green">Your diagnosis:</mark>
+      <mark class="green">Your diagnosis</mark>
     <hr>
     </h2>
-    <div class="your-doctor">
-      <h3>your doctor:</h3>
-    <%= cl_image_tag @diagnosis.doctor.profile_picture, height: 200, width: 200, crop: :fill %>
-    <h5><%= @diagnosis.doctor.user.full_name %></h5>
+  </div>
+  <div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-2">
+<div class="section-header">
+    <h2>Your doctor</h2>
+</div>
+    <div class="process-card big">
+      <div class="process-card-image-container">
+          <div class="doc-circle">
+            <%= cl_image_tag @diagnosis.doctor.profile_picture, class: 'process-card-image'%>
+          </div>
+        </div>
+        <div class="process-card-description">
+          <h2>
+            Dr. <%= @diagnosis.doctor.user.full_name %>
+          </h2>
+        </div>
+      </div>
     </div>
-    <p>
-      <h3>Medical assessment:</h3>
+  </div>
+
+    <div class="section-header">
+      <h2>
+        Medical Assessment
+      </h2>
+    </div>
       <%= @diagnosis.medical_assessment %>
-      <br>
-      <br>
-      <h3>Doctor recomendation:</h3>
-      <%= @diagnosis.recommendation %>
+      <div class="section-header">
+        <h2>
+          Dr. <%= @diagnosis.doctor.user.full_name %>'s recommendation:
+        </h2>
+      </div>
+      <p> <%= @diagnosis.recommendation %></p>
     </p>
-    <h3>Next steps:</h3>
-    <h5>Your medicine:</h5>
-    <h5>Find a doctor:</h5>
+  <div class="wrapper-white">
+  <div class="stats-container">
+    <h2>
+      <mark class="green">Next steps</mark>
+    <hr>
+    </h2>
+  </div>
+    <div class="section-header">
+      <h2>
+        Recommended medicine
+      </h2>
+    </div>
+     <div class="section-header">
+      <h2>
+        Find a doctor near you
+      </h2>
+    </div>
     <%= @diagnosis.location %>
     <%= link_to "Find", diagnosis_path(@diagnosis), class: "btn-solid" %>
-  </div>
 </div>
+  </div>
