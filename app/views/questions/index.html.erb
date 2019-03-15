@@ -51,11 +51,10 @@
           </div>
           <% if question.multiple_choice %>
             <div class="chatBottom ">
-              <!-- <div class="answers-container"> -->
                 <%= simple_form_for [question, @patient_answer], html: {id: "chatForm"} do |f| %>
                     <%= f.input :content, as: :radio_buttons, collection: question.answers.pluck(:content), label: false, wrapper_html: { class: "choices" }, input_html: { class: "choice hidden" } %>
                     <%= f.submit "Send", id: "submitchat", class: "btn-solid" %>
-                    <% end %>
+                  <% end %>
             </div>
           <% else %>
             <div class="chatBottom fix-height">
