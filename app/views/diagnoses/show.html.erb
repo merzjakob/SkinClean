@@ -1,6 +1,3 @@
-<h1>Diagnoses#show</h1>
-<p>Find me in app/views/diagnoses/show.html.erb</p>
-
 <div class="wrapper-light-grey">
   <div class="stats-container">
     <h2>
@@ -9,8 +6,8 @@
     </h2>
     <div class="your-doctor">
       <h3>your doctor:</h3>
-    <%= cl_image_tag doctors.profile_picture, height: 200, width: 200, crop: :fill %>
-    <h4>doctor name</h4>
+    <%= cl_image_tag @diagnosis.doctor.profile_picture, height: 200, width: 200, crop: :fill %>
+    <h5><%= @diagnosis.doctor.user.full_name %></h5>
     </div>
     <p>
       <h3>Medical assessment:</h3>
@@ -21,9 +18,9 @@
       <%= @diagnosis.recommendation %>
     </p>
     <h3>Next steps:</h3>
-    <h4>Your medicine:</h4>
-    <h4>Find a doctor:</h4>
+    <h5>Your medicine:</h5>
+    <h5>Find a doctor:</h5>
     <%= @diagnosis.location %>
-    <%= link_to "Find", diagnosis_path(@diagnosis) %>
+    <%= link_to "Find", diagnosis_path(@diagnosis), class: "btn-solid" %>
   </div>
 </div>
