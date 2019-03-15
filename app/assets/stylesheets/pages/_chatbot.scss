@@ -4,6 +4,9 @@
   border: 2px solid #1AB06D;
   margin: 5px 10px;
   border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   .chatHeader {
     width: 100%;
     padding: 10px;
@@ -16,26 +19,36 @@
     }
   }
   .chatMessages {
-      height: 80%;
-      border-bottom: 1px solid #1AB06D;
+      // height: 80%;
+
       overflow-y: scroll;
       padding-bottom: 5px;
+      width: 100%;
+      flex-grow: 1;
   }
   .chatBottom {
-    height: 15%;
+    flex-grow: 1;
+    width: 100%;
+    border-top: 1px solid #1AB06D;
+    // display: flex;
+    // .answers-container {
+    //   flex-grow: 1;
+    // }
   form {
       display: flex !important;
-      height: 40%;
+      height: 100%;
       justify-content: space-around;
       align-items: center;
+
 
     }
 
       #submitchat {
         cursor: pointer;
-        height: 100%;
+        height: 40px;
         width: 20%;
         margin: 0px 2px;
+        float: right;
       }
       #inputchat {
         padding: 3px;
@@ -56,6 +69,7 @@
 
 .speech-wrapper{
   padding: 30px 35px;
+  height: 100%;
   .bubble{
     width: 70%;
     height: auto;
@@ -126,6 +140,9 @@
     }
   }
 }
+.fix-height {
+  max-height: 100px;
+}
 .chatBottom
 .form-post {
   background: white;
@@ -175,6 +192,7 @@
   legend {
     display:none;
   }
+  height: 100%;
 }
 
 
