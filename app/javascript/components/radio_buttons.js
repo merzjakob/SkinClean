@@ -1,7 +1,7 @@
 const activeButtons = () => {
-  if (document.getElementsByClassName('form-check')) {
+  if (document.querySelector('.chatBottom')) {
     $(document).ready(function(){
-      document.querySelector(".speech-wrapper > .bubble:last-child").scrollIntoView()
+      document.querySelector(".chatBottom").scrollIntoView()
       $(".form-check").click(function(){
         $(".active").removeClass("active");
         $(this).toggleClass("active");
