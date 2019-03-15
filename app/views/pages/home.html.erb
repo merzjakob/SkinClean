@@ -2,8 +2,11 @@
   <div class="banner-content text-center">
     <h1>Discrete, professional advice for your skin problems!</h1>
     <%= link_to "Get advice", questions_path, class: "btn btn-solid"  %>
-    <p><i class="fas fa-angle-down"></i></p>
   </div>
+  <div>
+    <i class="fas fa-angle-down"></i>
+  </div>
+
 </div>
 
 <div class="wrapper-light-grey">
@@ -29,7 +32,7 @@
   </div>
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-2">
-      <div class="process-card">
+      <div class="process-card big">
         <div class="process-card-image-container">
           <div class="circle">
         <%= image_tag "chat.svg", class: 'process-card-image'%>
@@ -46,7 +49,7 @@
       </div>
     </div>
     <div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-2">
-      <div class="process-card">
+      <div class="process-card big">
         <div class="process-card-image-container">
           <div class="circle">
         <%= image_tag "camera.svg", class: 'process-card-image'%>
@@ -63,7 +66,7 @@
       </div>
     </div>
     <div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-2">
-      <div class="process-card">
+      <div class="process-card big">
         <div class="process-card-image-container">
           <div class="circle">
         <%= image_tag "doctor.svg", class: 'process-card-image'%>
@@ -77,6 +80,11 @@
             SkinClean gives you indicative, free advice from our in-house dermatologists on the next steps to take.
           </p>
         </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-2">
+      <div class="process-card small">
+          <%= link_to "Get advice", questions_path, class: "btn btn-solid"  %>
       </div>
     </div>
 
