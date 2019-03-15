@@ -71,7 +71,7 @@ mark.green {
 
 .process-card-image-container {
   display: flex;
-  width: inherit;
+  width: 100%;
   height: 35%;
   justify-content: space-around;
   align-items: center;
@@ -89,6 +89,8 @@ mark.green {
   overflow:hidden;
   // border: 1px solid grey;
 }
+
+  // border: 1px
 .process-card-image {
   width: 60px;
   height: 60px;
