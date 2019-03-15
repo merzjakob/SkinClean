@@ -4,7 +4,7 @@
 }
 
 .wrapper-light-grey {
-  background: rgb(253,253,253);
+  background: #F6F6F6;
   padding: 20px 5px 0px 5px;
 }
 
@@ -20,7 +20,7 @@
 }
 
 .stats-container {
-  padding: 7px;
+  padding: 10px;
   h2 {
     text-align: center;
     font-size: 24px;
@@ -46,20 +46,28 @@ mark.green {
       font-weight: 550;
 }
 
-.process-card {
+.process-card{
   position: relative;
   background-size: cover;
   background-position: center;
-  height: 240px;
   justify-content: center;
   color: rgb(250,250,250);
   margin: 5px;
   border-radius: 5px;
   padding: 10px;
   display: flex;
-  justify-content: space-around;
   text-align: center;
 }
+
+.process-card.big {
+    height: 240px;
+}
+.process-card.small {
+    justify-content: space-around;
+    // height:120px;
+    padding-bottom: 50px;
+}
+
 
 .process-card-image-container {
   display: flex;
