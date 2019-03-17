@@ -10,7 +10,7 @@
         <div class="chatMessages">
           <div class="speech-wrapper">
             <% @questions.each do |question| %>
-              <div class="bubble">
+            <div class="bubble">
               <div class="txt">
                 <p class="name">Judy</p>
 
@@ -22,7 +22,6 @@
               <% if question.answered?(current_user) %>
                 <% if question.photo?  %>
                   <% current_user.patient_answers.each do |patient_answer| %>
-                    <div>
                       <% if patient_answer.photo? %>
                         <div class="bubble alt">
                           <div class="txt">
@@ -35,9 +34,7 @@
                           </div>
                           <div class="bubble-arrow alt"></div>
                         </div>
-
                       <% end %>
-                    </div>
                   <% end %>
                 <% else %>
                   <div class="bubble alt">
@@ -49,16 +46,15 @@
                     <div class="bubble-arrow alt"></div>
                   </div>
                 <% end %>
-              <% else %>
+          <% else %>
             </div>
           </div>
           <% if question.multiple_choice %>
             <div class="chatBottom ">
-              <!-- <div class="answers-container"> -->
                 <%= simple_form_for [question, @patient_answer], html: {id: "chatForm"} do |f| %>
                     <%= f.input :content, as: :radio_buttons, collection: question.answers.pluck(:content), label: false, wrapper_html: { class: "choices" }, input_html: { class: "choice hidden" } %>
-
-                    <% end %>
+                    <%= f.submit "Send", id: "submitchat", class: "btn-solid" %>
+                  <% end %>
             </div>
           <% else %>
             <div class="chatBottom fix-height">
@@ -84,9 +80,3 @@
       </div>
   </div>
 </div>
-</div>
-<!--
-
-                        <div class="chatBottom fix-height">
-
-                        </div>
