@@ -18,6 +18,10 @@
     font-weight: 550;
   }
 }
+.diagnosis-name {
+  display: flex;
+  justify-content: space-between;
+}
 
 .stats-container {
   padding: 10px;
@@ -152,3 +156,4 @@ mark.green {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
+
