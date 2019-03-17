@@ -48,11 +48,11 @@
         <% else %>
           <% if question.multiple_choice %>
             <div class="chatBottom ">
-              <%= render 'multiplechoice_form', :locals => {question: question, object: question}%>
+              <%= render partial: 'multiplechoice_form', :locals => {question: question}%>
             </div>
           <% else %>
             <div class="chatBottom fix-height">
-              <%= render 'input_form', :locals => {question: question, object: question}%>
+              <%= render partial: 'input_form', :locals => {question: question}%>
             </div>
           <% end %>
           <% break unless question.answered?(current_user) %>
