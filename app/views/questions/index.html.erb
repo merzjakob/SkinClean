@@ -6,58 +6,19 @@
       </div>
       <div class="chatMessages">
         <div class="speech-wrapper">
-          <% @questions.each do |question| %>
-            <div class="bubble">
-              <div class="txt">
-                <p class="name">Judy</p>
-                <p class="message"><%= question.title %></p><br>
-                <span class="timestamp">10:20 pm</span>
-              </div>
-              <div class="bubble-arrow"></div>
-            </div>
-            <% if question.answered?(current_user) %>
-              <% if question.photo?  %>
-                <% current_user.patient_answers.each do |patient_answer| %>
-                  <% if patient_answer.photo? %>
-                    <div class="bubble alt">
-                      <div class="txt">
-                        <p class="name alt"><%= current_user.first_name %></p>
-                        <p class="message"><%= image_tag patient_answer.photo.url %></p>
-                        <br>
-                        <p>
-                          <span class="timestamp">10:22 pm</span>
-                        </p>
-                      </div>
-                      <div class="bubble-arrow alt"></div>
-                    </div>
-                  <% end %>
-                <% end %>
-              <% else %>
-                <div class="bubble alt">
-                  <div class="txt">
-                    <p class="name alt"><%= current_user.first_name %></p>
-                    <p class="message"><%= current_user.patient_answers[@questions.index(question)].content %></p>
-                    <br>
-                    <span class="timestamp">10:22 pm</span>
-                  </div>
-                  <div class="bubble-arrow alt"></div>
-                </div>
-              <% end %>
+          <ul class="messages-list">
+            <% @questions.each do |question| %>
+              <%= render partial: 'questions', :locals => {question: question}%>
+              <% if question.answered?(current_user) %>
+                  <%= render partial: 'answers', :locals => {question: question, current_user: current_user, questions: @questions}%>
+          </ul>
         </div>
       </div>
         <% else %>
-          <% if question.multiple_choice %>
-            <div class="chatBottom ">
-              <%= render partial: 'multiplechoice_form', :locals => {question: question}%>
-            </div>
-          <% else %>
-            <div class="chatBottom fix-height">
-              <%= render partial: 'input_form', :locals => {question: question}%>
-            </div>
-          <% end %>
-          <% break unless question.answered?(current_user) %>
-          <% end %>
+         <%= render partial: 'input_form', :locals => {question: question}%>
         <% end %>
+        <% break unless question.answered?(current_user) %>
+            <% end %>
         <% if current_user.finished_quiz? %>
           <div class="chatBottom fix-height flex-submit">
             <%=  link_to 'Submit', diagnoses_path, method: :post, class: "btn btn-solid"%>

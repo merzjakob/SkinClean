@@ -1,0 +1,16 @@
+function refreshForm(innerHTML) {
+  const newMessageForm = document.getElementById('chatForm');
+  newMessageForm.innerHTML = innerHTML;
+}
+
+function addMessage(reviewHTML) {
+  const messages = document.getElementById('messages-list');
+  messages.insertAdjacentHTML('beforeend', reviewHTML);
+}
+
+<% if @patient_answer.errors.any? %>
+  refreshForm('<%= j render partial: "multiplechoice_form", question: @question %>');
+<% else %>
+  addMessage('<%= j render partial "input_form", question: @question %>');
+  refreshForm('<%= j render "reviews/form", restaurant: @restaurant, review: Review.new %>');
+<% end %>

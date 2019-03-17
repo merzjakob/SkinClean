@@ -4,7 +4,6 @@ class PatientAnswersController < ApplicationController
   end
 
   def create
-
     @question = Question.find(params[:question_id])
     if patient_answer_params.include?(:photo)
       @patient_answer = PatientAnswer.new(question: @question, user: current_user, photo: patient_answer_params[:photo])
@@ -13,10 +12,17 @@ class PatientAnswersController < ApplicationController
     end
 
     if @patient_answer.save
-      redirect_to questions_path
+      respond_to do |format|
+        format.html { redirect_to questions_path }
+        format.js
+      end
+
     else
-      flash[:alert] = "Please provide an answer"
-      render :index
+      respond_to do |format|
+        format.html { render :index }
+        format.js
+        # flash[:alert] = "Please provide an answer"
+      end
     end
   end
 

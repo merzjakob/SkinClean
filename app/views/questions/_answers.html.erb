@@ -1,0 +1,31 @@
+<% if question.photo?  %>
+  <% current_user.patient_answers.each do |patient_answer| %>
+    <% if patient_answer.photo? %>
+      <li>
+        <div class="bubble alt">
+          <div class="txt">
+            <p class="name alt"><%= current_user.first_name %></p>
+            <p class="message"><%= image_tag patient_answer.photo.url %></p>
+            <br>
+            <p>
+              <span class="timestamp">10:22 pm</span>
+            </p>
+          </div>
+          <div class="bubble-arrow alt"></div>
+        </div>
+        </li>
+    <% end %>
+  <% end %>
+<% else %>
+  <li>
+    <div class="bubble alt">
+      <div class="txt">
+        <p class="name alt"><%= current_user.first_name %></p>
+        <p class="message"><%= current_user.patient_answers[@questions.index(question)].content %></p>
+        <br>
+        <span class="timestamp">10:22 pm</span>
+      </div>
+      <div class="bubble-arrow alt"></div>
+    </div>
+  </li>
+<% end %>
