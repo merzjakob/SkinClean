@@ -18,6 +18,7 @@
 
 }
 .section-header h2 {
+  text-align: center;
   padding-bottom: 10px;
   border-bottom: 1px solid #1AB06D;
   font-size: 16px;
@@ -77,8 +78,24 @@ height:70px;
 width:70;
 }
 
+#search-map {
+  width: 250px;
+  border-radius: 10px !important;
+}
 
+.mapboxgl-canvas {
+  border-radius: 5px;
+  padding-top: 20px;
+  padding-bottom: 50px;
+}
 
+form {
+  display: flex;
+}
+
+.btn {
+  margin-left: 10px;
+}
 
 // .medicine-box {
 //   display:flex;
