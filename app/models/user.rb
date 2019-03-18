@@ -11,11 +11,19 @@ class User < ApplicationRecord
 
   validates :first_name, :last_name, :email, :password, presence: true
 
+  after_create :create_doctor, if: :doctor?
+
   def full_name
     "#{first_name} #{last_name}"
   end
 
   def finished_quiz?
     self.undiagnosed_answers.count == Question.count
+  end
+
+  private
+
+  def create_doctor
+    Doctor.create(user: self)
   end
 end
