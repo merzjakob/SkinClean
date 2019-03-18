@@ -29,3 +29,57 @@
 // .process-card-description {
 //   width: 100%;
 // }
+
+
+
+.medicine-card-visible {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid rgba(220,224,244,0.4);
+  text-align: top;
+  height: 80px;
+}
+
+.medicine-card-visible h3{
+  font-size: 18px;
+  margin: 0px 0px;
+}
+.medicine-card-visible p {
+  font-size: 15px;
+  font-weight: lighter;
+  opacity: 0.8;
+  margin: 5px 0px;
+}
+
+.medicine-card-invisible {
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+  padding: 10px;
+  border-bottom: 1px solid rgba(220,224,244,0.4);
+  text-align: top;
+}
+
+.medicine-card-invisible h3{
+  font-size: 18px;
+  margin: 0px 0px;
+}
+.medicine-card-invisible p {
+  font-size: 15px;
+  font-weight: lighter;
+  opacity: 0.8;
+  margin: 5px 0px;
+}
+
+.medicine-card-visible img {
+height:70px;
+width:70;
+}
+
+
+
+
+// .medicine-box {
+//   display:flex;
+// }
