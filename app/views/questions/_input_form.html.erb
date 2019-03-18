@@ -1,4 +1,3 @@
-
 <% if question  %>
   <%= simple_form_for [question, patient_answer], remote: true, html: {id: "chatForm"} do |f| %>
     <% if question.multiple_choice %>

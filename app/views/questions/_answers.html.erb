@@ -8,7 +8,7 @@
             <p class="message"><%= image_tag patient_answer.photo.url %></p>
             <br>
             <p>
-              <span class="timestamp">10:22 pm</span>
+              <span class="timestamp"><%= Time.now.strftime("%b %e, %l:%M %p") %></span>
             </p>
           </div>
           <div class="bubble-arrow alt"></div>
@@ -23,22 +23,12 @@
         <p class="name alt"><%= current_user.first_name %></p>
         <p class="message"><%= answer.content %></p>
         <br>
-        <span class="timestamp">10:22 pm</span>
+        <span class="timestamp"><%= Time.now.strftime("%b %e, %l:%M %p") %></span>
       </div>
       <div class="bubble-arrow alt"></div>
     </div>
   </li>
 <% end %>
 <% if  question = current_user.next_question %>
-  <li>
-    <div class="bubble">
-      <div class="txt">
-        <p class="name">Judy</p>
-        <p class="message"><%= question.title %></p>
-        <br>
-        <span class="timestamp"><%= Time.now.strftime("%b %e, %l:%M %p") %></span>
-      </div>
-      <div class="bubble-arrow alt"></div>
-    </div>
-  </li>
+  <%= render "questions/question", question: question %>
 <% end %>

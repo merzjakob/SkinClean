@@ -7,31 +7,28 @@
       <div class="chatMessages">
         <div class="speech-wrapper">
           <ul class="messages-list">
-            <% current_user.answered_questions.each do |question| %>
               <li>
                 <div class="bubble">
                   <div class="txt">
                     <p class="name">Judy</p>
-                    <p class="message"><%= question.title %></p><br>
-                    <span class="timestamp">10:20 pm</span>
+                    <p class="message">
+                      Hi, my name is Jude. I am SkinClean's chatbot and I will personally assist you in getting discrete, professional advice for your skin problems. What should I call you throughout this process?
+                    </p>
+                    <br>
+                    <span class="timestamp"><%= Time.now.strftime("%b %e, %l:%M %p") %></span>
                   </div>
                   <div class="bubble-arrow"></div>
                 </div>
               </li>
-                <%= render partial: 'answers', :locals => {question: question, current_user: current_user, questions: @questions, answer: question.user_answer(current_user) } %>
+            <% current_user.answered_questions.each do |question| %>
+              <%= render partial: 'answers', :locals => {question: question, current_user: current_user, questions: @questions, answer: question.user_answer(current_user) } %>
             <% end %>
-           <% if question = current_user.next_question %>
-            <%= render "questions", question: question %>
-           <% end %>
+            <!-- FIRST QUESTION -->
           </ul>
         </div>
       </div>
       <div class="chatBottom">
-        <% if question = current_user.next_question %>
-          <%= render partial: 'input_form', :locals => { question: question, patient_answer: @patient_answer } %>
-        <% else  %>
-          <%=  link_to 'Submit', diagnoses_path, method: :post, class: "btn btn-solid"%>
-        <% end %>
+        <%= render partial: 'input_form', :locals => { question: current_user.next_question, patient_answer: @patient_answer } %>
       </div>
     </div>
   </div>
