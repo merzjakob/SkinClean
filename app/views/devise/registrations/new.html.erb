@@ -1,37 +1,48 @@
-<h2>Sign up</h2>
-<div class="navbar-signup">
-  <div class="patien-signup">
-    <%= link_to "Patient", new_user_session_path %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+      <div class="form-sign-up">
+        <h2>Sign up</h2>
+        <div class="navbar-signup">
+          <div class="patien-signup">
+            <% link_to "Patient", new_user_session_path %>
+          </div>
+        </div>
+
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= f.error_notification %>
+
+          <div class="form-inputs">
+            <%= f.input :first_name, label: false,
+                        required: true,
+                        autofocus: true, placeholder: "First Name"%>
+            <%= f.input :last_name, label: false,
+                        required: true,
+                        autofocus: true, placeholder: "Last Name"%>
+            <%= f.input :email, label: false,
+                        required: true,
+                        autofocus: true, placeholder: "Email",
+                        input_html: { autocomplete: "email" }%>
+            <%= f.input :password, label: false, placeholder: "Password",
+                        required: true,
+                        hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                        input_html: { autocomplete: "new-password" } %>
+            <%= f.input :password_confirmation, label: false,
+                        required: true, placeholder: "Password confirmation",
+                        input_html: { autocomplete: "new-password" } %>
+            <%= f.hidden_field :is_doctor, value: true if params[:role] == "doctor" %>
+          </div>
+
+          <div class="form-actions">
+            <%= f.button :submit, "Sign up", class: "btn btn-solid" %>
+          </div>
+        <% end %>
+        <%= render "devise/shared/links" %>
+
+      </div>
+    </div>
   </div>
 </div>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :first_name, label: false,
-                required: true,
-                autofocus: true%>
-    <%= f.input :last_name,
-                required: true,
-                autofocus: true%>
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.hidden_field :doctor, value: true if params[:role] == "doctor" %>
-  </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>

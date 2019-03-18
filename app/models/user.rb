@@ -5,11 +5,14 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :doctors, dependent: :destroy
+  has_one :doctor
   has_many :diagnoses
   has_many :patient_answers
   has_many :undiagnosed_answers, -> { where(diagnosis_id: nil) }, class_name: "PatientAnswer"
 
   validates :first_name, :last_name, :email, :password, presence: true
+
+  after_create :create_doctor, if: :is_doctor?
 
   def full_name
     "#{first_name} #{last_name}"
@@ -27,5 +30,11 @@ class User < ApplicationRecord
 
   def answered_questions
     Question.joins(:patient_answers).where("patient_answers.user_id = ?", id)
+  end
+
+  private
+
+  def create_doctor
+    Doctor.create(user: self)
   end
 end
