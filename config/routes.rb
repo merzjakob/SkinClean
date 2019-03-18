@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { registrations: "registrations" }
+
   patch '/diagnoses/:id/approve', to: 'diagnoses#approve', as: :approve
   patch '/diagnoses/:id/decline', to: 'diagnoses#decline', as: :decline
   root to: 'pages#home'
@@ -10,7 +11,7 @@ Rails.application.routes.draw do
     resources :pictures, only: [:new, :create]
   end
 
-  resources :doctors, only: [:new, :create, :update, :edit]
+  resources :doctors, only: [:edit, :update]
 
   resources :questions, only: [:index] do
     resources :patient_answers, only: [:new, :create]

@@ -16,9 +16,9 @@ Doctor.destroy_all
 User.destroy_all
 
 puts 'Creating users...'
-user1 = User.create!(first_name: 'Jakob', last_name: 'Merz', email: 'jakob.merz@whu.edu', password: '123456', doctor: true)
-user2 = User.create!(first_name: 'Antoine', last_name: 'Massot', email: 'antoine@massot.com', password: '123456', doctor: false)
-user3 = User.create!(first_name: 'Augustin', last_name: 'Massot', email: 'augustin@Uyttenhove.com', password: '123456', doctor: false)
+user1 = User.create!(first_name: 'Jakob', last_name: 'Merz', email: 'jakob.merz@whu.edu', password: '123456', is_doctor: true)
+user2 = User.create!(first_name: 'Antoine', last_name: 'Massot', email: 'antoine@massot.com', password: '123456', is_doctor: false)
+user3 = User.create!(first_name: 'Augustin', last_name: 'Uyttenhove', email: 'augustin@Uyttenhove.com', password: '123456', is_doctor: false)
 
 puts 'Creating doctors...'
 doctor1 = Doctor.create!(introduction: 'I am a good doctor', profile_picture: 'https://hcplive.s3.amazonaws.com/v1_media/_image/happydoctor.jpg', license: '1234', user: user1)
