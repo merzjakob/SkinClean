@@ -19,7 +19,7 @@ class DiagnosesController < ApplicationController
   end
 
   def index
-    if current_user.doctor?
+    if current_user.is_doctor?
       @diagnoses = Diagnosis.all
       # redirect_to diagnoses_path
     else
