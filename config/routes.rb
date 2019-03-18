@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :doctors, only: [:new, :create, :update, :edit]
 
   resources :questions, only: [:index] do
-    resources :patient_answers, only: [:new, :create]
+    resources :patient_answers, only: [:new, :create, :edit, :update]
   end
 
   resources :medicines, only: [:show]
