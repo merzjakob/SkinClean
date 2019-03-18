@@ -23,7 +23,6 @@
             <% current_user.answered_questions.each do |question| %>
               <%= render partial: 'answers', :locals => {question: question, current_user: current_user, questions: @questions, answer: question.user_answer(current_user) } %>
             <% end %>
-            <!-- FIRST QUESTION -->
           </ul>
         </div>
       </div>

@@ -47,9 +47,8 @@
       height: 100%;
       justify-content: space-around;
       align-items: center;
-
-
-    }
+  }
+}
 
       #submitchat {
         cursor: pointer;
@@ -67,19 +66,12 @@
         margin: 5px;
       }
   }
-  //   display:flex;
-  //   justify-content: space-around;
-  //   align-items: center;
-  //   .btn {
-  //     padding: 15px 50px;
-  //   }
-  }
 
 .speech-wrapper{
   padding: 30px 35px 30px 30px;
   height: 100%;
   .bubble{
-    width: 70%;
+    width: 80%;
     height: auto;
     display: block;
     background: white;
@@ -90,11 +82,11 @@
       width: 100%
     }
     &.alt{
-      margin: 0 0 7% 35%;
+      margin: 0 0 7% 25%;
       object-fit: contain;
     }
     .txt{
-      padding: 8px 40px 8px 14px;
+      padding: 8px 35px 8px 14px;
       .name{
         font-weight: 600;
         font-size: 14px;
@@ -209,6 +201,7 @@
     display:none;
   }
   height: 100%;
+  max-width: 80%;
 }
 
 
