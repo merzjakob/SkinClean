@@ -1,0 +1,20 @@
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.main-container {
+  display: flex;
+}
+
+#map {
+  position: relative;
+}
+
+.doctor_address {
+  position: absolute;
+}
