@@ -1,6 +1,5 @@
 class DiagnosesController < ApplicationController
   def new
-
   end
 
   def create
@@ -16,7 +15,22 @@ class DiagnosesController < ApplicationController
 
   def show
     @diagnosis = Diagnosis.find(params[:id])
+    @doctors = Doctor.where.not(latitude: nil, longitude: nil)
+
+    if params[:query].present?
+       @doctors = @doctors.where(address: params[:query])
+     end
+
+    @markers = @doctors.map do |doctor|
+      {
+        lat: doctor.latitude,
+        lng: doctor.longitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { doctor: doctor }),
+        image_url: helpers.asset_url('doctor-icon.jpg')
+      }
+    end
     @medicines = Medicine.all
+
   end
 
   def index
