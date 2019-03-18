@@ -8,6 +8,7 @@
   <div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-2">
     <div class="section-header">
       <h2>Your doctor</h2>
+      <p>Your trusted physican advising you</p>
     </div>
     <div class="process-card big">
       <div class="process-card-image-container">
@@ -25,14 +26,20 @@
       <h2>
       Medical Assessment
       </h2>
+      <p>Official physical assessment of your condition</p>
     </div>
-    <%= @diagnosis.medical_assessment %>
+    <div>
+      <%= @diagnosis.medical_assessment %>
+    </div>
     <div class="section-header">
       <h2>
       Dr. <%= @diagnosis.doctor.user.full_name %>'s recommendation:
       </h2>
+      <p>Practical tips from your doctor</p>
     </div>
-    <p> <%= @diagnosis.recommendation %></p>
+    <div>
+      <p> <%= @diagnosis.recommendation %></p>
+    </div>
   </p>
 </div>
 </div>
@@ -47,6 +54,7 @@
     <h2>
     Recommended medicine
     </h2>
+    <p>Immediate help to make you feel better</p>
     <div class="medicine-box">
         <% @medicines.each do |medicine| %>
       <div class="medicine-card-visible">
@@ -63,6 +71,7 @@
     <h2>
       Find a doctor near you
     </h2>
+    <p>Dermatologists specialized on your condition</p>
   </div>
 
   <div id="map"
