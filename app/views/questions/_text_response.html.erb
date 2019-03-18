@@ -1,0 +1,13 @@
+<li>
+  <div class="bubble alt">
+    <div class="txt">
+      <p class="name alt"><%= current_user.first_name %></p>
+      <p class="message"><%= image_tag patient_answer.photo.url %></p>
+      <br>
+      <p>
+        <span class="timestamp"><%= Time.now.strftime("%b %e, %l:%M %p") %></span>
+      </p>
+     </div>
+     <div class="bubble-arrow alt"></div>
+  </div>
+</li>

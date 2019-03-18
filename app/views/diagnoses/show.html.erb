@@ -17,20 +17,19 @@
       </div>
       <div class="process-card-description">
         <h2>
-          Dr. <%= @diagnosis.doctor.user.full_name %>
+        Dr. <%= @diagnosis.doctor.user.full_name %>
         </h2>
       </div>
     </div>
-
     <div class="section-header">
       <h2>
-        Medical Assessment
+      Medical Assessment
       </h2>
     </div>
     <%= @diagnosis.medical_assessment %>
     <div class="section-header">
       <h2>
-        Dr. <%= @diagnosis.doctor.user.full_name %>'s recommendation:
+      Dr. <%= @diagnosis.doctor.user.full_name %>'s recommendation:
       </h2>
     </div>
     <p> <%= @diagnosis.recommendation %></p>
@@ -46,8 +45,19 @@
   </div>
   <div class="section-header">
     <h2>
-      Recommended medicine
+    Recommended medicine
     </h2>
+    <div class="medicine-box">
+        <% @medicines.each do |medicine| %>
+      <div class="medicine-card-visible">
+        <%= cl_image_tag medicine.medicine_picture %>
+
+        <%= medicine.name %>
+        <%= medicine.description %>
+        <%= link_to "Buy", diagnosis_path(@diagnosis) %>
+      </div>
+        <% end %>
+    </div>
   </div>
   <div class="section-header">
     <h2>
@@ -78,4 +88,15 @@
       < link_to "Find", diagnosis_path(@diagnosis), class: "btn btn-solid" %>
     </div>
   </div> -->
+<div class="footer">
+<div class="footer-links">
+  <a href="#"><i class="fab fa-twitter"></i></a>
+  <a href="#"><i class="fab fa-github"></i></a>
+  <a href="#"><i class="fab fa-facebook"></i></a>
+  <a href="#"><i class="fab fa-instagram"></i></a>
+  <a href="#"><i class="fab fa-linkedin"></i></a>
+</div>
+<div class="footer-copyright">
+  <h5>SkinClean</h5>
+</div>
 </div>

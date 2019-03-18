@@ -29,6 +29,8 @@ class DiagnosesController < ApplicationController
         image_url: helpers.asset_url('doctor-icon.jpg')
       }
     end
+    @medicines = Medicine.all
+
   end
 
   def index

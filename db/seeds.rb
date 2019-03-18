@@ -75,8 +75,8 @@ puts 'All answers created!'
 
 
 puts 'Creating medicines...'
-medicine1 = Medicine.create!(name: 'Aspirin', description: 'This helps with hangovers', risk: 'drowning', price_per_unit: 3)
-medicine2 = Medicine.create!(name: 'Ibuprofen', description: 'This helps with hangovers', risk: 'drowning', price_per_unit: 5)
+medicine1 = Medicine.create!(name: 'Aspirin', description: 'This helps with hangovers', risk: 'drowning', price_per_unit: 3, medicine_picture: 'https://hcplive.s3.amazonaws.com/v1_media/_image/happydoctor.jpg')
+medicine2 = Medicine.create!(name: 'Ibuprofen', description: 'This helps with hangovers', risk: 'drowning', price_per_unit: 5, medicine_picture: 'https://hcplive.s3.amazonaws.com/v1_media/_image/happydoctor.jpg')
 
 puts 'Creating diagnosis...'
 diagnosis1 = Diagnosis.create!(user: user2, doctor: doctor1, recommendation: 'Sorry, there is nothing I can do here', medical_assessment: 'this is bad!')
