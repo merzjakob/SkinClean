@@ -1,17 +1,10 @@
 class DoctorsController < ApplicationController
-  def new
-    @doctor = Doctor.new
-  end
 
-  def create
-    @doctor = Doctor.new(doctor_params)
-
+  def edit
+    @doctor = current_user.doctor
   end
 
   def update
-  end
-
-  def edit
   end
 
 

@@ -30,7 +30,7 @@
             <%= f.input :password_confirmation, label: false,
                         required: true, placeholder: "Password confirmation",
                         input_html: { autocomplete: "new-password" } %>
-            <%= f.hidden_field :doctor, value: true if params[:role] == "doctor" %>
+            <%= f.hidden_field :is_doctor, value: true if params[:role] == "doctor" %>
           </div>
 
           <div class="form-actions">

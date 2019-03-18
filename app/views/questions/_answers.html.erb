@@ -1,0 +1,24 @@
+<% if question.photo?  %>
+  <% current_user.patient_answers.each do |patient_answer| %>
+    <% if patient_answer.photo? %>
+      <%= render "questions/foto_response", current_user: current_user, patient_answer: patient_answer %>
+    <% else %>
+      <%= render "questions/text_response", current_user: current_user, patient_answer: patient_answer %>
+    <% end %>
+  <% end %>
+<% else %>
+  <li>
+    <div class="bubble alt">
+      <div class="txt">
+        <p class="name alt"><%= current_user.first_name %></p>
+        <p class="message"><%= answer.content %></p>
+        <br>
+        <span class="timestamp"><%= Time.now.strftime("%b %e, %l:%M %p") %></span>
+      </div>
+      <div class="bubble-arrow alt"></div>
+    </div>
+  </li>
+<% end %>
+<% if  question = current_user.next_question %>
+  <%= render "questions/question", question: question %>
+<% end %>

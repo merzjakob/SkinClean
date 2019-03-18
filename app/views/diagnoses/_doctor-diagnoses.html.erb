@@ -17,6 +17,7 @@
           <%= link_to "Diagnose", approve_path(diagnosis), method: :patch, id: "approved"%>
           <%= diagnosis.status %>
           <% end %>
+
         </div>
         <div class="diagnosis-time">
           <p>This request has been created the <%= Date.parse(diagnosis.created_at.to_s).strftime("%d of %B, %Y") %></p>
