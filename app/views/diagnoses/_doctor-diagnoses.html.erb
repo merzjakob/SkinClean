@@ -1,42 +1,41 @@
 <div class="wrapper-white">
   <div class="green-header">
     <h1>
-      YOUR DASHBOARD
-      <hr>
+    YOUR DASHBOARD
+    <hr>
     </h1>
   </div>
-    <div class="row">
-      <% @diagnoses.doctor.each do |diagnosis| %>
-        <div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-2">
-          <div class="card">
-            <div class="diagnosis-name">
-              <h3><%= diagnosis.user.full_name %></h3>
-              <% if diagnosis.status == "Diagnosed" %>
-              <p id="approved"><%=diagnosis.status%></p>
-              <% else diagnosis.status == "Pending" %>
-              <p id="pending"><%=diagnosis.status%></p>
-              <% end %>
-            </div>
-            <div class="diagnosis-time">
-              <p>This request has been created the <%= Date.parse(diagnosis.created_at.to_s).strftime("%d of %B, %Y") %></p>
-            </div>
-              <%= link_to "Diagnosis", diagnosis_path(diagnosis), class: "card-link" %>
-          </div>
+  <div class="row">
+    <% @diagnoses.each do |diagnosis| %>
+    <div class="col-xs-12 col-sm-6 col-md-6 col-md-offset-2">
+      <div class="card">
+        <div class="diagnosis-name">
+          <h3><%= diagnosis.user.full_name %></h3>
+          <% if diagnosis.status == "Diagnosed" %>
+          <h3 id="approved"><%=diagnosis.status%></h3>
+          <% elsif diagnosis.status == "pending" %>
+          <%= link_to "Diagnose", approve_path(diagnosis), method: :patch, id: "approved"%>
+          <%= diagnosis.status %>
+          <% end %>
         </div>
-      <% end%>
+        <div class="diagnosis-time">
+          <p>This request has been created the <%= Date.parse(diagnosis.created_at.to_s).strftime("%d of %B, %Y") %></p>
+        </div>
+      </div>
     </div>
+    <% end%>
   </div>
 </div>
-
+</div>
 <div class="footer-index">
-  <div class="footer-links">
-    <a href="#"><i class="fab fa-twitter"></i></a>
-    <a href="#"><i class="fab fa-github"></i></a>
-    <a href="#"><i class="fab fa-facebook"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-linkedin"></i></a>
-  </div>
-  <div class="footer-copyright">
-   <h5>SkinClean</h5>
-  </div>
+<div class="footer-links">
+  <a href="#"><i class="fab fa-twitter"></i></a>
+  <a href="#"><i class="fab fa-github"></i></a>
+  <a href="#"><i class="fab fa-facebook"></i></a>
+  <a href="#"><i class="fab fa-instagram"></i></a>
+  <a href="#"><i class="fab fa-linkedin"></i></a>
+</div>
+<div class="footer-copyright">
+  <h5>SkinClean</h5>
+</div>
 </div>
