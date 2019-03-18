@@ -2,8 +2,6 @@
   <% current_user.patient_answers.each do |patient_answer| %>
     <% if patient_answer.photo? %>
       <%= render "questions/foto_response", current_user: current_user, patient_answer: patient_answer %>
-    <% else %>
-      <%= render "questions/text_response", current_user: current_user, patient_answer: patient_answer %>
     <% end %>
   <% end %>
 <% else %>
