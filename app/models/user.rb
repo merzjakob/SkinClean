@@ -19,7 +19,17 @@ class User < ApplicationRecord
   end
 
   def finished_quiz?
-    self.undiagnosed_answers.count == Question.count
+    undiagnosed_answers.count == Question.count
+  end
+
+  def next_question
+    Question.find do |question|
+      !PatientAnswer.find_by(question_id: question.id, user_id: id)
+    end
+  end
+
+  def answered_questions
+    Question.joins(:patient_answers).where("patient_answers.user_id = ?", id)
   end
 
   private
