@@ -16,6 +16,7 @@ class DiagnosesController < ApplicationController
 
   def show
     @diagnosis = Diagnosis.find(params[:id])
+    @medicines = Medicine.all
   end
 
   def index
