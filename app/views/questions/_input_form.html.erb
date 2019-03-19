@@ -10,6 +10,13 @@
           <button id="snap"><i class="fas fa-camera"></i></button>
           <canvas id="canvas" width="120" height="240"></canvas>
           <input type="text" hidden value="" id="patient_answer_photo" name="patient_answer[photo]">
+
+          <% content_for(:after_js) do %>
+            <script>
+              chatController.initiateCamera();
+            </script>
+          <% end %>
+
         <% else %>
             <%= f.input :content, label: false, wrapper_html: {id: "inputchat"} %>
         <% end %>
