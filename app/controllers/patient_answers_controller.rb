@@ -8,6 +8,8 @@ class PatientAnswersController < ApplicationController
       @patient_answer = PatientAnswer.new(question: @question, content: patient_answer_params[:content], user: current_user)
     end
 
+
+
     if @patient_answer.save
       respond_to do |format|
         format.html { redirect_to questions_path }
