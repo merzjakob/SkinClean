@@ -1,4 +1,5 @@
 .mapboxgl-popup {
+  margin-top: 20px;
   max-width: 200px;
   padding: 10px;
   background-color: white;
@@ -29,5 +30,9 @@
 }
 
 .marker {
+  border-radius: 50px;
+}
+
+.doctor-pic-card {
   border-radius: 50px;
 }
