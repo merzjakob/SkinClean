@@ -20,6 +20,7 @@ gem 'webpacker', '~> 3.5'
 gem 'carrierwave', '~> 1.2'
 gem 'cloudinary', '~> 1.9.1'
 gem 'dotenv-rails', groups: [:development, :test]
+gem 'carrierwave-base64'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
