@@ -5,4 +5,8 @@ class Question < ApplicationRecord
   def user_answer(current_user)
     patient_answers.find_by_user_id(current_user.id)
   end
+
+  def first?
+    Question.all.first == self
+  end
 end

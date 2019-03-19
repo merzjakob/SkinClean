@@ -39,7 +39,7 @@ question8 = Question.create!(title: 'Please upload a photo', multiple_choice:fal
 
 puts 'Creating text answers'
 answer1 = Answer.create!(content: '', question: question1)
-answer2 = Answer.create!(content: '', question: question5)
+answer2 = Answer.create!(content: '', question: question8)
 answer3 = Answer.create!(content: '', question: question1)
 puts 'Creating Q2 answers'
 answer4 = Answer.create!(content: 'More than 25%', question: question2)
@@ -54,8 +54,8 @@ answer11 = Answer.create!(content: 'Never', question: question3)
 puts 'Creating Q4 answers'
 answer12 = Answer.create!(content: 'Every day', question: question4)
 answer13 = Answer.create!(content: 'For a week or two each month', question: question4)
-# answer14 = Answer.create!(content: 'Every couple of months', question: question4)
-# answer15 = Answer.create!(content: 'Never', question: question4)
+answer14 = Answer.create!(content: 'Every couple of months', question: question4)
+answer15 = Answer.create!(content: 'Never', question: question4)
 puts 'Creating Q5 answers'
 answer16 = Answer.create!(content: 'More than 25%', question: question5)
 answer17 = Answer.create!(content: "Between 10% and 25%", question: question5)
