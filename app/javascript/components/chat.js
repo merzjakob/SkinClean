@@ -23,7 +23,7 @@ const chatController = {
       }
       });
     };
-},
+  },
 
   attachEventListenersToNewButtons: function() {
     $(".form-check").click(function(){

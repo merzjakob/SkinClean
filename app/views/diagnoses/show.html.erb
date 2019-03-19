@@ -94,7 +94,7 @@
             class: "form-control", id: "doctor_address",
             placeholder: "Find a doctor"
           %>
-          <input type="submit" value="Submit" class= "btn btn-solid">
+          <%= submit_tag "Submit" , class: "btn btn-solid", onclick: "scrollToMapBottom();" %>
         <% end %>
       </div>
     </div>
