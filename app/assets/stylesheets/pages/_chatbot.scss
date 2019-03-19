@@ -27,7 +27,6 @@
   }
   .chatMessages {
       // height: 80%;
-
       overflow-y: scroll;
       padding-bottom: 5px;
       width: 100%;
@@ -89,6 +88,9 @@
     border-radius: 4px;
     position: relative;
     margin: 0 0 7%;
+    transition-timing-function: ease;
+  transition: 2s;
+  transform: translateY(0);
     img {
       width: 100%;
 
@@ -265,7 +267,8 @@
 // User is typing animation
 div#wave {
   position:relative;
-  top: -40px;
+  bottom: 10px;
+  padding-top:20px;
   width: 80px;
   text-align:center;
   margin-left: 5px;

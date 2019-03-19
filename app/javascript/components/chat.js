@@ -1,23 +1,25 @@
 const chatController = {
+  // Chat form refresh
   refreshForm: function(innerHTML) {
     const newMessageForm = document.querySelector('.chatBottom');
     newMessageForm.innerHTML = innerHTML;
     this.attachEventListenersToNewButtons();
   },
-
+  // Insert chat answer
   addMessage: function(messageHTML) {
     const messages = document.querySelector('.messages-list');
     messages.insertAdjacentHTML('beforeend', messageHTML);
     this.scrollToLastMessage();
+    this.jumpingDots();
   },
-
+  // Insert next question
   addNextQuestion: function(questionHTML, isPhoto) {
     this.addMessage(questionHTML);
     if (isPhoto == "true") {
       this.initiateCamera();
     }
   },
-
+  // Scroll down to last message
   scrollToLastMessage: function() {
     if (document.querySelector('.messages-list')) {
     $(document).ready(function(){
@@ -30,7 +32,7 @@ const chatController = {
       });
     };
   },
-
+  // allow screen capture as picture
   takeSelfie: function() {
     if (document.getElementById("canvas")) {
       const snap = document.getElementById("snap")
@@ -43,16 +45,15 @@ const chatController = {
       };
     }
   },
-
+  // insert jumping dots on wait
   jumpingDots: function() {
+    console.log(" JUMPING!!!!!!!")
     if (document.getElementById('wave')) {
-      $(document).ready(function(){
       const wave = document.getElementById('wave')
       wave.classList.toggle("hide")
-      });
     };
   },
-
+  // open camera of user
   initiateCamera: function() {
     // Grab elements, create settings, etc.
     var video = document.getElementById('video');
@@ -81,7 +82,7 @@ const chatController = {
     });
     this.takeSelfie();
   },
-
+  // turn selected option green
   attachEventListenersToNewButtons: function() {
     $(".form-check").click(function(){
         $(".active").removeClass("active");
