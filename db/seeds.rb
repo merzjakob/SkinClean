@@ -80,6 +80,7 @@ medicine2 = Medicine.create!(name: 'Ibuprofen', description: 'This helps with ha
 
 puts 'Creating diagnosis...'
 diagnosis1 = Diagnosis.create!(user: user2, doctor: doctor1, recommendation: 'Sorry, there is nothing I can do here', medical_assessment: 'this is bad!')
+diagnosis1 = Diagnosis.create!(user: user2, doctor: doctor1, recommendation: 'Several home remedies and over-the-counter medications can treat minor-to-mild papules and pustules. The following tips can help: Washing the affected area with cool water and soap using clean hands or a clean, gentle facecloth twice a day. Applying a warm compress or cloth - available to buy in pharmacies and online - to the affected area for 10–15 minutes to encourage trapped debris to rise to the surface. Using products with benzoyl peroxide to combat bacteria. Using products with salicylic acid to remove dead skin cells and other debris', medical_assessment: 'Most active ingredients in over-the-counter products are available in prescription-strength treatments. Dermatologists can also remove lesions that are very large or persistent. They can also remove those that do not respond to other forms of treatment. Always see a doctor or dermatologist about nodules and cysts, because these require medical care. Untreated nodules and cysts and those that have been picked or popped can cause scarring.', status: 'Diagnosed')
 
 puts 'Creating patient answer...'
 PatientAnswer.create!(question: question1, diagnosis: diagnosis1, user: user1, content: "Jakob")

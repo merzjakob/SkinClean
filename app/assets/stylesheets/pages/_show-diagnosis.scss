@@ -3,10 +3,11 @@
   justify-content: space-around;
   align-items: center;
   border-radius: 50%;
-  width: 150px;
-  height: 150px;
+  width: 130px;
+  height: 130px;
   background-color: white;
   overflow:hidden;
+  margin-top: 40px;
   object-fit: cover;
   .process-card-image {
     width: 120px;
@@ -17,14 +18,20 @@
   }
 
 }
+
 .section-header h2 {
   text-align: center;
   padding-bottom: 10px;
-  border-bottom: 1px solid #1AB06D;
+  border-bottom: 2px solid #1AB06D;
   font-size: 16px;
-  margin-bottom: 30px;
+  margin-bottom: 5px;
   margin-top: 20px;
-  font-weight: 500;
+  font-weight: 550;
+}
+  p {
+    font-size: 16px;
+    font-style: italic;
+  }
 }
 
 // .process-card-description {
