@@ -31,6 +31,28 @@ const chatController = {
     };
   },
 
+  takeSelfie: function() {
+    if (document.getElementById("canvas")) {
+      const snap = document.getElementById("snap")
+      const canvas = document.getElementById("canvas")
+      const video = document.getElementById("video")
+      snap.onclick = function () {
+        video.classList.toggle("hide");
+        canvas.classList.toggle("hide");
+        canvas.classList.toggle("pulsate-bck");
+      };
+    }
+  },
+
+  jumpingDots: function() {
+    if (document.getElementById('wave')) {
+      $(document).ready(function(){
+      const wave = document.getElementById('wave')
+      wave.classList.toggle("hide")
+      });
+    };
+  },
+
   initiateCamera: function() {
     // Grab elements, create settings, etc.
     var video = document.getElementById('video');
@@ -51,15 +73,14 @@ const chatController = {
 
     // Trigger photo take
     document.getElementById('snap').addEventListener('click', function(event) {
-    context.drawImage(video, 0, 0, 120, 240);
+    context.drawImage(video, 0, 0, 250, 200);
     const encoded = canvas.toDataURL();
     // const decoded = atob(encoded.split(",")[1]);
     formInput.value = encoded;
       event.preventDefault();
     });
+    this.takeSelfie();
   },
-
-
 
   attachEventListenersToNewButtons: function() {
     $(".form-check").click(function(){
@@ -67,8 +88,9 @@ const chatController = {
         $(this).toggleClass("active");
         this.querySelector("input").click();
       })
-  }
+  },
 }
+
 
 
 export { chatController };

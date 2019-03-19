@@ -32,12 +32,14 @@
       padding-bottom: 5px;
       width: 100%;
       flex-grow: 1;
+      // min-height: 600px;
   }
   .chatBottom {
     flex-grow: 1;
-    width: 100%;
+    // width: 100%;
     border-top: 1px solid #1AB06D;
     margin-top: 5px;
+    // min-height: 100px;
     // display: flex;
     // .answers-container {
     //   flex-grow: 1;
@@ -45,6 +47,7 @@
   form {
       display: flex !important;
       height: 100%;
+      width: 100%;
       justify-content: space-around;
       align-items: center;
   }
@@ -66,6 +69,14 @@
         margin: 5px;
       }
   }
+.hide {
+  display:none;
+}
+
+#canvas {
+  border-radius: 5px;
+  margin: 5px;
+}
 
 .speech-wrapper{
   padding: 30px 35px 30px 30px;
@@ -79,14 +90,16 @@
     position: relative;
     margin: 0 0 7%;
     img {
-      width: 100%
+      width: 100%;
+
+      border-radius: 5px;
     }
     &.alt{
-      margin: 0 0 7% 25%;
+      margin: 0 0 5% 25%;
       object-fit: contain;
     }
     .txt{
-      padding: 8px 35px 8px 14px;
+      padding: 8px 14px 8px 14px;
       .name{
         font-weight: 600;
         font-size: 14px;
@@ -108,9 +121,10 @@
       .timestamp{
         font-size: 11px;
         position: absolute;
-        bottom: 8px;
+        bottom: 10px;
         right: 10px;
-        text-transform: uppercase; color: #999
+        text-transform: uppercase; color: #999;
+        font-style: italic;
       }
     }
     .bubble-arrow {
@@ -143,34 +157,39 @@
 .fix-height {
   height: 100px;
 }
-.chatBottom
-.form-post {
-  background: white;
-  margin-top: 50px;
-  padding: 20px;
-  border-radius: 5px;
-  h1 {
-    text-align: center;
-    font-weight: bold;
-    font-size: 25px;
-    color: #666666;
-    margin-bottom: 50px;
-    margin-top: 0px;
+.chatBottom {
+  .form-post {
+    background: white;
+    margin-top: 50px;
+    padding: 20px;
+    border-radius: 5px;
+    h1 {
+      text-align: center;
+      font-weight: bold;
+      font-size: 25px;
+      color: #666666;
+      margin-bottom: 50px;
+      margin-top: 0px;
+    }
+    .btn {
+      width: 100%;
+      padding: 10px;
+      font-weight: bold;
+    }
   }
-  .btn {
-    width: 100%;
-    padding: 10px;
-    font-weight: bold;
-  }
-}
-  .flex-submit {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    // a {
-    //   height: 50%;
-    // }
-  }
+    .flex-submit {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .btn {
+        margin: 20px 0px;
+      }
+      // object-align: middle
+      // a {
+      //   height: 50%;
+      // }
+    }
 
 // Checkboxes design
 .form-check {
@@ -192,19 +211,91 @@
   opacity: 1;
   }
 }
-.choices {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin: 0px 0px;
-  legend {
-    display:none;
+  .choices {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0px 0px;
+    legend {
+      display:none;
+    }
+    height: 100%;
+    max-width: 80%;
   }
-  height: 100%;
-  max-width: 80%;
-}
 
 
-.choice.hidden{
-  display: none;
+  .choice.hidden{
+    display: none;
+  }
+
+  .pulsate-bck {
+    -webkit-animation: pulsate-bck 0.2s ease-out 0.2s both;
+            animation: pulsate-bck 0.2s ease-out 0.2s both;
+  }
 }
+@-webkit-keyframes pulsate-bck {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes pulsate-bck {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+// User is typing animation
+div#wave {
+  position:relative;
+  top: -40px;
+  width: 80px;
+  text-align:center;
+  margin-left: 5px;
+  margin-right: auto;
+  .dot {
+    display:inline-block;
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    margin-right:3px;
+    background:#303131;
+    animation: wave 1.3s linear infinite;
+
+    &:nth-child(2) {
+      animation-delay: -1.1s;
+    }
+
+    &:nth-child(3) {
+      animation-delay: -0.9s;
+    }
+  }
+}
+
+@keyframes wave {
+  0%, 60%, 100% {
+    transform: initial;
+  }
+
+  30% {
+    transform: translateY(-15px);
+  }
+}
+

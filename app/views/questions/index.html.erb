@@ -33,6 +33,11 @@
         </div>
       </div>
       <div class="chatBottom">
+        <div id="wave" class="hide">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
         <%= render partial: 'input_form', :locals => { question: current_user.next_question, patient_answer: @patient_answer } %>
       </div>
     </div>
