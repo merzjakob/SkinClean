@@ -1,15 +1,11 @@
 .mapboxgl-popup {
-  margin-top: 20px;
+  margin-top: -150px;
   max-width: 200px;
   padding: 10px;
   background-color: white;
   box-shadow: 0px 10px 53px 0px rgba(0,0,0,0.27);
   border-bottom: 1px solid rgba(220,224,244,0.4);
   border-radius: 5px;
-}
-
-.mapboxgl-popup:hover{
-    transform: scale(0.99);
 }
 
 .mapboxgl-popup-content {
@@ -21,18 +17,22 @@
   display: flex;
 }
 
-#map {
-  position: relative;
+.map-container {
+  margin: 10px;
 }
 
-.doctor_address {
+/*.doctor_address {
   position: absolute;
-}
+}*/
 
 .marker {
-  border-radius: 50px;
+  border-radius: 10px;
 }
 
-.doctor-pic-card {
+/*.doctor-pic-card {
   border-radius: 50px;
+}*/
+
+.process-card-image {
+  padding-top: 10px;
 }
