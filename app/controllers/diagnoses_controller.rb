@@ -18,7 +18,7 @@ class DiagnosesController < ApplicationController
     @doctors = Doctor.where.not(latitude: nil, longitude: nil)
 
     if params[:query].present?
-       @doctors = @doctors.where(address: params[:query])
+       @doctors = @doctors.where(city: params[:query])
      end
 
     @markers = @doctors.map do |doctor|

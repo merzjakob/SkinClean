@@ -1,3 +1,5 @@
-<div class="marker">
-  <p>Your doctor</p>
+<div class="marker-card">
+  <%= cl_image_tag @diagnosis.doctor.profile_picture, class: 'process-card-image'%>
+  <h2><%= doctor.user.full_name %></h2>
+    <p><%= doctor.address %></p>
 </div>

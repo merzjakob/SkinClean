@@ -23,9 +23,9 @@ user4 = User.create!(first_name: 'Bruce', last_name: 'Willis', email: 'bwillis@s
 user5 = User.create!(first_name: 'John', last_name: 'Doe', email: 'jdoe@skinclean.xyz', password: '123456', is_doctor: true)
 
 puts 'Creating doctors...'
-doctor1 = Doctor.create!(introduction: 'I am a good doctor', profile_picture: 'https://hcplive.s3.amazonaws.com/v1_media/_image/happydoctor.jpg', license: '1234', user: user1, address: "Barcelona")
-doctor2 = Doctor.create!(introduction: 'I am a good doctor', profile_picture: 'https://hcplive.s3.amazonaws.com/v1_media/_image/happydoctor.jpg', license: '1234', user: user4, address: "Madrid")
-doctor3 = Doctor.create!(introduction: 'I am a good doctor', profile_picture: 'https://hcplive.s3.amazonaws.com/v1_media/_image/happydoctor.jpg', license: '1234', user: user5, address: "Paris")
+doctor1 = Doctor.create!(introduction: 'I am a good doctor', profile_picture: 'https://hcplive.s3.amazonaws.com/v1_media/_image/happydoctor.jpg', license: '1234', user: user1, address: "carrer d'en grassot 101", city: "Barcelona")
+doctor2 = Doctor.create!(introduction: 'I am a good doctor', profile_picture: 'https://hcplive.s3.amazonaws.com/v1_media/_image/happydoctor.jpg', license: '1234', user: user4, address: "Carrer de Mallorca 401, Barcelona", city: "Barcelona")
+doctor3 = Doctor.create!(introduction: 'I am a good doctor', profile_picture: 'https://hcplive.s3.amazonaws.com/v1_media/_image/happydoctor.jpg', license: '1234', user: user5, address: "Carrer de la Marina 212", city: "Barcelona")
 
 puts 'Creating questions..'
 question1 = Question.create!(title: "Hi, my name is Jude. I am SkinClean's chatbot and I will personally assist you in getting discrete, professional advice for your skin problems. What should I call you throughout this process?", multiple_choice: false)

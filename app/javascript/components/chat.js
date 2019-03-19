@@ -32,6 +32,7 @@ const chatController = {
       });
     };
   },
+  
   // allow screen capture as picture
   takeSelfie: function() {
     if (document.getElementById("canvas")) {
@@ -71,6 +72,7 @@ const chatController = {
     var context = canvas.getContext('2d');
     var video = document.getElementById('video');
     const formInput = document.getElementById("patient_answer_photo")
+
 
     // Trigger photo take
     document.getElementById('snap').addEventListener('click', function(event) {
