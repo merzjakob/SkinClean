@@ -40,27 +40,23 @@
 
 
 .medicine-card-visible {
+  display:block;
+}
+
+
+
+.medicine-card-visible >.not-clicked {
   display: flex;
   align-items: center;
+  justify-content:space-between;
   padding: 10px;
   border-bottom: 1px solid rgba(220,224,244,0.4);
   text-align: top;
   height: 80px;
 }
 
-.medicine-card-visible h3{
-  font-size: 18px;
-  margin: 0px 0px;
-}
-.medicine-card-visible p {
-  font-size: 15px;
-  font-weight: lighter;
-  opacity: 0.8;
-  margin: 5px 0px;
-}
-
-.medicine-card-invisible {
-  display: flex;
+.medicine-card-invisible >.not-clicked {
+  display: none;
   align-items: center;
   justify-content:space-between;
   padding: 10px;
@@ -68,21 +64,42 @@
   text-align: top;
 }
 
-.medicine-card-invisible h3{
-  font-size: 18px;
-  margin: 0px 0px;
-}
-.medicine-card-invisible p {
-  font-size: 15px;
-  font-weight: lighter;
-  opacity: 0.8;
-  margin: 5px 0px;
-}
-
 .medicine-card-visible img {
 height:70px;
 width:70;
 }
+
+ .medicine-card-visible >.buy-hidden{
+  display:flex;
+  justify-content:flex-end;
+}
+
+
+
+
+.medicine-card-visible >.clicked {
+  display: none;
+  align-items: center;
+  justify-content:space-between;
+  padding: 10px;
+  border-bottom: 1px solid rgba(220,224,244,0.4);
+  text-align: top;
+  height: 80px;
+}
+
+.medicine-card-invisible >.clicked {
+  display: block;
+  align-items: center;
+  justify-content:space-between;
+  padding: 10px;
+  border-bottom: 1px solid rgba(220,224,244,0.4);
+  text-align: left;
+
+}
+
+
+
+
 
 #search-map {
   width: 250px;
@@ -106,3 +123,92 @@ form {
 // .medicine-box {
 //   display:flex;
 // }
+
+
+
+
+
+// .medicine-card-visible h3{
+//   font-size: 18px;
+//   margin: 0px 0px;
+// }
+// .medicine-card-visible p {
+//   font-size: 15px;
+//   font-weight: lighter;
+//   opacity: 0.8;
+//   margin: 5px 0px;
+// }
+
+// .medicine-card-visible img {
+// height:70px;
+// width:70;
+// }
+
+// .medicine-card-visible >.description-hidden{
+//   display:none;
+// }
+
+// .medicine-card-visible >.buy-hidden{
+//   display:block;
+// }
+
+// .medicine-card-visible > .clicked {
+//   display:none;
+// }
+
+// .medicine-card-invisible {
+//   display: block;
+//   align-items: center;
+//   justify-content:space-between;
+//   padding: 10px;
+//   border-bottom: 1px solid rgba(220,224,244,0.4);
+//   text-align: top;
+// }
+
+// .medicine-card-invisible h3{
+//   font-size: 18px;
+//   margin: 0px 0px;
+
+// }
+// .medicine-card-invisible p {
+//   font-size: 15px;
+//   font-weight: lighter;
+//   opacity: 0.8;
+//   margin: 5px 0px;
+// }
+
+// .medicine-card-invisible img {
+// height:140px;
+// width:140;
+// }
+
+// .medicine-card-invisible >.description-hidden{
+//   display:block;
+// }
+
+// .medicine-card-invisible >.buy-hidden{
+//   display:block;
+// }
+
+// .medicine-card-invisible >.sign-hidden{
+//   display:none;
+// }
+
+// .medicine-card-invisible > .not-clicked {
+//   display:none;
+// }
+
+// .medicine-card-invisible > .clicked {
+//   display:block;
+// }
+
+.movie-img {
+  width:100%;
+  height:240px;
+ /*background-size: contain;*/
+  z-index:111 !important;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  position:relative;
+
+}
