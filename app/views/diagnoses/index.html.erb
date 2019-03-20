@@ -1,8 +1,8 @@
 <!-- <h2>Your guests</h2> -->
-<div class="container wrapper">
-  <% if current_user.is_doctor? %>
-  <%= render 'doctor-diagnoses', diagnoses: @diagnoses %>
-  <% else %>
-  <%= render 'patient-diagnoses', diagnoses: @diagnoses %>
-<% end %>
+<div class="container">
+    <% if current_user.is_doctor? %>
+    <%= render 'doctor-diagnoses', diagnoses: @diagnoses %>
+    <% else %>
+    <%= render 'patient-diagnoses', diagnoses: @diagnoses %>
+    <% end %>
 </div>
