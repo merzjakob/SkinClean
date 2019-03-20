@@ -1,12 +1,13 @@
 import swal from 'sweetalert';
 
 const initSweetalert = (selector, options = {}) => {
-  const swalButton = document.querySelector(selector);
-  if (swalButton) { // protect other pages
-    swalButton.addEventListener('click', () => {
-      swal(options);
+  if (document.querySelector(selector)) { // protect other pages
+    const swalButton = document.querySelectorAll(selector).forEach((diagnosis) => {
+      diagnosis.addEventListener('click', () => {
+        swal(options);
+      });
     });
-  }
+  };
 };
 
 export { initSweetalert };

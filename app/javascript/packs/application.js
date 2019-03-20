@@ -17,6 +17,6 @@ bannerArrowScroll();
 global.chatController = chatController;
 initSweetalert('#sweet-alert-demo', {
   title: "Still pending",
-  text: "The doctor has not yet given his prescriptions.",
+  text: "The doctor has not yet submitted the diagnosis. This takes on average 4 hours.",
   icon: "warning"
 });
