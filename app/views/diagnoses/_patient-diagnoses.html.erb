@@ -8,7 +8,7 @@
     <div class="row">
       <div class="col-xs-12 col-md-4 col-md-offset-2">
       <% @diagnoses.each do |diagnosis| %>
-          <div class="index-diagnosis-card">
+          <div class="index-diagnosis-card" id="sweet-alert-demo">
             <div class="diagnosis-name">
               <h3><%= diagnosis.user.full_name %></h3>
             </div>
@@ -46,3 +46,5 @@
       </div>
     </div>
 </div>
+
+

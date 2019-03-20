@@ -7,6 +7,7 @@ import { initMapbox } from '../plugins/init_mapbox';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import { scrollToMapBottom } from '../components/map';
 import { bannerArrowScroll } from '../components/banner_arrow';
+import { initSweetalert } from '../plugins/init_sweetalert';
 
 activeButtons();
 initMapbox();
@@ -14,4 +15,8 @@ showDropdown();
 scrollToMapBottom();
 bannerArrowScroll();
 global.chatController = chatController;
-
+initSweetalert('#sweet-alert-demo', {
+  title: "Still pending",
+  text: "Please wait for the doctor's diagnosis",
+  icon: "warning"
+});
