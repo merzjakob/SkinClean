@@ -31,8 +31,13 @@
       padding-bottom: 5px;
       width: 100%;
       flex-grow: 1;
+
       // min-height: 600px;
   }
+  .chatMessages::-webkit-scrollbar {
+        display: none;
+  }
+
   .chatBottom {
     flex-grow: 1;
     // width: 100%;
@@ -43,6 +48,13 @@
     // .answers-container {
     //   flex-grow: 1;
     // }
+    i {
+      color: #1AB06D;
+      font-size: 20px;
+      border: solid 2px;
+      border-radius: 50%;
+      padding: 15px;
+    }
   form {
       display: flex !important;
       height: 100%;
@@ -56,7 +68,7 @@
         cursor: pointer;
         height: 40px;
         width: 20%;
-        margin: 0px 2px;
+        margin: 0px 4px 0px 0px;
         float: right;
       }
       #inputchat {
