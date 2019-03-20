@@ -111,9 +111,9 @@
           <%= form_tag diagnosis_path, method: :get do %>
             <%= text_field_tag :query,
               params[:query],
-              class: "form-control", id: "doctor_address",
+              class: "form-control-map", id: "doctor_address",
               placeholder: "Find a doctor"%>
-              <%= submit_tag "Submit" , class: "btn btn-solid", onclick: "scrollToMapBottom();" %>
+              <%= submit_tag "Submit" , class: "btn btn-solid", id: "map-submit", onclick: "scrollToMapBottom();" %>
             <% end %>
         </div>
         <div id="map"
