@@ -21,13 +21,13 @@
 
 .section-header {
   h2 {
-    padding-bottom: 10px;
-    border-bottom: 2px solid #1AB06D;
-    font-size: 16px;
-    margin-bottom: 5px;
-    margin-top: 20px;
-    font-weight: 550;
-  }
+  padding-bottom: 10px;
+  border-bottom: 2px solid #1AB06D;
+  font-size: 16px;
+  margin-bottom: 5px;
+  margin-top: 20px;
+  font-weight: 550;
+}
   p {
     font-size: 14px;
     font-style: italic;
@@ -38,16 +38,12 @@
 //   width: 100%;
 // }
 
-
+.process-card {
+  margin-bottom: -88px;
+}
 
 .medicine-card-visible {
   display:block;
-}
-
-.assessment {
-  p {
-    font-size: 15px;
-  }
 }
 
 .medicine-card-visible >.not-clicked {
