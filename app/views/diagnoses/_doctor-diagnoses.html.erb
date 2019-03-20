@@ -17,7 +17,6 @@
           <%= link_to "Diagnose", approve_path(diagnosis), method: :patch, id: "approved"%>
           <%= diagnosis.status %>
           <% end %>
-
         </div>
         <div class="diagnosis-time">
           <p>This request has been created the <%= Date.parse(diagnosis.created_at.to_s).strftime("%d of %B, %Y") %></p>
@@ -26,17 +25,5 @@
     </div>
     <% end%>
   </div>
-</div>
-</div>
-<div class="footer-index">
-<div class="footer-links">
-  <a href="#"><i class="fab fa-twitter"></i></a>
-  <a href="#"><i class="fab fa-github"></i></a>
-  <a href="#"><i class="fab fa-facebook"></i></a>
-  <a href="#"><i class="fab fa-instagram"></i></a>
-  <a href="#"><i class="fab fa-linkedin"></i></a>
-</div>
-<div class="footer-copyright">
-  <h5>SkinClean</h5>
 </div>
 </div>
