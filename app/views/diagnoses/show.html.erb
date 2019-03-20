@@ -7,7 +7,7 @@
   </div>
   <div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-2">
     <div class="section-header">
-      <h2>Your doctor</h2>
+      <h2>Dr. <%= @diagnosis.doctor.user.full_name %></h2>
       <p>Your trusted physican advising you</p>
     </div>
     <div class="process-card big">
@@ -16,92 +16,72 @@
           <%= cl_image_tag @diagnosis.doctor.profile_picture, class: 'process-card-image'%>
         </div>
       </div>
-      <div class="process-card-description">
-        <h2>
-        Dr. <%= @diagnosis.doctor.user.full_name %>
-        </h2>
-      </div>
+      <div class="process-card-description"></div>
     </div>
     <div class="section-header">
-      <h2>
-      Medical Assessment
-      </h2>
+      <h2>Medical Assessment</h2>
       <p>Official physical assessment of your condition</p>
     </div>
-    <div>
-      <%= @diagnosis.medical_assessment %>
-    </div>
+    <div><%= @diagnosis.medical_assessment %></div>
     <div class="section-header">
       <h2>
       Dr. <%= @diagnosis.doctor.user.full_name %>'s recommendation:
       </h2>
       <p>Practical tips from your doctor</p>
     </div>
-    <div>
-      <p> <%= @diagnosis.recommendation %></p>
-    </div>
-  </p>
-</div>
-</div>
-<div class="wrapper-white">
-<div class="stats-container">
-  <h2>
-  <mark class="green">Next steps</mark>
-  <hr>
-  </h2>
-</div>
-<div class="section-header">
-  <h2>
-  Recommended medicine
-  </h2>
-  <p>Immediate help to make you feel better</p>
-  <div class="medicine-box">
-    <% @medicines.each do |medicine| %>
-    <div class="medicine-card-visible">
-      <div class="not-clicked">
-        <div class="medicine-pic">
-          <%= cl_image_tag medicine.medicine_picture %>
-        </div>
-        <div class="name-med">
-          <%= medicine.name %>
-        </div>
-        <div class="buy-hidden">
-          <%= link_to "Buy", diagnosis_path(@diagnosis), class: "btn btn-solid" %>
-        </div>
-      </div>
-      <div class="clicked">
-        <div class="medicine-pic">
-          <%= cl_image_tag medicine.medicine_picture, class: "movie-img" %>
-        </div>
-        <div class="buy-hidden">
-          <div class="name-med">
-            <h1><%= medicine.name %></h1>
-          </div>
-          <div class="price-med">
-            <h4><span class="euro">$</span><%= medicine.price_per_unit %></h4>
-          </div>
-        </div>
-        <div class="description-hidden">
-          <h5><em>Description and Risks:</em></h5>
-          <p><%= medicine.description %></p>
-        </div>
-        <div class="risk-med">
-          <p><%= medicine.risk %></p>
-        </div>
-        <div class="buy-button">
-          <!-- <i class="fas fa-chevron-down", id="down"></i> -->
-          <%= link_to "Buy", diagnosis_path(@diagnosis), class: "btn btn-solid" %>
-        </div>
-      </div>
-    </div>
-    <% end %>
+    <div><p> <%= @diagnosis.recommendation %></p></div>
   </div>
-  <div class="wrapper-light-grey">
+</div> <!-- end of the first wrapper-light-grey -->
+
+<div class="wrapper-white">
+  <div class="stats-container">
+    <h2>
+      <mark class="green">Next steps</mark>
+      <hr>
+    </h2>
+  </div>
+  <div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-2">
+    <div class="section-header">
+      <h2> Recommended medicine </h2>
+      <p> Immediate help to make you feel better </p>
+    <div class="medicine-box">
+      <% @medicines.each do |medicine| %>
+        <div class="medicine-card-visible">
+          <div class="not-clicked">
+            <div class="medicine-pic"><%= cl_image_tag medicine.medicine_picture %></div>
+              <div class="name-med"><%= medicine.name %></div>
+                <div class="buy-hidden">
+                  <%= link_to "Buy", diagnosis_path(@diagnosis), class: "btn btn-solid" %>
+                </div>
+          </div>
+            <div class="clicked">
+              <div class="medicine-pic"><%= cl_image_tag medicine.medicine_picture, class: "movie-img" %></div>
+                <div class="buy-hidden">
+                  <div class="name-med">
+                    <h1><%= medicine.name %></h1>
+                  </div>
+                  <div class="price-med">
+                    <h4><span class="euro">$</span><%= medicine.price_per_unit %></h4>
+                  </div>
+                </div>
+                <div class="description-hidden">
+                  <h5><em>Description and Risks:</em></h5>
+                  <p><%= medicine.description %></p>
+                </div>
+                <div class="risk-med">
+                  <p><%= medicine.risk %></p>
+                </div>
+                <div class="buy-button">
+                  <!-- <i class="fas fa-chevron-down", id="down"></i> -->
+                  <%= link_to "Buy", diagnosis_path(@diagnosis), class: "btn btn-solid" %>
+                </div>
+            </div>
+          </div>
+        <% end %>
+
     <div class="stats-container">
       <div class="section-header">
-        <h2>
-        Find a doctor near you
-        </h2>
+        <h2>Find a doctor near you</h2>
         <p>Dermatologists specialized on your condition</p>
       </div>
       <div class="map-container">
@@ -111,7 +91,7 @@
               params[:query],
               class: "form-control-map", id: "doctor_address",
               placeholder: "Find a doctor"%>
-              <%= submit_tag "Submit" , class: "btn btn-solid", id: "map-submit", onclick: "scrollToMapBottom();" %>
+              <%= submit_tag "Find" , class: "btn btn-solid", id: "map-submit", onclick: "scrollToMapBottom();" %>
             <% end %>
         </div>
         <div id="map"
@@ -124,3 +104,18 @@
       </div>
     </div>
   </div>
+</div>
+</div>
+
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+   <h5>SkinClean</h5>
+  </div>
+</div>

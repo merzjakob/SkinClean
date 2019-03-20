@@ -9,6 +9,7 @@
 }
 
 .mapboxgl-popup-content {
+  position: relative;
   text-align: center;
   font-family: 'Open Sans', sans-serif;
 }
@@ -23,7 +24,7 @@
 }
 
 .marker {
-  border-radius: 10px;
+  border-radius: 50px;
 }
 
 .process-card-image {
@@ -39,4 +40,8 @@
   margin-bottom: 10px;
 }
 
-
+.mapboxgl-popup-close-button {
+  position: absolute;
+  left: 0px;
+  top:0px;
+}

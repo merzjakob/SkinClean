@@ -17,6 +17,6 @@ bannerArrowScroll();
 global.chatController = chatController;
 initSweetalert('#sweet-alert-demo', {
   title: "Still pending",
-  text: "Please wait for the doctor's diagnosis",
+  text: "The doctor has not yet given his prescriptions.",
   icon: "warning"
 });
