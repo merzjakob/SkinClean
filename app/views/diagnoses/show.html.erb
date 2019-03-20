@@ -67,32 +67,30 @@
         </div>
         <div class="buy-hidden">
           <%= link_to "Buy", diagnosis_path(@diagnosis), class: "btn btn-solid" %>
-          <!-- <i class="fas fa-chevron-down"></i> -->
         </div>
-        <!-- <div class="sign-hidden">
-          <i class="fas fa-chevron-down"></i>
-        </div> -->
       </div>
       <div class="clicked">
         <div class="medicine-pic">
           <%= cl_image_tag medicine.medicine_picture, class: "movie-img" %>
         </div>
-        <div class="name-med">
-         <h1><%= medicine.name %></h1>
+        <div class="buy-hidden">
+          <div class="name-med">
+            <h1><%= medicine.name %></h1>
+          </div>
+          <div class="price-med">
+            <h4><span class="euro">$</span><%= medicine.price_per_unit %></h4>
+          </div>
         </div>
         <div class="description-hidden">
-         <h5><em>Description and Risks:</em></h5>
-          <%= medicine.description %>
-        </div>
-        <div class="price-med">
-          <p><%= medicine.price_per_unit %>€</p>
+          <h5><em>Description and Risks:</em></h5>
+          <p><%= medicine.description %></p>
         </div>
         <div class="risk-med">
-          <%= medicine.risk %>
+          <p><%= medicine.risk %></p>
         </div>
-        <div class="buy-hidden">
+        <div class="buy-button">
+          <!-- <i class="fas fa-chevron-down", id="down"></i> -->
           <%= link_to "Buy", diagnosis_path(@diagnosis), class: "btn btn-solid" %>
-          <!-- <i class="fas fa-chevron-down"></i> -->
         </div>
       </div>
     </div>
@@ -102,7 +100,7 @@
     <div class="stats-container">
       <div class="section-header">
         <h2>
-          Find a doctor near you
+        Find a doctor near you
         </h2>
         <p>Dermatologists specialized on your condition</p>
       </div>
@@ -126,9 +124,3 @@
       </div>
     </div>
   </div>
-<!--   <div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-2">
-<div class="process-card small">
-< @diagnosis.doctor.address %>
-< link_to "Find", diagnosis_path(@diagnosis), class: "btn btn-solid" %>
-</div>
-</div> -->
