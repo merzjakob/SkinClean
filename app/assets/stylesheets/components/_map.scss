@@ -13,8 +13,9 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-.main-container {
+#search-map {
   display: flex;
+  margin-bottom: 10px !important;
 }
 
 .map-container {
@@ -36,3 +37,14 @@
 .process-card-image {
   padding-top: 10px;
 }
+
+#map {
+  overflow: hidden;
+}
+
+.mapboxgl-canvas {
+  padding: 0px !important;
+  margin-bottom: 10px;
+}
+
+
