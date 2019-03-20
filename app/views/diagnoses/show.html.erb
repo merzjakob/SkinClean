@@ -28,8 +28,8 @@
       </h2>
       <p>Official physical assessment of your condition</p>
     </div>
-    <div>
-      <%= @diagnosis.medical_assessment %>
+    <div class="assessment">
+      <p><%= @diagnosis.medical_assessment %></p>
     </div>
     <div class="section-header">
       <h2>
@@ -37,7 +37,7 @@
       </h2>
       <p>Practical tips from your doctor</p>
     </div>
-    <div>
+    <div class="assessment">
       <p> <%= @diagnosis.recommendation %></p>
     </div>
   </p>
