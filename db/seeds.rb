@@ -30,12 +30,12 @@ doctor3 = Doctor.create!(introduction: 'I am a good doctor', profile_picture: 'h
 puts 'Creating questions..'
 question1 = Question.create!(title: "Hi, my name is Jude. I am SkinClean's chatbot and I will personally assist you in getting discrete, professional advice for your skin problems. Up to 85% of adolescents have acne at one point in their life. So no need to feel embarassed. We can help you. What should I call you throughout our conversation?", multiple_choice: false)
 question2 = Question.create!(title: 'Great, let us start with the first question: What percentage of your face would you say is covered in acne scars?', multiple_choice: true)
-question3 = Question.create!(title: 'Thank you, facial scars significantly impair life quality, but we can actively do something agains it. How often do you have deep, painful nodules on your face?', multiple_choice: true)
+question3 = Question.create!(title: 'Thank you, facial scars significantly impair life quality, but we can actively do something against them. Our doctors will provide you with individualized assessments after submitting your information. How often do you have deep, painful nodules on your face?', multiple_choice: true)
 question4 = Question.create!(title: 'How often do you have painful nodules on areas of your body other than your face?', multiple_choice: true)
-question5 = Question.create!(title: 'How much of your face is covered with pus-filled blemishes?', multiple_choice: true)
-question6 = Question.create!(title: 'What percentage of your face is covered with blackheads or whiteheads?', multiple_choice: true)
-question7 = Question.create!(title: 'How much of your face is covered with red blemishes without pus?', multiple_choice: true)
-question8 = Question.create!(title: 'Thank you for your trust, we will now ask you to upload a picture to allow for the creation of an optimal, personalized diagnosis.', multiple_choice:false, photo:true)
+question5 = Question.create!(title: 'Thank you for providing us with the valuable information. How much of your face is covered with pus-filled blemishes?', multiple_choice: true)
+question6 = Question.create!(title: 'We are almost there, only two more questions! What percentage of your face is covered with blackheads or whiteheads?', multiple_choice: true)
+question7 = Question.create!(title: 'Did you know that acne is the most common skin condition in the US? You are not alone and we are here to help you. For the final question could you please tell me how much of your face is covered with red blemishes without pus?', multiple_choice: true)
+question8 = Question.create!(title: 'Thank you for your trust, we will now ask you to upload a picture to allow for the creation of an optimal, personalized diagnosis. Whenever you are ready, take the picture and submit for diagnosis', multiple_choice:false, photo:true)
 
 puts 'Creating text answers'
 answer1 = Answer.create!(content: '', question: question1)
