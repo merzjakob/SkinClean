@@ -10,7 +10,7 @@
       <h2>Dr. <%= @diagnosis.doctor.user.full_name %></h2>
       <p>Your trusted physican advising you</p>
     </div>
-    <div class="process-card big">
+    <div class="doctor-diagnosis">
       <div class="process-card-image-container">
         <div class="doc-circle">
           <%= cl_image_tag @diagnosis.doctor.profile_picture, class: 'process-card-image'%>
