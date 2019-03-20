@@ -107,12 +107,12 @@
       <div class="map-container">
         <div id="search-map">
           <%= form_tag diagnosis_path, method: :get do %>
-            <%= text_field_tag :query,
-              params[:query],
-              class: "form-control-map", id: "doctor_address",
-              placeholder: "Find a doctor"%>
-              <%= submit_tag "Submit" , class: "btn btn-solid", id: "map-submit", onclick: "scrollToMapBottom();" %>
-            <% end %>
+          <%= text_field_tag :query,
+          params[:query],
+          class: "form-control-map", id: "doctor_address",
+          placeholder: "Find a doctor"%>
+          <%= submit_tag "Submit" , class: "btn btn-solid", id: "map-submit", onclick: "scrollToMapBottom();" %>
+          <% end %>
         </div>
         <div id="map"
           style="width: 100%;
@@ -122,5 +122,17 @@
           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>
       </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="footer-links">
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+    <div class="footer-copyright">
+      <h5>SkinClean</h5>
     </div>
   </div>
