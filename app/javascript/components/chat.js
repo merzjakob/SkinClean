@@ -10,7 +10,9 @@ const chatController = {
     const messages = document.querySelector('.messages-list');
     messages.insertAdjacentHTML('beforeend', messageHTML);
     this.scrollToLastMessage();
-    this.jumpingDots();
+    if (!(document.querySelector('.chatMessages img'))){
+      this.jumpingDots()
+    }
   },
   // Insert next question
   addNextQuestion: function(questionHTML, isPhoto) {
@@ -32,10 +34,12 @@ const chatController = {
       });
     };
   },
-  
+
   // allow screen capture as picture
   takeSelfie: function() {
     if (document.getElementById("canvas")) {
+      const submit = document.getElementById('submitchat')
+      submit.classList.toggle("hide");
       const snap = document.getElementById("snap")
       const canvas = document.getElementById("canvas")
       const video = document.getElementById("video")
@@ -43,12 +47,13 @@ const chatController = {
         video.classList.toggle("hide");
         canvas.classList.toggle("hide");
         canvas.classList.toggle("pulsate-bck");
+        submit.classList.toggle("hide");
+        snap.classList.toggle("hide");
       };
     }
   },
   // insert jumping dots on wait
   jumpingDots: function() {
-    console.log(" JUMPING!!!!!!!")
     if (document.getElementById('wave')) {
       const wave = document.getElementById('wave')
       wave.classList.toggle("hide")
@@ -76,7 +81,7 @@ const chatController = {
 
     // Trigger photo take
     document.getElementById('snap').addEventListener('click', function(event) {
-    context.drawImage(video, 0, 0, 250, 200);
+    context.drawImage(video, 0, 0, 250, 350);
     const encoded = canvas.toDataURL();
     // const decoded = atob(encoded.split(",")[1]);
     formInput.value = encoded;

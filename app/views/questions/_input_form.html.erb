@@ -6,8 +6,8 @@
     <% else %>
         <% if question.photo %>
 
-          <video id="video" width="250" height="200" autoplay></video>
-          <canvas id="canvas" class="hide" width="250" height="200"></canvas><br>
+          <video id="video" width="250" height="350" autoplay></video>
+          <canvas id="canvas" class="hide" width="250" height="350"></canvas>
           <button id="snap"><i class="fas fa-camera"></i></button>
           <input type="text" hidden value="" id="patient_answer_photo" name="patient_answer[photo]">
 
@@ -26,6 +26,6 @@
   <% end %>
 <% else  %>
 <div class="flex-submit">
-  <%=  link_to 'Submit', diagnoses_path, method: :post, class: "btn btn-solid"%>
+  <%=  link_to 'Submit for Diagnosis', diagnoses_path, method: :post, class: "btn btn-solid"%>
 </div>
 <% end %>
