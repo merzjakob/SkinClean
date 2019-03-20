@@ -28,14 +28,14 @@ doctor2 = Doctor.create!(introduction: 'I am a good doctor', profile_picture: 'h
 doctor3 = Doctor.create!(introduction: 'I am a good doctor', profile_picture: 'https://hcplive.s3.amazonaws.com/v1_media/_image/happydoctor.jpg', license: '1234', user: user5, address: "Carrer de la Marina 212", city: "Barcelona")
 
 puts 'Creating questions..'
-question1 = Question.create!(title: "Hi, my name is Jude. I am SkinClean's chatbot and I will personally assist you in getting discrete, professional advice for your skin problems. What should I call you throughout this process?", multiple_choice: false)
-question2 = Question.create!(title: 'What percentage of your face would you say is covered in acne scars?', multiple_choice: true)
-question3 = Question.create!(title: 'How often do you have deep, painful nodules on your face?', multiple_choice: true)
+question1 = Question.create!(title: "Hi, my name is Jude. I am SkinClean's chatbot and I will personally assist you in getting discrete, professional advice for your skin problems. Up to 85% of adolescents have acne at one point in their life. So no need to feel embarassed. We can help you. What should I call you throughout our conversation?", multiple_choice: false)
+question2 = Question.create!(title: 'Great, let us start with the first question: What percentage of your face would you say is covered in acne scars?', multiple_choice: true)
+question3 = Question.create!(title: 'Thank you, facial scars significantly impair life quality, but we can actively do something agains it. How often do you have deep, painful nodules on your face?', multiple_choice: true)
 question4 = Question.create!(title: 'How often do you have painful nodules on areas of your body other than your face?', multiple_choice: true)
 question5 = Question.create!(title: 'How much of your face is covered with pus-filled blemishes?', multiple_choice: true)
 question6 = Question.create!(title: 'What percentage of your face is covered with blackheads or whiteheads?', multiple_choice: true)
 question7 = Question.create!(title: 'How much of your face is covered with red blemishes without pus?', multiple_choice: true)
-question8 = Question.create!(title: 'Please upload a photo', multiple_choice:false, photo:true)
+question8 = Question.create!(title: 'Thank you for your trust, we will now ask you to upload a picture to allow for the creation of an optimal, personalized diagnosis.', multiple_choice:false, photo:true)
 
 puts 'Creating text answers'
 answer1 = Answer.create!(content: '', question: question1)
@@ -60,7 +60,7 @@ puts 'Creating Q5 answers'
 answer16 = Answer.create!(content: 'More than 25%', question: question5)
 answer17 = Answer.create!(content: "Between 10% and 25%", question: question5)
 answer18 = Answer.create!(content: "Less than 10%", question: question5)
-answer19 = Answer.create!(content: "I don't have any red bumps that are filled with pus", question: question5)
+answer19 = Answer.create!(content: "I don't have any red bumps filled with pus", question: question5)
 puts 'Creating Q6 answers'
 answer20 = Answer.create!(content: "More than 25%", question: question6)
 answer21 = Answer.create!(content: "Between 10% and 25%", question: question6)
@@ -70,17 +70,18 @@ puts 'Creating Q7 answers'
 answer24 = Answer.create!(content: "More than 25%", question: question7)
 answer25 = Answer.create!(content: "Between 10% and 25%", question: question7)
 answer26 = Answer.create!(content: "Less than 10%", question: question7)
-answer27 = Answer.create!(content: "I don't have any red bumps without pus", question: question7)
+answer27 = Answer.create!(content: "I don't have red bumps without pus", question: question7)
 puts 'All answers created!'
 
 
 puts 'Creating medicines...'
-medicine1 = Medicine.create!(name: 'Aspirin', description: 'This helps with hangovers', risk: 'drowning', price_per_unit: 3, medicine_picture: 'https://hcplive.s3.amazonaws.com/v1_media/_image/happydoctor.jpg')
-medicine2 = Medicine.create!(name: 'Ibuprofen', description: 'This helps with hangovers', risk: 'drowning', price_per_unit: 5, medicine_picture: 'https://hcplive.s3.amazonaws.com/v1_media/_image/happydoctor.jpg')
+medicine1 = Medicine.create!(name: 'Aspirin', description: "Acanya Gel is a prescription medication that contains two acne-fighting ingredients: benzoyl peroxide and clindamycin.  It’s used to treat mild to moderate inflammatory breakouts, as well as severe acne.  It helps improve bumps and blackheads too.", risk: "The side effects are pretty typical of most topical acne medications: mild itching, burning, and dryness.
+  The side effects are usually worse during the first few weeks of treatment, and peak about week four.  The good news is, dryness and irritation slowly subside over time and after about three months or so your skin is back to where it was before you started treatment (but most likely, with fewer breakouts).", price_per_unit: 3, medicine_picture: 'https://www.empr.com/wp-content/uploads/sites/7/2018/12/acanya_pump_photo_204476.jpg')
+medicine2 = Medicine.create!(name: 'Benzamycin', description: "Benzamycin gel is applied topically to all areas affected by acne. It works by killing the Propionibacterium acnes (P. acnes). Benzamycin seems to have the greatest effect on inflammatory acne breakouts, such as papules and pustules.
+It may take a while before you start noticing improvement of the skin, so don't give up on your medication too quickly. You may find your acne actually gets a bit worse before getting better.", risk: "Like most acne medications, the most common side effect of Benzamycin is dryness and peeling. Other side effects can include: stinging, burning or itching, redness, and irritation, increased sensitivity to the sun, skin discoloration (hyperpigmentation or hypopigmentation)", price_per_unit: 5, medicine_picture: 'http://miraremedios.cl/wp-content/uploads/2017/03/Benzac.png')
 
 puts 'Creating diagnosis...'
-diagnosis1 = Diagnosis.create!(user: user2, doctor: doctor1, recommendation: 'Sorry, there is nothing I can do here', medical_assessment: 'this is bad!')
-diagnosis1 = Diagnosis.create!(user: user2, doctor: doctor1, recommendation: 'Several home remedies and over-the-counter medications can treat minor-to-mild papules and pustules. The following tips can help: Washing the affected area with cool water and soap using clean hands or a clean, gentle facecloth twice a day. Applying a warm compress or cloth - available to buy in pharmacies and online - to the affected area for 10–15 minutes to encourage trapped debris to rise to the surface. Using products with benzoyl peroxide to combat bacteria. Using products with salicylic acid to remove dead skin cells and other debris', medical_assessment: 'Most active ingredients in over-the-counter products are available in prescription-strength treatments. Dermatologists can also remove lesions that are very large or persistent. They can also remove those that do not respond to other forms of treatment. Always see a doctor or dermatologist about nodules and cysts, because these require medical care. Untreated nodules and cysts and those that have been picked or popped can cause scarring.', status: 'Diagnosed')
+diagnosis1 = Diagnosis.create!(user: user2, doctor: doctor1, recommendation: 'I recommend washing your face once or twice a day using a mild facial cleanser and lukewarm water. Furthermore, you should apply topical products that come in gels, creams, solutions and lotions. I have provided a selection of those below. If that does not help significantly within the next two weeks, please go through the SkinClean assessment process again to see the progress and provide you with some oral antibiotics, if needed.', medical_assessment: 'You seem to have Acne vulgaris characterized by comedones, papules, pustules, and nodules in the face. A comedone is a whitehead (closed comedone) or a blackhead (open comedone). You do not have any clinical signs of inflammation.', status: 'Diagnosed')
 
 puts 'Creating patient answer...'
 PatientAnswer.create!(question: question1, diagnosis: diagnosis1, user: user1, content: "Jakob")
