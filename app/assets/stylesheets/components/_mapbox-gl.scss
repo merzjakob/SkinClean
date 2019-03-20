@@ -13,26 +13,30 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-.main-container {
+#search-map {
   display: flex;
+  margin-bottom: 10px !important;
 }
 
 .map-container {
   margin: 10px;
 }
 
-/*.doctor_address {
-  position: absolute;
-}*/
-
 .marker {
   border-radius: 10px;
 }
 
-/*.doctor-pic-card {
-  border-radius: 50px;
-}*/
-
 .process-card-image {
   padding-top: 10px;
 }
+
+#map {
+  overflow: hidden;
+}
+
+.mapboxgl-canvas {
+  padding: 0px !important;
+  margin-bottom: 10px;
+}
+
+

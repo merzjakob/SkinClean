@@ -18,6 +18,7 @@
                 </div>
                   <div class="diagnosis-status">
                     <p>Dr. <%=diagnosis.doctor.user.full_name%> recommends:</p>
+                    <%= link_to "Diagnosis", diagnosis_path(diagnosis), class: "card-link" %>
                   </div>
                   <div class="recommendation">
                     <div class="recommendation-element">
@@ -40,23 +41,8 @@
             <div class="diagnosis-time">
               <p>Submitted: <%= Date.parse(diagnosis.created_at.to_s).strftime("%d of %B, %Y") %></p>
             </div>
-              <%= link_to "Diagnosis", diagnosis_path(diagnosis), class: "card-link" %>
           </div>
         <% end%>
       </div>
     </div>
 </div>
-
-<div class="footer-index">
-  <div class="footer-links">
-    <a href="#"><i class="fab fa-twitter"></i></a>
-    <a href="#"><i class="fab fa-github"></i></a>
-    <a href="#"><i class="fab fa-facebook"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-linkedin"></i></a>
-  </div>
-  <div class="footer-copyright">
-   <h5>SkinClean</h5>
-  </div>
-</div>
-

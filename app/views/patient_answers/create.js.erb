@@ -2,9 +2,7 @@
   chatController.refreshForm('<%= j render  "questions/input_form", question: @question, patient_answer: @patient_answer %>');
 <% else %>
   chatController.addMessage('<%= j render "questions/answer", question: @question, answer: @patient_answer %>');
-  // chatController.jumpingDots();
   setTimeout(function(){
-    // chatController.jumpingDots();
     chatController.refreshForm('<%= j render  "questions/input_form", question: current_user.next_question, patient_answer: PatientAnswer.new %>');
     <% if question = current_user.next_question %>
       chatController.addNextQuestion('<%= j render "questions/question", question: question %>', "<%= question.photo? %>")
