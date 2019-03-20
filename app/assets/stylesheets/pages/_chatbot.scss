@@ -31,9 +31,14 @@
       padding-bottom: 5px;
       width: 100%;
       flex-grow: 1;
-
       // min-height: 600px;
   }
+
+  // li {
+  //   transition: all 5s ease-out;
+  //   transform: translateY(0);
+  // }
+
   .chatMessages::-webkit-scrollbar {
         display: none;
   }
@@ -100,9 +105,6 @@
     border-radius: 4px;
     position: relative;
     margin: 0 0 7%;
-    transition-timing-function: ease;
-  transition: 2s;
-  transform: translateY(0);
     img {
       width: 100%;
 
@@ -248,20 +250,6 @@
   }
 }
 @-webkit-keyframes pulsate-bck {
-  0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  50% {
-    -webkit-transform: scale(0.9);
-            transform: scale(0.9);
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
-@keyframes pulsate-bck {
   0% {
     -webkit-transform: scale(1);
             transform: scale(1);
