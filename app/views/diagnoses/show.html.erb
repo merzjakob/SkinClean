@@ -42,45 +42,45 @@
       <hr>
     </h2>
   </div>
-  <div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-2">
+
+<div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-2">
     <div class="section-header">
       <h2> Recommended medicine </h2>
       <p> Immediate help to make you feel better </p>
-    <div class="medicine-box">
-      <% @medicines.each do |medicine| %>
-        <div class="medicine-card-visible">
-          <div class="not-clicked">
-            <div class="medicine-pic"><%= cl_image_tag medicine.medicine_picture %></div>
-              <div class="name-med"><%= medicine.name %></div>
-                <div class="buy-hidden">
-                  <%= link_to "Buy", diagnosis_path(@diagnosis), class: "btn btn-solid" %>
-                </div>
-          </div>
-            <div class="clicked">
-              <div class="medicine-pic"><%= cl_image_tag medicine.medicine_picture, class: "movie-img" %></div>
-                <div class="buy-hidden">
-                  <div class="name-med">
-                    <h1><%= medicine.name %></h1>
-                  </div>
-                  <div class="price-med">
-                    <h4><span class="euro">$</span><%= medicine.price_per_unit %></h4>
-                  </div>
-                </div>
-                <div class="description-hidden">
-                  <h5><em>Description and Risks:</em></h5>
-                  <p><%= medicine.description %></p>
-                </div>
-                <div class="risk-med">
-                  <p><%= medicine.risk %></p>
-                </div>
-                <div class="buy-button">
-                  <!-- <i class="fas fa-chevron-down", id="down"></i> -->
-                  <%= link_to "Buy", diagnosis_path(@diagnosis), class: "btn btn-solid" %>
-                </div>
-            </div>
-          </div>
-        <% end %>
+    </div>
+    <div class="accordian">
+        <ul>
+          <% @medicines.each do |medicine| %>
+            <li>
+              <h3>
+                <span class="arrow"></span> <%= medicine.name %>
+              </h3>
+              <ul>
+                <li>
+                  <div class="med-header">
+                    <div class="medicine-pic"><%= cl_image_tag medicine.medicine_picture %>
+                    </div>
+                    <div>
+                      <%= medicine.name %>
+                      <h4><span class="euro">$</span><%= medicine.price_per_unit %></h4>
+                      <div class="buy-button">
+                        <%= link_to "Buy", diagnosis_path(@diagnosis), class: "btn btn-solid" %>
+                      </div>
 
+                    </div>
+
+                  </div>
+                  <p><%= medicine.description %></p>
+                  <p><%= medicine.risk %></p>
+                </li>
+              </ul>
+            </li>
+          <% end %>
+        </ul>
+    </div>
+</div>
+
+<!-- Map -->
     <div class="stats-container">
       <div class="section-header">
         <h2>Find a doctor near you</h2>
