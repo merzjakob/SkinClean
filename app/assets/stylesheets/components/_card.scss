@@ -41,7 +41,7 @@
 
 hr {
   border-radius: 4px;
-  border-top: 4px solid #1AB06D !important;
+  border-top: 10px solid #1AB06D !important;
   width: 25%;
 }
 
@@ -75,6 +75,9 @@ mark.green {
     padding-bottom: 50px;
     .btn {
       padding: 12px 40px;
+    }
+    a.btn:focus {
+    color: white;
     }
 }
 
