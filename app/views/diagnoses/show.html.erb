@@ -37,68 +37,81 @@
       <h2>
       <mark class="green">Next steps</mark>
       <hr>
-      </h2>
+    </h2>
+  </div>
+
+<div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-2">
+    <div class="section-header">
+      <h2> Recommended medicine </h2>
+      <p> Immediate help to make you feel better </p>
     </div>
-    <div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-2">
-      <div class="section-header">
-        <h2> Recommended medicine </h2>
-        <p> Immediate help to make you feel better </p>
-        <div class="medicine-box">
+    <div class="accordian">
+        <ul>
           <% @medicines.each do |medicine| %>
-          <div class="medicine-card-visible">
-            <div class="not-clicked">
-              <div class="medicine-pic"><%= cl_image_tag medicine.medicine_picture %></div>
-              <div class="name-med"><%= medicine.name %></div>
-              <div class="buy-hidden">
-                <%= link_to "Buy", diagnosis_path(@diagnosis), class: "btn btn-solid" %>
-              </div>
-            </div>
-            <div class="clicked">
-              <div class="medicine-pic"><%= cl_image_tag medicine.medicine_picture, class: "movie-img" %></div>
-              <div class="buy-hidden">
-                <div class="name-med">
-                  <h1><%= medicine.name %></h1>
-                </div>
-                <div class="price-med">
-                  <h4><span class="euro">$</span><%= medicine.price_per_unit %></h4>
-                </div>
-              </div>
-              <div class="description-hidden">
-                <h5><em>Description and Risks:</em></h5>
-                <p><%= medicine.description %></p>
-              </div>
-              <div class="risk-med">
-                <p><%= medicine.risk %></p>
-              </div>
-              <div class="buy-button">
-                <!-- <i class="fas fa-chevron-down", id="down"></i> -->
-                <%= link_to "Buy", diagnosis_path(@diagnosis), class: "btn btn-solid" %>
-              </div>
-            </div>
-          </div>
+            <li>
+              <h3>
+                <span class="arrow"></span> <%= medicine.name %>
+              </h3>
+              <ul>
+                <li>
+                  <div class="med-header">
+                    <div class="medicine-pic"><%= cl_image_tag medicine.medicine_picture %>
+                    </div>
+                    <div class="med-info-header">
+                      <h4>
+                        <%= medicine.name %>
+                      </h4>
+                      <div class="flex">
+                        <div class="price-med">
+                          <h4>
+                            <i class="fas fa-dollar-sign">
+                              <%= medicine.price_per_unit %>
+                            </i>
+                          </h4>
+                        </div>
+                        <div class="buy-button">
+                          <%= link_to "Buy", diagnosis_path(@diagnosis), class: "btn btn-solid fixed" %>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                    <div class="section-header no-font-style">
+                    <h2>Description:</h2>
+                    <p><%= medicine.description %></p>
+                    <h2>Risks:</h2>
+                    <p><%= medicine.risk %></p>
+                    </div>
+                </li>
+              </ul>
+            </li>
           <% end %>
-            <div class="section-header">
-              <h2>Find a doctor near you</h2>
-              <p>Dermatologists specialized on your condition</p>
-            </div>
-            <div class="map-container">
-              <div id="search-map">
-                <%= form_tag diagnosis_path, method: :get do %>
-                <%= text_field_tag :query,
-                params[:query],
-                class: "form-control-map", id: "doctor_address",
-                placeholder: "Find a doctor"%>
-                <%= submit_tag "Find" , class: "btn btn-solid", id: "map-submit", onclick: "scrollToMapBottom();" %>
-                <% end %>
-              </div>
-              <div id="map"
-                style="width: 100%;
-                margin-bottom: 50px;
-                height: 600px;"
-                data-markers="<%= @markers.to_json %>"
-                data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-              </div>
-            </div>
+        </ul>
+    </div>
+</div>
+
+<!-- Map -->
+    <div class="stats-container">
+      <div class="section-header">
+        <h2>Find a doctor near you</h2>
+        <p>Dermatologists specialized on your condition</p>
+      </div>
+      <div class="map-container">
+        <div id="search-map">
+          <%= form_tag diagnosis_path, method: :get do %>
+            <%= text_field_tag :query,
+              params[:query],
+              class: "form-control-map", id: "doctor_address",
+              placeholder: "Find a doctor"%>
+              <%= submit_tag "Find" , class: "btn btn-solid", id: "map-submit", onclick: "scrollToMapBottom();" %>
+            <% end %>
+
+        </div>
+        <div id="map"
+          style="width: 100%;
+          margin-bottom: 50px;
+          height: 600px;"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>
       </div>
     </div>

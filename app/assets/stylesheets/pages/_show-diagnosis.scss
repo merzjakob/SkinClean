@@ -16,7 +16,6 @@
 //   // flex: none;
 //   background-size: contain;
   }
-
 }
 
 .section-header {
@@ -35,86 +34,154 @@
   }
 }
 
+
 // .process-card-description {
 //   width: 100%;
 // }
 
+// Medicine styling
 
-.medicine-card-visible {
-  display:block;
-}
-
-.medicine-card-visible >.not-clicked {
-  display: flex;
-  align-items: center;
-  justify-content:space-between;
-  padding: 10px;
-  border-bottom: 1px solid rgba(220,224,244,0.4);
-  text-align: top;
-  height: 80px;
-}
-
-.medicine-card-invisible >.not-clicked {
-  display: none;
-  align-items: center;
-  justify-content:space-between;
-  padding: 10px;
-  border-bottom: 1px solid rgba(220,224,244,0.4);
-  text-align: top;
-}
-
-.medicine-card-visible img {
-height:70px;
-width:70;
-}
-
- .medicine-card-invisible {
-  .clicked {
-      display: block;
-      align-items: center;
-      justify-content:space-between;
-      padding: 10px;
-      border-bottom: 1px solid rgba(220,224,244,0.4);
-      text-align: left;
-    .buy-hidden{
-      display:flex;
-      justify-content:space-between;
-      text-align: center;
+.accordian {
+    width: 100%;
+    color: rgb(100,100,100);
+    transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+    font-weight: 100;
+    letter-spacing: 0.035em;
+    font-size: 14px;
+    margin: 0 auto;
+    ul > li {
+        margin-bottom: 8px;
+        &:first-child h3 {
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
     }
+    h3 {
+        cursor: pointer;
+        background-color: #F6F6F6;
+        padding: 1.2rem 1rem 1rem 1.2rem;
+        margin: 0;
+        border-bottom: 1px solid #F6F6F6;
+        display: block;
+        font-weight: 450;
+        letter-spacing: 0.035em;
+        position: relative;
+        font-size: 18px;
+        transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.24);
+        border-radius: 3px;
+        &.closed {
+            color: #1AB06D;
+            background-color: white;
+        }
+        &:hover .arrow {
+            border-top: 3px solid #1AB06D;
+            border-right: 3px solid #1AB06D;
+        }
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      ul {
+          display: none;
+          height: 100%;
+          margin-bottom: -7px;
+          li {
+              background-color: #fff;
+              padding: 1rem 5px;
+              color: black;
+              box-shadow: none;
+              border-left: 1px solid #dfdfdf;
+              border-right: 1px solid #dfdfdf;
+              border-bottom: 1px solid #dfdfdf;
+              p {
+                  opacity: 0;
+                  transition: all 0.5s;
+                  transform: translatey(-20px);
+              }
+          }
+          &.open p {
+              opacity: 0.9;
+              transform: translatey(0px);
+          }
+      }
+    }
+
+    .arrow {
+        position: relative;
+        right: 10px;
+        top: 8px;
+        width: 8px;
+        height: 8px;
+        border-top: 3px solid #1AB06D;
+        border-right: 3px solid #1AB06D;
+        transform: rotate(135deg);
+        transform-origin: center;
+        float: right;
+        margin-right: 8px;
+        transition: transform 600ms cubic-bezier(0.175, 0.885, 0.32, 1);
+        &.closed {
+            margin-top: 4px;
+            transform: rotate(-45deg);
+            border-top: 3px solid #1AB06D;
+            border-right: 3px solid #1AB06D;
+        }
+    }
+    h4 {
+    text-align: center;
+    margin: 10px 10px 30px 10px;
+    color: #999;
+    font-size: 1.5em;
+    }
+}
+
+.no-font-style {
+  p {
+    font-style: normal !important;
   }
 }
 
-.clicked >.buy-hidden h4{
-  margin: 0px;
-  color:#1AB06D;
+.med-header {
+  display: flex;
+  .medicine-pic {
+    width:50%;
+    align-items: center;
+    display: block;
+
+    img {
+      max-width:100%;
+      height: auto;
+      margin-left: auto;
+      margin-top: auto;
+      vertical-align: middle;
+    }
+  }
+  .btn {
+    height: 35%;
+  }
+  .flex {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    h4 {
+      margin: 0;
+    }
+  }
+  .price-med {
+    margin-left: 10px;
+  }
+  .buy-button {
+    display:flex;
+    justify-content:flex-end;
+  }
+  .med-info-header {
+    padding: 20px;
+    width: 50%;
+    height: inherit;
+    align-items: center;
+  }
 }
 
-.price-med {
-  margin-top:15px;
-  margin-right: 10px;
-}
-
-.buy-button {
-  display:flex;
-  justify-content:flex-end;
-}
-
-#down {
-  margin-right:115px;
-  margin-top:5px;
-}
-
-.medicine-card-visible >.clicked {
-  display: none;
-  align-items: center;
-  justify-content:space-between;
-  padding: 10px;
-  border-bottom: 1px solid rgba(220,224,244,0.4);
-  text-align: top;
-  height: 80px;
-}
-
-
+// Map styling
 
 #search-map {
   width: 250px;
@@ -125,104 +192,4 @@ width:70;
   border-radius: 5px;
   padding-top: 20px;
   padding-bottom: 50px;
-}
-
-// .medicine-box {
-//   display:flex;
-// }
-
-
-.euro {
-      font-size: 20px;
-    margin-right: 4px;
-    vertical-align: bottom;
-}
-// .medicine-card-visible h3{
-//   font-size: 18px;
-//   margin: 0px 0px;
-// }
-// .medicine-card-visible p {
-//   font-size: 15px;
-//   font-weight: lighter;
-//   opacity: 0.8;
-//   margin: 5px 0px;
-// }
-
-// .medicine-card-visible img {
-// height:70px;
-// width:70;
-// }
-
-// .medicine-card-visible >.description-hidden{
-//   display:none;
-// }
-
-// .medicine-card-visible >.buy-hidden{
-//   display:block;
-// }
-
-// .medicine-card-visible > .clicked {
-//   display:none;
-// }
-
-// .medicine-card-invisible {
-//   display: block;
-//   align-items: center;
-//   justify-content:space-between;
-//   padding: 10px;
-//   border-bottom: 1px solid rgba(220,224,244,0.4);
-//   text-align: top;
-// }
-
-// .medicine-card-invisible h3{
-//   font-size: 18px;
-//   margin: 0px 0px;
-
-// }
-// .medicine-card-invisible p {
-//   font-size: 15px;
-//   font-weight: lighter;
-//   opacity: 0.8;
-//   margin: 5px 0px;
-// }
-
-// .medicine-card-invisible img {
-// height:140px;
-// width:140;
-// }
-
-// .medicine-card-invisible >.description-hidden{
-//   display:block;
-// }
-
-// .medicine-card-invisible >.buy-hidden{
-//   display:block;
-// }
-
-// .medicine-card-invisible >.sign-hidden{
-//   display:none;
-// }
-
-// .medicine-card-invisible > .not-clicked {
-//   display:none;
-// }
-
-// .medicine-card-invisible > .clicked {
-//   display:block;
-// }
-
-.movie-img {
-  width:100%;
-  height:220px;
- /*background-size: contain;*/
-  z-index:111 !important;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
-  position:relative;
-
-}
-
-.medicine-card-invisible p {
-  color:gray;
-  margin-bottom:5px;
 }
