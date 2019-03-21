@@ -1,5 +1,4 @@
 .mapboxgl-popup {
-  margin-top: -150px;
   max-width: 200px;
   padding: 10px;
   background-color: white;
@@ -44,4 +43,8 @@
   position: absolute;
   left: 0px;
   top:0px;
+}
+
+.mapboxgl-ctrl {
+  display: none;
 }

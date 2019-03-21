@@ -16,16 +16,22 @@ Doctor.destroy_all
 User.destroy_all
 
 puts 'Creating users...'
-user1 = User.create!(first_name: 'Jakob', last_name: 'Merz', email: 'jakob.merz@whu.edu', password: '123456', is_doctor: true)
+user1 = User.create!(first_name: 'Dr.', last_name: 'House', email: 'house@skinclean.xyz', password: '123456', is_doctor: true)
 user2 = User.create!(first_name: 'Antoine', last_name: 'Massot', email: 'antoine@massot.com', password: '123456', is_doctor: false)
 user3 = User.create!(first_name: 'Augustin', last_name: 'Uyttenhove', email: 'augustin@Uyttenhove.com', password: '123456', is_doctor: false)
-user4 = User.create!(first_name: 'Bruce', last_name: 'Willis', email: 'bwillis@skinclean.xyz', password: '123456', is_doctor: true)
-user5 = User.create!(first_name: 'John', last_name: 'Doe', email: 'jdoe@skinclean.xyz', password: '123456', is_doctor: true)
+user4 = User.create!(first_name: 'Dr. Douglas', last_name: 'Ross', email: 'dross@skinclean.xyz', password: '123456', is_doctor: true)
+user5 = User.create!(first_name: 'Dr. Derek Christopher', last_name: 'Shepherd', email: 'dshepherd@skinclean.xyz', password: '123456', is_doctor: true)
+user6 = User.create!(first_name: 'Dr.', last_name: 'Dolittle', email: 'dolittle@skinclean.xyz', password: '123456', is_doctor: true)
+user7 = User.create!(first_name: 'Dr. Patch', last_name: 'Adams', email: 'padams@skinclean.xyz', password: '123456', is_doctor: true)
+user8 = User.create!(first_name: 'Dr.', last_name: 'Strange', email: 'strange@skinclean.xyz', password: '123456', is_doctor: true)
 
 puts 'Creating doctors...'
-doctor1 = Doctor.create!(introduction: 'I am a good doctor', profile_picture: 'https://hcplive.s3.amazonaws.com/v1_media/_image/happydoctor.jpg', license: '1234', user: user1, address: "carrer d'en grassot 101", city: "Barcelona")
-doctor2 = Doctor.create!(introduction: 'I am a good doctor', profile_picture: 'https://hcplive.s3.amazonaws.com/v1_media/_image/happydoctor.jpg', license: '1234', user: user4, address: "Carrer de Mallorca 401, Barcelona", city: "Barcelona")
-doctor3 = Doctor.create!(introduction: 'I am a good doctor', profile_picture: 'https://hcplive.s3.amazonaws.com/v1_media/_image/happydoctor.jpg', license: '1234', user: user5, address: "Carrer de la Marina 212", city: "Barcelona")
+doctor1 = Doctor.create!(introduction: 'I am a pro!', profile_picture: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuZNI10enj-AaAluxnWEI7R15yUy0esuqb44t44kM-3mr_Nc-MCw', license: '1234', user: user1, address: "Carrer d'en grassot 101", city: "Barcelona")
+doctor2 = Doctor.create!(introduction: 'I am here for you!', profile_picture: 'https://peopledotcom.files.wordpress.com/2017/06/george-clooney2.jpg', license: '1234', user: user4, address: "Carrer de Mallorca 401, Barcelona", city: "Barcelona")
+doctor3 = Doctor.create!(introduction: 'I am a good doctor', profile_picture: 'https://i.skyrock.net/5990/60545990/pics/2438759609_1.jpg', license: '1234', user: user5, address: "Carrer de la Marina 212", city: "Barcelona")
+doctor4 = Doctor.create!(introduction: 'I am a good doctor', profile_picture: 'https://d1jo0zet24jmxt.cloudfront.net/content/14898/2fd6c5914cc444a3adf19813635f60de.jpg', license: '1234', user: user6, address: "26 Avenue de l'Opéra", city: "Paris")
+doctor5 = Doctor.create!(introduction: 'I am a good doctor', profile_picture: 'https://musicart.xboxlive.com/7/e5b61000-0000-0000-0000-000000000002/504/image.jpg?w=1920&h=1080', license: '1234', user: user7, address: "Plaza Canovas del Castillo 5", city: "Madrid")
+doctor6 = Doctor.create!(introduction: 'I am a good doctor', profile_picture: 'https://vignette.wikia.nocookie.net/disney/images/5/55/Doctor_Strange.jpg/revision/latest?cb=20180426213411&path-prefix=es', license: '1234', user: user8, address: "Pariser Platz 4A", city: "Berlin")
 
 puts 'Creating questions..'
 question1 = Question.create!(title: "Hi, my name is Jude. I am SkinClean's chatbot and I will personally assist you in getting discrete, professional advice for your skin problems. Up to 85% of adolescents have acne at one point in their life. So no need to feel embarassed. We can help you. What should I call you throughout our conversation?", multiple_choice: false)
