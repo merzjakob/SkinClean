@@ -18,7 +18,7 @@
                   <p id="approved"><%=diagnosis.status%></p>
                 </div>
                   <div class="diagnosis-status">
-                    <p>Dr. <%=diagnosis.doctor.user.full_name%> recommends:</p>
+                    <p><%=diagnosis.doctor.user.full_name%> recommends:</p>
                     <%= link_to "Diagnosis", diagnosis_path(diagnosis), class: "card-link" %>
                   </div>
                   <div class="recommendation">
