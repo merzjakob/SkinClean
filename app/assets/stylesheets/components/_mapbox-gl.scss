@@ -49,6 +49,8 @@
   display: none;
 }
 
-.header-infowindow h2 {
-  font-size: 16px;
+.header-infowindow {
+  padding-bottom: 3px;
+  font-size: 16px !important;
+  border-bottom: 2px solid #1AB06D;
 }
