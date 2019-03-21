@@ -60,18 +60,30 @@
                   <div class="med-header">
                     <div class="medicine-pic"><%= cl_image_tag medicine.medicine_picture %>
                     </div>
-                    <div>
-                      <%= medicine.name %>
-                      <h4><span class="euro">$</span><%= medicine.price_per_unit %></h4>
-                      <div class="buy-button">
-                        <%= link_to "Buy", diagnosis_path(@diagnosis), class: "btn btn-solid" %>
+                    <div class="med-info-header">
+                      <h4>
+                        <%= medicine.name %>
+                      </h4>
+                      <div class="flex">
+                        <div class="price-med">
+                          <h4>
+                            <i class="fas fa-dollar-sign">
+                              <%= medicine.price_per_unit %>
+                            </i>
+                          </h4>
+                        </div>
+                        <div class="buy-button">
+                          <%= link_to "Buy", diagnosis_path(@diagnosis), class: "btn btn-solid fixed" %>
+                        </div>
                       </div>
-
                     </div>
-
                   </div>
-                  <p><%= medicine.description %></p>
-                  <p><%= medicine.risk %></p>
+                    <div class="section-header no-font-style">
+                    <h2>Description:</h2>
+                    <p><%= medicine.description %></p>
+                    <h2>Risks:</h2>
+                    <p><%= medicine.risk %></p>
+                    </div>
                 </li>
               </ul>
             </li>

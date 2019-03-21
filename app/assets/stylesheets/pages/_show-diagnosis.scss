@@ -41,7 +41,7 @@
 
 .accordian {
     width: 100%;
-    color: #b9b9b9;
+    color: rgb(100,100,100);
     transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
     font-weight: 100;
     letter-spacing: 0.035em;
@@ -55,26 +55,25 @@
     }
     h3 {
         cursor: pointer;
-        background-color: #f7f9f9;
+        background-color: #F6F6F6;
         padding: 1.2rem 1rem 1rem 1.2rem;
         margin: 0;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+        border-bottom: 1px solid #F6F6F6;
         display: block;
-        font-weight: 400;
+        font-weight: 450;
         letter-spacing: 0.035em;
         position: relative;
         font-size: 18px;
         transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
         box-shadow: 0 1px 2px rgba(0, 0, 0, 0.24);
         border-radius: 3px;
-        &:hover,
         &.closed {
-            color: var(--dark-gray);
-            background-color: #fff;
+            color: #1AB06D;
+            background-color: white;
         }
         &:hover .arrow {
-            border-top: 2px solid var(--dark-gray);
-            border-right: 2px solid var(--dark-gray);
+            border-top: 3px solid #1AB06D;
+            border-right: 3px solid #1AB06D;
         }
     }
     ul {
@@ -87,7 +86,7 @@
           li {
               background-color: #fff;
               padding: 1rem 5px;
-              color: var(--dark-gray);
+              color: black;
               box-shadow: none;
               border-left: 1px solid #dfdfdf;
               border-right: 1px solid #dfdfdf;
@@ -99,7 +98,7 @@
               }
           }
           &.open p {
-              opacity: 1;
+              opacity: 0.9;
               transform: translatey(0px);
           }
       }
@@ -111,8 +110,8 @@
         top: 8px;
         width: 8px;
         height: 8px;
-        border-top: 2px solid black;
-        border-right: 2px solid black;
+        border-top: 3px solid #1AB06D;
+        border-right: 3px solid #1AB06D;
         transform: rotate(135deg);
         transform-origin: center;
         float: right;
@@ -121,47 +120,64 @@
         &.closed {
             margin-top: 4px;
             transform: rotate(-45deg);
-            border-top: 2px solid var(--dark-gray);
-            border-right: 2px solid var(--dark-gray);
+            border-top: 3px solid #1AB06D;
+            border-right: 3px solid #1AB06D;
         }
     }
     h4 {
     text-align: center;
-    margin: 20px 20px 50px;
+    margin: 10px 10px 30px 10px;
     color: #999;
-    font-size: 2em;
+    font-size: 1.5em;
     }
+}
+
+.no-font-style {
+  p {
+    font-style: normal !important;
+  }
 }
 
 .med-header {
   display: flex;
   .medicine-pic {
     width:50%;
-  }
+    align-items: center;
+    display: block;
 
+    img {
+      max-width:100%;
+      height: auto;
+      margin-left: auto;
+      margin-top: auto;
+      vertical-align: middle;
+    }
+  }
+  .btn {
+    height: 35%;
+  }
+  .flex {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    h4 {
+      margin: 0;
+    }
+  }
   .price-med {
-    margin-top:15px;
-    margin-right: 10px;
+    margin-left: 10px;
   }
-
   .buy-button {
     display:flex;
     justify-content:flex-end;
   }
-
+  .med-info-header {
+    padding: 20px;
+    width: 50%;
+    height: inherit;
+    align-items: center;
+  }
 }
-
-#down {
-  margin-right:115px;
-  margin-top:5px;
-}
-
-.euro {
-      font-size: 20px;
-    margin-right: 4px;
-    vertical-align: bottom;
-}
-
 
 // Map styling
 
