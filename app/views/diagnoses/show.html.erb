@@ -23,7 +23,9 @@
       <p>Official physical assessment of your condition</p>
     </div>
     <div class ="doctor-recommend">
-      <%= @diagnosis.medical_assessment %>
+      <p>
+        <%= @diagnosis.medical_assessment %>
+      </p>
     </div>
     <div class="section-header">
       <h2>
@@ -33,23 +35,24 @@
     </div>
     <div class ="doctor-recommend">
       <p> <%= @diagnosis.recommendation %></p>
+      <br>
     </div>
   </div>
   </div> <!-- end of the first wrapper-light-grey -->
-  <div class="wrapper-white">
-    <div class="stats-container">
-      <h2>
+<div class="wrapper-white">
+  <div class="stats-container">
+    <h2>
       <mark class="green">Next steps</mark>
       <hr>
     </h2>
   </div>
 
 <div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-2">
-    <div class="section-header">
-      <h2> Recommended medicine </h2>
-      <p> Immediate help to make you feel better </p>
-    </div>
-    <div class="accordian">
+  <div class="section-header">
+    <h2> Recommended medicine </h2>
+    <p> Immediate help to make you feel better </p>
+  </div>
+  <div class="accordian">
         <ul>
           <% @medicines.each do |medicine| %>
             <li>
@@ -90,16 +93,15 @@
             </li>
           <% end %>
         </ul>
-    </div>
-</div>
+  </div>
+
 
 <!-- Map -->
-    <div class="stats-container">
-      <div class="section-header">
-        <h2>Find a doctor near you</h2>
-        <p>Dermatologists specialized on your condition</p>
-      </div>
-      <div class="map-container">
+  <div class="section-header">
+    <h2>Find a doctor near you</h2>
+    <p>Dermatologists specialized on your condition</p>
+  </div>
+  <div class="map-container">
         <div id="search-map">
           <%= form_tag diagnosis_path, method: :get do %>
             <%= text_field_tag :query,
@@ -117,5 +119,6 @@
           data-markers="<%= @markers.to_json %>"
           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>
-      </div>
     </div>
+  </div>
+</div>
