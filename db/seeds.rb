@@ -16,26 +16,32 @@ Doctor.destroy_all
 User.destroy_all
 
 puts 'Creating users...'
-user1 = User.create!(first_name: 'Jakob', last_name: 'Merz', email: 'jakob.merz@whu.edu', password: '123456', is_doctor: true)
+user1 = User.create!(first_name: 'Dr.', last_name: 'House', email: 'house@skinclean.xyz', password: '123456', is_doctor: true)
 user2 = User.create!(first_name: 'Antoine', last_name: 'Massot', email: 'antoine@massot.com', password: '123456', is_doctor: false)
 user3 = User.create!(first_name: 'Augustin', last_name: 'Uyttenhove', email: 'augustin@Uyttenhove.com', password: '123456', is_doctor: false)
-user4 = User.create!(first_name: 'Bruce', last_name: 'Willis', email: 'bwillis@skinclean.xyz', password: '123456', is_doctor: true)
-user5 = User.create!(first_name: 'John', last_name: 'Doe', email: 'jdoe@skinclean.xyz', password: '123456', is_doctor: true)
+user4 = User.create!(first_name: 'Dr. Douglas', last_name: 'Ross', email: 'dross@skinclean.xyz', password: '123456', is_doctor: true)
+user5 = User.create!(first_name: 'Dr. Derek Christopher', last_name: 'Shepherd', email: 'dshepherd@skinclean.xyz', password: '123456', is_doctor: true)
+user6 = User.create!(first_name: 'Dr.', last_name: 'Dolittle', email: 'dolittle@skinclean.xyz', password: '123456', is_doctor: true)
+user7 = User.create!(first_name: 'Dr. Patch', last_name: 'Adams', email: 'padams@skinclean.xyz', password: '123456', is_doctor: true)
+user8 = User.create!(first_name: 'Dr.', last_name: 'Strange', email: 'strange@skinclean.xyz', password: '123456', is_doctor: true)
 
 puts 'Creating doctors...'
-doctor1 = Doctor.create!(introduction: 'I am a good doctor', profile_picture: 'https://hcplive.s3.amazonaws.com/v1_media/_image/happydoctor.jpg', license: '1234', user: user1, address: "carrer d'en grassot 101", city: "Barcelona")
-doctor2 = Doctor.create!(introduction: 'I am a good doctor', profile_picture: 'https://hcplive.s3.amazonaws.com/v1_media/_image/happydoctor.jpg', license: '1234', user: user4, address: "Carrer de Mallorca 401, Barcelona", city: "Barcelona")
-doctor3 = Doctor.create!(introduction: 'I am a good doctor', profile_picture: 'https://hcplive.s3.amazonaws.com/v1_media/_image/happydoctor.jpg', license: '1234', user: user5, address: "Carrer de la Marina 212", city: "Barcelona")
+doctor1 = Doctor.create!(introduction: 'I am a pro!', profile_picture: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuZNI10enj-AaAluxnWEI7R15yUy0esuqb44t44kM-3mr_Nc-MCw', license: '1234', user: user1, address: "Carrer d'en grassot 101", city: "Barcelona")
+doctor2 = Doctor.create!(introduction: 'I am here for you!', profile_picture: 'https://peopledotcom.files.wordpress.com/2017/06/george-clooney2.jpg', license: '1234', user: user4, address: "Carrer de Mallorca 401, Barcelona", city: "Barcelona")
+doctor3 = Doctor.create!(introduction: 'I am a good doctor', profile_picture: 'https://i.skyrock.net/5990/60545990/pics/2438759609_1.jpg', license: '1234', user: user5, address: "Carrer de la Marina 212", city: "Barcelona")
+doctor4 = Doctor.create!(introduction: 'I am a good doctor', profile_picture: 'https://d1jo0zet24jmxt.cloudfront.net/content/14898/2fd6c5914cc444a3adf19813635f60de.jpg', license: '1234', user: user6, address: "26 Avenue de l'Opéra", city: "Paris")
+doctor5 = Doctor.create!(introduction: 'I am a good doctor', profile_picture: 'https://musicart.xboxlive.com/7/e5b61000-0000-0000-0000-000000000002/504/image.jpg?w=1920&h=1080', license: '1234', user: user7, address: "Plaza Canovas del Castillo 5", city: "Madrid")
+doctor6 = Doctor.create!(introduction: 'I am a good doctor', profile_picture: 'https://vignette.wikia.nocookie.net/disney/images/5/55/Doctor_Strange.jpg/revision/latest?cb=20180426213411&path-prefix=es', license: '1234', user: user8, address: "Pariser Platz 4A", city: "Berlin")
 
 puts 'Creating questions..'
-question1 = Question.create!(title: "Hi, my name is Jude. I am SkinClean's chatbot and I will personally assist you in getting discrete, professional advice for your skin problems. Up to 85% of adolescents have acne at one point in their life. So no need to feel embarassed. We can help you. What should I call you throughout our conversation?", multiple_choice: false)
-question2 = Question.create!(title: 'Great, let us start with the first question: What percentage of your face would you say is covered in acne scars?', multiple_choice: true)
-question3 = Question.create!(title: 'Thank you, facial scars significantly impair life quality, but we can actively do something against them. Our doctors will provide you with individualized assessments after submitting your information. How often do you have deep, painful nodules on your face?', multiple_choice: true)
-question4 = Question.create!(title: 'How often do you have painful nodules on areas of your body other than your face?', multiple_choice: true)
-question5 = Question.create!(title: 'Thank you for providing us with the valuable information. How much of your face is covered with pus-filled blemishes?', multiple_choice: true)
-question6 = Question.create!(title: 'We are almost there, only two more questions! What percentage of your face is covered with blackheads or whiteheads?', multiple_choice: true)
-question7 = Question.create!(title: 'Did you know that acne is the most common skin condition in the US? You are not alone and we are here to help you. For the final question could you please tell me how much of your face is covered with red blemishes without pus?', multiple_choice: true)
-question8 = Question.create!(title: 'Thank you for your trust, we will now ask you to upload a picture to allow for the creation of an optimal, personalized diagnosis. Whenever you are ready, take the picture and submit for diagnosis', multiple_choice:false, photo:true)
+question1 = Question.create!(title: "Hi, my name is Judy. I am SkinClean's chatbot and I will personally assist you in getting discrete, professional advice for your skin problems. Up to 85% of adolescents have acne at one point in their life. So no need to feel embarassed. We can help you. What should I call you throughout our conversation?</strong>", multiple_choice: false)
+question2 = Question.create!(title: '<p class="message">Great, let us start with the first question: <br> <strong>What percentage of your face would you say is covered in acne scars?</strong></p>', multiple_choice: true)
+question3 = Question.create!(title: '<p class="message">Thank you, facial scars significantly impair life quality, but we can actively do something against them. Our doctors will provide you with individualized assessments after submitting your information.<br> <strong> How often do you have deep, painful nodules on your face?</strong></p>', multiple_choice: true)
+question4 = Question.create!(title: '<p class="message"><strong>How often do you have painful nodules on areas of your body other than your face?</strong></p>', multiple_choice: true)
+question5 = Question.create!(title: '<p class="message">Thank you for providing us with the valuable information. <br> <strong>How much of your face is covered with pus-filled blemishes?</strong></p>', multiple_choice: true)
+question6 = Question.create!(title: '<p class="message">We are almost there, only two more questions! <br> <strong>What percentage of your face is covered with blackheads or whiteheads?</strong></p>', multiple_choice: true)
+question7 = Question.create!(title: '<p class="message">Did you know that acne is the most common skin condition in the US? You are not alone and we are here to help you. For the final question could you please tell me <strong> how much of your face is covered with red blemishes without pus?</strong></p>', multiple_choice: true)
+question8 = Question.create!(title: '<p class="message">Thank you for your trust, we will now ask you to <strong>upload a picture </strong>to allow for the creation of an optimal, personalized diagnosis. Whenever you are ready, take the picture and submit for diagnosis</p>', multiple_choice:false, photo:true)
 
 puts 'Creating text answers'
 answer1 = Answer.create!(content: '', question: question1)
@@ -75,10 +81,12 @@ puts 'All answers created!'
 
 
 puts 'Creating medicines...'
-medicine1 = Medicine.create!(name: 'Aspirin', description: "Acanya Gel is a prescription medication that contains two acne-fighting ingredients: benzoyl peroxide and clindamycin.  It’s used to treat mild to moderate inflammatory breakouts, as well as severe acne.  It helps improve bumps and blackheads too.", risk: "The side effects are pretty typical of most topical acne medications: mild itching, burning, and dryness.
+medicine1 = Medicine.create!(name: 'Acanya Gel', description: "Acanya Gel is a prescription medication that contains two acne-fighting ingredients: benzoyl peroxide and clindamycin.  It’s used to treat mild to moderate inflammatory breakouts, as well as severe acne.  It helps improve bumps and blackheads too.", risk: "The side effects are pretty typical of most topical acne medications: mild itching, burning, and dryness.
   The side effects are usually worse during the first few weeks of treatment, and peak about week four.  The good news is, dryness and irritation slowly subside over time and after about three months or so your skin is back to where it was before you started treatment (but most likely, with fewer breakouts).", price_per_unit: 3, medicine_picture: 'https://www.empr.com/wp-content/uploads/sites/7/2018/12/acanya_pump_photo_204476.jpg')
 medicine2 = Medicine.create!(name: 'Benzamycin', description: "Benzamycin gel is applied topically to all areas affected by acne. It works by killing the Propionibacterium acnes (P. acnes). Benzamycin seems to have the greatest effect on inflammatory acne breakouts, such as papules and pustules.
-It may take a while before you start noticing improvement of the skin, so don't give up on your medication too quickly. You may find your acne actually gets a bit worse before getting better.", risk: "Like most acne medications, the most common side effect of Benzamycin is dryness and peeling. Other side effects can include: stinging, burning or itching, redness, and irritation, increased sensitivity to the sun, skin discoloration (hyperpigmentation or hypopigmentation)", price_per_unit: 5, medicine_picture: 'http://miraremedios.cl/wp-content/uploads/2017/03/Benzac.png')
+It may take a while before you start noticing improvement of the skin, so don't give up on your medication too quickly. You may find your acne actually gets a bit worse before getting better.", risk: "Like most acne medications, the most common side effect of Benzamycin is dryness and peeling. Other side effects can include: stinging, burning or itching, redness, and irritation, increased sensitivity to the sun, skin discoloration (hyperpigmentation or hypopigmentation)", price_per_unit: 5, medicine_picture: 'https://yoderm.com/media/cms_page_media/198/epiduo-pump.jpg')
+medicine3 = Medicine.create!(name: 'Differin', description: "Benzamycin gel is applied topically to all areas affected by acne. It works by killing the Propionibacterium acnes (P. acnes). Benzamycin seems to have the greatest effect on inflammatory acne breakouts, such as papules and pustules.
+It may take a while before you start noticing improvement of the skin, so don't give up on your medication too quickly. You may find your acne actually gets a bit worse before getting better.", risk: "Like most acne medications, the most common side effect of Benzamycin is dryness and peeling. Other side effects can include: stinging, burning or itching, redness, and irritation, increased sensitivity to the sun, skin discoloration (hyperpigmentation or hypopigmentation)", price_per_unit: 8, medicine_picture: 'https://yoderm.com/media/cms_page_media/198/epiduo-pump.jpg')
 
 
 puts 'Creating diagnosis...'
