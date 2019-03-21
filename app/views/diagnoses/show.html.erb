@@ -10,7 +10,7 @@
       <h2>Dr. <%= @diagnosis.doctor.user.full_name %></h2>
       <p>Your trusted physican advising you</p>
     </div>
-    <div class="process-card big">
+    <div class="doctor-diagnosis">
       <div class="process-card-image-container">
         <div class="doc-circle">
           <%= cl_image_tag @diagnosis.doctor.profile_picture, class: 'process-card-image'%>
@@ -22,9 +22,7 @@
       <h2>Medical Assessment</h2>
       <p>Official physical assessment of your condition</p>
     </div>
-
     <div><%= @diagnosis.medical_assessment %></div>
-
     <div class="section-header">
       <h2>
       Dr. <%= @diagnosis.doctor.user.full_name %>'s recommendation:
@@ -33,11 +31,10 @@
     </div>
     <div><p> <%= @diagnosis.recommendation %></p></div>
   </div>
-</div> <!-- end of the first wrapper-light-grey -->
-
-<div class="wrapper-white">
-  <div class="stats-container">
-    <h2>
+  </div> <!-- end of the first wrapper-light-grey -->
+  <div class="wrapper-white">
+    <div class="stats-container">
+      <h2>
       <mark class="green">Next steps</mark>
       <hr>
     </h2>
@@ -118,5 +115,3 @@
         </div>
       </div>
     </div>
-  </div>
-
