@@ -22,14 +22,18 @@
       <h2>Medical Assessment</h2>
       <p>Official physical assessment of your condition</p>
     </div>
-    <div><%= @diagnosis.medical_assessment %></div>
+    <div class ="doctor-recommend">
+      <%= @diagnosis.medical_assessment %>
+    </div>
     <div class="section-header">
       <h2>
       <%= @diagnosis.doctor.user.full_name %>'s recommendation:
       </h2>
       <p>Practical tips from your doctor</p>
     </div>
-    <div><p> <%= @diagnosis.recommendation %></p></div>
+    <div class ="doctor-recommend">
+      <p> <%= @diagnosis.recommendation %></p>
+    </div>
   </div>
   </div> <!-- end of the first wrapper-light-grey -->
   <div class="wrapper-white">

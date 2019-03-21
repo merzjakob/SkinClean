@@ -24,6 +24,7 @@ user5 = User.create!(first_name: 'Dr. Derek Christopher', last_name: 'Shepherd',
 user6 = User.create!(first_name: 'Dr.', last_name: 'Dolittle', email: 'dolittle@skinclean.xyz', password: '123456', is_doctor: true)
 user7 = User.create!(first_name: 'Dr. Patch', last_name: 'Adams', email: 'padams@skinclean.xyz', password: '123456', is_doctor: true)
 user8 = User.create!(first_name: 'Dr.', last_name: 'Strange', email: 'strange@skinclean.xyz', password: '123456', is_doctor: true)
+user9 = User.create!(first_name: 'Jakob', last_name: 'Merz', email: 'jm@skinclean.xyz', password: '123456', is_doctor: false)
 
 puts 'Creating doctors...'
 doctor1 = Doctor.create!(introduction: 'I am a pro!', profile_picture: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuZNI10enj-AaAluxnWEI7R15yUy0esuqb44t44kM-3mr_Nc-MCw', license: '1234', user: user1, address: "Carrer d'en grassot 101", city: "Barcelona")
@@ -90,7 +91,7 @@ It may take a while before you start noticing improvement of the skin, so don't 
 
 
 puts 'Creating diagnosis...'
-diagnosis1 = Diagnosis.create!(user: user2, doctor: doctor1, recommendation: 'I recommend washing your face once or twice a day using a mild facial cleanser and lukewarm water. Furthermore, you should apply topical products that come in gels, creams, solutions and lotions. I have provided a selection of those below. If that does not help significantly within the next two weeks, please go through the SkinClean assessment process again to see the progress and provide you with some oral antibiotics, if needed.', medical_assessment: 'You seem to have Acne vulgaris characterized by comedones, papules, pustules, and nodules in the face. A comedone is a whitehead (closed comedone) or a blackhead (open comedone). You do not have any clinical signs of inflammation.', status: 'Diagnosed')
+diagnosis1 = Diagnosis.create!(user: user9, doctor: doctor1, recommendation: 'I recommend washing your face once or twice a day using a mild facial cleanser and lukewarm water. Furthermore, you should apply topical products that come in gels, creams, solutions and lotions. I have provided a selection of those below. If that does not help significantly within the next two weeks, please go through the SkinClean assessment process again to see the progress and provide you with some oral antibiotics, if needed.', medical_assessment: 'You seem to have Acne vulgaris characterized by comedones, papules, pustules, and nodules in the face. A comedone is a whitehead (closed comedone) or a blackhead (open comedone). You do not have any clinical signs of inflammation.', status: 'Diagnosed')
 
 puts 'Creating patient answer...'
 PatientAnswer.create!(question: question1, diagnosis: diagnosis1, user: user1, content: "Jakob")

@@ -76,6 +76,9 @@ mark.green {
     .btn {
       padding: 12px 40px;
     }
+    a.btn:focus {
+    color: white;
+    }
 }
 
 
