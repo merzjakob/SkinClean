@@ -12,13 +12,13 @@
             <% if diagnosis.status == "Diagnosed" %>
                 <div class="index-diagnosis-card">
                   <div class="diagnosis-name">
-                    <h3><%= diagnosis.user.full_name %></h3>
+                    <h3><%=diagnosis.doctor.user.full_name%> recommends</h3>
                   </div>
                       <div class="corner-ribbon top-right sticky blue">
                   <p id="approved"><%=diagnosis.status%></p>
                 </div>
                   <div class="diagnosis-status">
-                    <p><%=diagnosis.doctor.user.full_name%> recommends:</p>
+
                     <%= link_to "Diagnosis", diagnosis_path(diagnosis), class: "card-link" %>
                   </div>
                   <div class="recommendation">
