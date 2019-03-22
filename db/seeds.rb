@@ -96,7 +96,7 @@ diagnosis1 = Diagnosis.create!(user: user9, doctor: doctor1, recommendation: ' <
 puts 'Creating patient answer...'
 PatientAnswer.create!(question: question1, diagnosis: diagnosis1, user: user1, content: "Jakob")
 PatientAnswer.create!(question: question2, diagnosis: diagnosis1, user: user1, content: answer4.content)
-PatientAnswer.create!(question: question5, diagnosis: diagnosis1, user: user1, content: answer8.content, photo:'https://www.uni-regensburg.de/Fakultaeten/phil_Fak_II/Psychologie/Psy_II/beautycheck/english/durchschnittsgesichter/m(01-32)_gr.jpg' )
+PatientAnswer.create!(question: question8, diagnosis: diagnosis1, user: user1, content: answer8.content, photo:'https://www.uni-regensburg.de/Fakultaeten/phil_Fak_II/Psychologie/Psy_II/beautycheck/english/durchschnittsgesichter/m(01-32)_gr.jpg' )
 
 puts 'Creating prescription'
 Prescription.create!(diagnosis: diagnosis1, medicine: medicine2)
