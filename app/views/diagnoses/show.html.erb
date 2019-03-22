@@ -34,7 +34,7 @@
       <p>Practical tips from your doctor</p>
     </div>
     <div class ="doctor-recommend">
-      <p> <%= @diagnosis.recommendation %></p>
+      <p> <%= @diagnosis.recommendation.html_safe %></p>
       <br>
     </div>
   </div>
