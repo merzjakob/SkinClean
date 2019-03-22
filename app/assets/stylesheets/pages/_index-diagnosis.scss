@@ -36,7 +36,7 @@
   min-width: 80px;
   margin-right: 5px;
   }
-  top: 10px;
+  top: 15px;
   right: 5px;
 }
 
@@ -72,7 +72,8 @@
 
 .recommendation {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  margin-top: 20px;
   i{
     font-size: 18px;
     color: #1AB06D;
