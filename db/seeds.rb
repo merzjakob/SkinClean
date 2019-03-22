@@ -19,7 +19,7 @@ puts 'Creating users...'
 user1 = User.create!(first_name: 'Dr.', last_name: 'House', email: 'house@skinclean.xyz', password: '123456', is_doctor: true)
 user2 = User.create!(first_name: 'Antoine', last_name: 'Massot', email: 'antoine@massot.com', password: '123456', is_doctor: false)
 user3 = User.create!(first_name: 'Augustin', last_name: 'Uyttenhove', email: 'augustin@Uyttenhove.com', password: '123456', is_doctor: false)
-user4 = User.create!(first_name: 'Dr. Douglas', last_name: 'Ross', email: 'dross@skinclean.xyz', password: '123456', is_doctor: true)
+user4 = User.create!(first_name: 'Dr.', last_name: 'Grey', email: 'dross@skinclean.xyz', password: '123456', is_doctor: true)
 user5 = User.create!(first_name: 'Dr. Derek Christopher', last_name: 'Shepherd', email: 'dshepherd@skinclean.xyz', password: '123456', is_doctor: true)
 user6 = User.create!(first_name: 'Dr.', last_name: 'Dolittle', email: 'dolittle@skinclean.xyz', password: '123456', is_doctor: true)
 user7 = User.create!(first_name: 'Dr. Patch', last_name: 'Adams', email: 'padams@skinclean.xyz', password: '123456', is_doctor: true)
@@ -28,7 +28,7 @@ user9 = User.create!(first_name: 'Jakob', last_name: 'Merz', email: 'jm@skinclea
 
 puts 'Creating doctors...'
 doctor1 = Doctor.create!(introduction: 'I am a pro!', profile_picture: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuZNI10enj-AaAluxnWEI7R15yUy0esuqb44t44kM-3mr_Nc-MCw', license: '1234', user: user1, address: "Carrer d'en grassot 101", city: "Barcelona")
-doctor2 = Doctor.create!(introduction: 'I am here for you!', profile_picture: 'https://peopledotcom.files.wordpress.com/2017/06/george-clooney2.jpg', license: '1234', user: user4, address: "Carrer de Mallorca 401, Barcelona", city: "Barcelona")
+doctor2 = Doctor.create!(introduction: 'I am here for you!', profile_picture: 'https://s-cdn.serienjunkies.de/greys-anatomy/dr--meredith-grey.jpg', license: '1234', user: user4, address: "Carrer de Mallorca 401, Barcelona", city: "Barcelona")
 doctor3 = Doctor.create!(introduction: 'I am a good doctor', profile_picture: 'https://i.skyrock.net/5990/60545990/pics/2438759609_1.jpg', license: '1234', user: user5, address: "Carrer de la Marina 212", city: "Barcelona")
 doctor4 = Doctor.create!(introduction: 'I am a good doctor', profile_picture: 'https://d1jo0zet24jmxt.cloudfront.net/content/14898/2fd6c5914cc444a3adf19813635f60de.jpg', license: '1234', user: user6, address: "26 Avenue de l'Opéra", city: "Paris")
 doctor5 = Doctor.create!(introduction: 'I am a good doctor', profile_picture: 'https://musicart.xboxlive.com/7/e5b61000-0000-0000-0000-000000000002/504/image.jpg?w=1920&h=1080', license: '1234', user: user7, address: "Plaza Canovas del Castillo 5", city: "Madrid")
